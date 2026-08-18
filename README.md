@@ -8,6 +8,8 @@ Landing page de venda da imersão presencial **Supreme Full Body Experience**, d
 - **Ticket:** R$ 1.499 a R$ 16.899 — high ticket, ciclo curto
 - **Domínio novo:** `fullbodyexperience.com.br` (registro em andamento — Atendimento 3ADS)
 - **LP atual, que será substituída:** <https://supremeclinica.sprinthub.site/full-body>
+- **Preview no ar:** <https://atendimento3ads.github.io/lp-full-body-experience/>
+- **Repositório:** <https://github.com/atendimento3ads/lp-full-body-experience>
 
 > ⚠️ **O GitHub Pages é público.** Qualquer pessoa com o link vê a página e as fotos de
 > pacientes da seção de resultados. Enquanto a autorização de uso de imagem não estiver
@@ -344,7 +346,9 @@ cd "/Users/jpedrojunqueira/Desktop/Projetos/3ADS Geral/lp-full-body-experience" 
 
 ## Publicar
 
-Enviar para o cPanel o conteúdo da pasta **exceto** `_material-cliente/`, `README.md`,
-`.gitignore` e `index-versaoantiga.html`.
+O preview no GitHub Pages republica sozinho a cada push na `main`.
+
+Para o domínio de campanha, enviar ao cPanel o conteúdo da pasta **exceto**
+`_material-cliente/`, `README.md`, `.gitignore`, `.git/` e `index-versaoantiga.html`.
 
 Desenvolvido por **3ADS**.
