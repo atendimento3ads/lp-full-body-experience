@@ -1,0 +1,18 @@
+FONTES — Supreme Full Body Experience
+=====================================
+
+A LP atual (SprintHub) usa Playfair Display + Poppins, ambas via Google Fonts.
+
+O briefing (item 5) pede:
+  - Serifada de alto contraste para títulos, com palavras de destaque em itálico
+  - Sans-serif geométrica para corpo, rótulos e interface
+
+Definição para esta LP (a validar no layout):
+  - Títulos / destaque itálico .... Playfair Display (mantém a herança Supreme)
+  - Corpo / rótulos / interface ... Poppins  ou  Sora (a decidir na etapa de layout)
+
+Ambas são Google Fonts, licença SIL Open Font — sem custo e sem impedimento
+para uso comercial. Carregar por <link> com display=swap e preconnect.
+
+Se o cliente enviar a fonte oficial da marca Supreme em arquivo, colocar aqui
+e trocar o @font-face. Nesse caso, conferir a licença antes de subir.

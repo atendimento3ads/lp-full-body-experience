@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Supreme Full Body Experience · Imersão para Médicos · 28 e 29 de setembro</title>
+<meta name="description" content="Imersão presencial de harmonização corporal premium para médicos. Dois dias na Clínica Supreme, em Goiânia, com os cinco protocolos Full Body e o módulo de gestão. 28 e 29 de setembro de 2026.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://fullbodyexperience.com.br/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Supreme Full Body Experience">
+<meta property="og:title" content="Supreme Full Body Experience · Imersão para Médicos">
+<meta property="og:description" content="Dois dias presenciais em Goiânia. Os cinco protocolos corporais Supreme e o modelo de gestão que sustenta o preço deles. 28 e 29 de setembro de 2026.">
+<meta property="og:url" content="https://fullbodyexperience.com.br/">
+<meta property="og:image" content="https://fullbodyexperience.com.br/images/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="images/brand/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="images/hero-maria-ligia.webp" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   SUPREME FULL BODY EXPERIENCE — sistema visual
+   Tema claro. Herda a identidade Supreme (dourado + serifada de
+   alto contraste + canto reto), com a base invertida.
+   Contrastes conferidos em WCAG 2.1 — ver README.
+   ============================================================ */
+:root{
+  /* superfícies */
+  --papel:        #F7F4EF;
+  --papel-2:      #EDE7DC;
+  --papel-3:      #E4DACB;
+  --breu:         #0E0D0B;   /* bloco escuro: decisão e fechamento */
+  --breu-2:       #16130F;
+
+  /* tinta */
+  --tinta:        #17130F;   /* 16,8:1 sobre --papel */
+  --tinta-2:      #5A5148;   /* 7,1:1 */
+  --tinta-3:      #877C6F;
+  --claro:        #F5F2ED;   /* 17,4:1 sobre --breu */
+  --claro-2:      rgba(245,242,237,.66);
+
+  /* dourado */
+  --ouro-txt:     #806024;   /* 5,3:1 sobre papel — texto, rótulo, CTA */
+  --ouro:         #C9A96A;   /* marca — filete, borda, ornamento */
+  --ouro-luz:     #EBD9AE;   /* destaque sobre fundo escuro */
+  --fio:          rgba(201,169,106,.34);
+  --fio-forte:    rgba(201,169,106,.62);
+  --fio-claro:    rgba(201,169,106,.26);
+
+  /* tipografia */
+  --serif: "Playfair Display", "Times New Roman", serif;
+  --sans:  "Jost", "Helvetica Neue", Arial, sans-serif;
+
+  /* métrica */
+  --gutter: clamp(20px, 5vw, 64px);
+  --max: 1240px;
+  --raio: 2px;
+  --topo: 58px;
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; scroll-padding-top:calc(var(--topo) + 16px); -webkit-text-size-adjust:100%; }
+body{
+  margin:0; background:var(--papel); color:var(--tinta);
+  font-family:var(--sans); font-weight:300; font-size:17px; line-height:1.62;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+/* grão de papel — é o que tira o aspecto de "fundo branco chapado" */
+body::before{
+  content:""; position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.86' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.038'/%3E%3C/svg%3E");
+}
+main,header,footer{ position:relative; z-index:1; }
+img,video{ max-width:100%; height:auto; display:block; }
+a{ color:inherit; }
+::selection{ background:var(--ouro); color:var(--breu); }
+
+h1,h2,h3,h4{ font-family:var(--serif); font-weight:500; line-height:1.06; letter-spacing:-.015em; margin:0; }
+em,.it{ font-style:italic; color:var(--ouro-txt); font-weight:500; }
+p{ margin:0 0 1.1em; }
+p:last-child{ margin-bottom:0; }
+
+.env{ width:100%; max-width:var(--max); margin-inline:auto; padding-inline:var(--gutter); }
+.secao{ padding-block:clamp(72px,10vw,132px); position:relative; }
+.secao--alt{ background:var(--papel-2); }
+.secao--breu{ background:var(--breu); color:var(--claro); }
+.secao--breu h2,.secao--breu h3{ color:var(--claro); }
+.secao--breu em,.secao--breu .it{ color:var(--ouro-luz); }
+
+/* rótulo de seção: caixa alta, tracking largo, com o número em serifada */
+.rotulo{
+  display:flex; align-items:center; gap:14px; margin-bottom:26px;
+  font-size:11px; letter-spacing:.22em; text-transform:uppercase;
+  font-weight:500; color:var(--ouro-txt);
+}
+.rotulo::after{ content:""; flex:1; height:1px; background:var(--fio); }
+.rotulo b{ font-family:var(--serif); font-style:italic; font-size:15px; letter-spacing:0; font-weight:500; }
+.rotulo--centro{ justify-content:center; }
+.rotulo--centro::after{ display:none; }
+.rotulo--centro::before{ content:""; width:44px; height:1px; background:var(--fio); }
+.secao--breu .rotulo{ color:var(--ouro-luz); }
+.secao--breu .rotulo::after{ background:var(--fio-claro); }
+
+.titulo{ font-size:clamp(30px,4.6vw,54px); max-width:19ch; }
+.titulo--largo{ max-width:26ch; }
+.intro{ max-width:60ch; margin-top:20px; color:var(--tinta-2); font-size:clamp(16px,1.6vw,18.5px); }
+.secao--breu .intro{ color:var(--claro-2); }
+
+/* ---------- botões ---------- */
+.btn{
+  --bg:var(--ouro-txt); --fg:var(--papel);
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  padding:15px 26px; border:1px solid var(--bg); background:var(--bg); color:var(--fg);
+  font-family:var(--sans); font-size:13px; font-weight:500; letter-spacing:.13em;
+  text-transform:uppercase; text-decoration:none; border-radius:var(--raio);
+  cursor:pointer; transition:background .28s, color .28s, border-color .28s, transform .28s;
+}
+.btn:hover{ background:transparent; color:var(--bg); transform:translateY(-1px); }
+.btn--fantasma{ --bg:transparent; --fg:var(--tinta); border-color:var(--fio-forte); }
+.btn--fantasma:hover{ background:var(--tinta); color:var(--papel); border-color:var(--tinta); }
+.btn--ouro{ --bg:var(--ouro-luz); --fg:var(--breu); }
+.btn--ouro:hover{ background:transparent; color:var(--ouro-luz); }
+.btn--linha-clara{ --bg:transparent; --fg:var(--claro); border-color:rgba(245,242,237,.4); }
+.btn--linha-clara:hover{ background:var(--claro); color:var(--breu); border-color:var(--claro); }
+.btn--bloco{ width:100%; }
+.acoes{ display:flex; flex-wrap:wrap; gap:12px; margin-top:34px; }
+
+/* ---------- barra fixa superior ---------- */
+.topo{
+  position:fixed; inset:0 0 auto; z-index:60; height:var(--topo);
+  display:flex; align-items:center;
+  background:rgba(247,244,239,.9); backdrop-filter:saturate(1.4) blur(14px);
+  border-bottom:1px solid var(--fio);
+}
+.topo__in{ display:flex; align-items:center; gap:22px; width:100%; max-width:var(--max); margin-inline:auto; padding-inline:var(--gutter); }
+.topo__escassez{ font-size:11.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--tinta-2); font-weight:400; }
+.topo__escassez b{ color:var(--ouro-txt); font-weight:600; }
+.relogio{ display:flex; align-items:baseline; gap:9px; margin-left:auto; font-variant-numeric:tabular-nums; }
+.relogio__un{ display:flex; align-items:baseline; gap:3px; }
+.relogio__n{ font-family:var(--serif); font-size:19px; font-weight:500; line-height:1; color:var(--tinta); }
+.relogio__l{ font-size:9.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--tinta-3); }
+.relogio__sep{ color:var(--fio-forte); font-size:13px; }
+.topo .btn{ padding:9px 17px; font-size:11px; }
+
+/* ---------- hero ---------- */
+.hero{ padding-top:calc(var(--topo) + clamp(48px,7vw,86px)); padding-bottom:clamp(60px,8vw,104px); overflow:hidden; }
+.hero::after{ /* brilho quente atrás do retrato */
+  content:""; position:absolute; top:-8%; right:-10%; width:56vw; height:78%;
+  background:radial-gradient(ellipse at 60% 40%, rgba(201,169,106,.19), transparent 66%);
+  pointer-events:none; z-index:0;
+}
+.hero__grade{ display:grid; grid-template-columns:1.12fr .88fr; gap:clamp(34px,5vw,72px); align-items:center; position:relative; z-index:1; }
+.marca{ display:flex; align-items:center; gap:12px; margin-bottom:26px; }
+.marca__mono{
+  width:38px; height:38px; display:grid; place-items:center; flex:none;
+  border:1px solid var(--fio-forte); border-radius:var(--raio);
+  font-family:var(--serif); font-size:19px; font-style:italic; color:var(--ouro-txt);
+}
+.marca__txt{ font-size:11px; letter-spacing:.26em; text-transform:uppercase; color:var(--tinta-2); line-height:1.5; }
+.marca__txt b{ display:block; color:var(--tinta); font-weight:500; letter-spacing:.22em; }
+.hero h1{ font-size:clamp(34px,4.5vw,58px); letter-spacing:-.024em; max-width:16ch; }
+.hero__promessa{ margin-top:24px; max-width:52ch; font-size:clamp(16.5px,1.7vw,19.5px); color:var(--tinta-2); }
+.hero__promessa strong{ color:var(--tinta); font-weight:500; }
+
+.provas{ display:grid; grid-template-columns:repeat(4,1fr); margin-top:46px; border-top:1px solid var(--fio); }
+.prova{ padding:20px 16px 0 0; }
+.prova + .prova{ border-left:1px solid var(--fio); padding-left:20px; }
+.prova__n{ font-family:var(--serif); font-size:clamp(26px,3vw,34px); line-height:1; color:var(--ouro-txt); font-weight:500; }
+.prova__l{ margin-top:7px; font-size:11.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--tinta-2); line-height:1.4; }
+
+/* retrato do hero: moldura dupla, canto reto */
+.hero__figura{ position:relative; }
+.hero__figura::before{
+  content:""; position:absolute; inset:16px -16px -16px 16px;
+  border:1px solid var(--fio-forte); border-radius:var(--raio); z-index:0;
+}
+.hero__figura img{ position:relative; z-index:1; width:100%; border-radius:var(--raio); filter:saturate(.97); }
+.hero__legenda{
+  position:relative; z-index:2; margin-top:20px; padding-left:16px;
+  border-left:1px solid var(--fio-forte); font-size:12px; line-height:1.5;
+  letter-spacing:.09em; text-transform:uppercase; color:var(--tinta-2);
+}
+.hero__legenda b{ display:block; font-weight:500; color:var(--tinta); letter-spacing:.06em; }
+.play{
+  display:inline-flex; align-items:center; gap:11px; margin-top:22px; padding:0;
+  background:none; border:0; cursor:pointer; color:var(--tinta);
+  font-family:var(--sans); font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+}
+.play__ico{
+  width:34px; height:34px; flex:none; display:grid; place-items:center; border-radius:50%;
+  border:1px solid var(--fio-forte); color:var(--ouro-txt); transition:background .3s,color .3s;
+}
+.play:hover .play__ico{ background:var(--ouro-txt); color:var(--papel); }
+
+/* ---------- faixa de público ---------- */
+.publico{ border-block:1px solid var(--fio); background:var(--papel-2); }
+.publico__in{ display:flex; flex-wrap:wrap; align-items:center; gap:0; padding-block:19px; }
+.publico__rot{ font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--ouro-txt); padding-right:26px; font-weight:500; }
+.chip{ font-size:12.5px; letter-spacing:.11em; text-transform:uppercase; color:var(--tinta-2); padding-inline:22px; border-left:1px solid var(--fio); }
+
+/* ---------- grade de 3 (cenário) ---------- */
+.trio{ display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:52px; border-top:1px solid var(--fio); }
+.trio > article{ padding:34px 30px 0 0; }
+.trio > article + article{ border-left:1px solid var(--fio); padding-left:30px; }
+.ordinal{ font-family:var(--serif); font-style:italic; font-size:30px; color:var(--ouro-txt); line-height:1; display:block; margin-bottom:16px; font-weight:500; }
+.trio h3{ font-size:23px; margin-bottom:12px; }
+.trio p{ color:var(--tinta-2); font-size:16px; }
+
+/* ---------- método, 4 passos ---------- */
+.passos{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:52px; }
+.passo{ padding:0 26px 0 0; border-top:1px solid var(--fio); padding-top:26px; }
+.passo + .passo{ border-left:1px solid var(--fio); padding-left:26px; }
+.passo__n{ font-size:11px; letter-spacing:.2em; color:var(--ouro-txt); font-weight:500; }
+.passo h3{ font-size:26px; margin:14px 0 11px; }
+.passo p{ font-size:15.5px; color:var(--tinta-2); }
+
+/* ---------- como funciona: os dois dias ---------- */
+.dias{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(18px,2.4vw,30px); margin-top:54px; }
+.dia{ border:1px solid var(--fio); border-radius:var(--raio); background:var(--papel); padding:clamp(26px,3vw,40px); position:relative; }
+.dia--aberto{ background:linear-gradient(180deg, rgba(201,169,106,.09), transparent 42%); }
+.dia__tag{ font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--ouro-txt); font-weight:500; }
+.dia__data{ font-family:var(--serif); font-size:clamp(40px,5vw,60px); line-height:1; margin:12px 0 4px; font-weight:500; }
+.dia__data span{ font-size:.42em; letter-spacing:.04em; color:var(--tinta-2); font-style:italic; }
+.dia__hora{ font-size:12px; letter-spacing:.13em; text-transform:uppercase; color:var(--tinta-2); }
+.dia h3{ font-size:24px; margin:22px 0 10px; }
+.dia__desc{ color:var(--tinta-2); font-size:16px; }
+.quem{ margin-top:24px; border-top:1px solid var(--fio); padding-top:20px; }
+.quem dt{ font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--tinta-3); margin-bottom:8px; }
+.quem dd{ margin:0 0 16px; font-size:15.5px; display:flex; gap:10px; align-items:flex-start; color:var(--tinta); }
+.quem dd:last-child{ margin-bottom:0; }
+.quem dd i{ font-style:normal; flex:none; width:16px; text-align:center; }
+.quem .sim i{ color:var(--ouro-txt); }
+.quem .nao{ color:var(--tinta-3); }
+
+.modulos{ margin-top:clamp(34px,4vw,54px); border-top:1px solid var(--fio); }
+.modulo{ display:grid; grid-template-columns:96px 1fr; gap:22px; align-items:baseline; padding:19px 0; border-bottom:1px solid var(--fio); }
+.modulo__dia{ font-size:10.5px; letter-spacing:.17em; text-transform:uppercase; color:var(--ouro-txt); font-weight:500; }
+.modulo__nome{ font-family:var(--serif); font-size:20px; }
+.modulo__desc{ color:var(--tinta-2); font-size:15.5px; margin-top:3px; }
+
+/* ---------- modalidades (bloco escuro) ---------- */
+.faixa-rot{
+  display:flex; align-items:baseline; gap:16px; margin-top:clamp(46px,5vw,72px); margin-bottom:8px;
+  font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--ouro-luz); font-weight:500;
+}
+.faixa-rot::after{ content:""; flex:1; height:1px; background:var(--fio-claro); }
+.faixa-nota{ color:var(--claro-2); max-width:64ch; font-size:16px; margin-bottom:30px; }
+.faixa-nota b{ color:var(--claro); font-weight:500; }
+
+.planos{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(18px,2.4vw,28px); }
+.plano{ border:1px solid var(--fio-claro); border-radius:var(--raio); padding:clamp(26px,3vw,40px); display:flex; flex-direction:column; background:rgba(201,169,106,.035); }
+.plano--destaque{ border-color:var(--fio-forte); background:rgba(201,169,106,.075); }
+.plano__topo{ display:flex; justify-content:space-between; align-items:baseline; gap:14px; }
+.plano h3{ font-size:clamp(26px,3vw,34px); }
+.vagas{ font-size:10.5px; letter-spacing:.17em; text-transform:uppercase; color:var(--ouro-luz); border:1px solid var(--fio-claro); padding:5px 11px; border-radius:var(--raio); white-space:nowrap; }
+.plano__linha{ margin-top:14px; color:var(--claro-2); font-size:16px; min-height:3.2em; }
+.plano__preco{ margin-top:26px; padding-top:22px; border-top:1px solid var(--fio-claro); }
+.preco{ font-family:var(--serif); font-size:clamp(38px,4.6vw,52px); line-height:1; color:var(--claro); font-weight:500; }
+.preco small{ font-size:.42em; color:var(--claro-2); font-style:italic; margin-right:6px; }
+.parcela{ margin-top:9px; font-size:13.5px; letter-spacing:.06em; color:var(--claro-2); }
+.composicao{
+  margin-top:18px; padding:14px 16px; border-left:2px solid var(--ouro);
+  background:rgba(201,169,106,.07); font-size:13.5px; line-height:1.55; color:var(--claro-2);
+}
+.composicao b{ color:var(--ouro-luz); font-weight:500; }
+.inclui{ list-style:none; margin:24px 0 0; padding:0; }
+.inclui li{ display:flex; gap:11px; padding:9px 0; border-bottom:1px solid rgba(201,169,106,.14); font-size:15px; color:var(--claro-2); }
+.inclui li i{ font-style:normal; color:var(--ouro-luz); flex:none; }
+.plano .btn{ margin-top:26px; }
+.plano__rodape{ margin-top:auto; }
+
+.gestao{ border:1px solid var(--fio-claro); border-radius:var(--raio); padding:clamp(26px,3vw,40px); background:rgba(201,169,106,.035); }
+.gestao__cab{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:16px; }
+.gestao h3{ font-size:clamp(26px,3vw,34px); }
+.gestao__aviso{ margin-top:14px; color:var(--claro-2); max-width:70ch; font-size:16px; }
+.perfis{ margin-top:30px; border-top:1px solid var(--fio-claro); }
+.perfil{ display:grid; grid-template-columns:1fr auto auto; gap:clamp(16px,3vw,40px); align-items:center; padding:24px 0; border-bottom:1px solid var(--fio-claro); }
+.perfil__quem{ font-size:16.5px; color:var(--claro); }
+.perfil__quem span{ display:block; margin-top:5px; font-size:13px; color:var(--claro-2); }
+.perfil__preco{ text-align:right; }
+.perfil__preco .preco{ font-size:clamp(28px,3.2vw,36px); }
+.perfil .btn{ white-space:nowrap; }
+
+/* tabela comparativa */
+.tabela-env{ margin-top:clamp(46px,5vw,72px); }
+table{ width:100%; border-collapse:collapse; font-size:15px; }
+caption{ text-align:left; font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--ouro-luz); padding-bottom:18px; font-weight:500; }
+th,td{ padding:15px 14px; text-align:left; border-bottom:1px solid var(--fio-claro); }
+thead th{ font-family:var(--serif); font-size:19px; font-weight:500; color:var(--claro); border-bottom:1px solid var(--fio-forte); }
+thead th:first-child{ font-family:var(--sans); font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--claro-2); font-weight:400; }
+tbody th{ font-weight:400; color:var(--claro-2); font-size:14.5px; }
+td{ color:var(--claro); }
+td.sim{ color:var(--ouro-luz); }
+td.nao{ color:rgba(245,242,237,.42); }
+td.preco-cel{ font-family:var(--serif); font-size:19px; }
+td.preco-cel span{ display:block; font-family:var(--sans); font-size:12.5px; color:var(--claro-2); margin-top:4px; }
+
+/* ainda em dúvida */
+.duvida{ margin-top:clamp(46px,5vw,72px); }
+.duvida__lista{ margin-top:26px; border-top:1px solid var(--fio-claro); }
+.duvida__item{ display:grid; grid-template-columns:1fr auto; gap:clamp(16px,3vw,40px); align-items:center; padding:20px 0; border-bottom:1px solid var(--fio-claro); }
+.duvida__fala{ font-family:var(--serif); font-style:italic; font-size:clamp(17px,2vw,21px); color:var(--claro); }
+.duvida__resp{ font-size:12px; letter-spacing:.15em; text-transform:uppercase; color:var(--ouro-luz); text-align:right; white-space:nowrap; }
+.duvida__resp span{ display:block; text-transform:none; letter-spacing:.02em; font-size:13px; color:var(--claro-2); margin-top:4px; }
+
+/* ---------- o retorno ---------- */
+.roi{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(28px,4vw,64px); align-items:center; margin-top:48px; }
+.conta{ border:1px solid var(--fio-forte); border-radius:var(--raio); background:var(--papel); }
+.conta__l{ display:flex; justify-content:space-between; align-items:baseline; gap:18px; padding:20px clamp(22px,3vw,32px); border-bottom:1px solid var(--fio); }
+.conta__l:last-of-type{ border-bottom:0; }
+.conta__l dt{ flex:1; font-size:13.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--tinta-2); }
+.conta__l dd{ margin:0; font-family:var(--serif); font-size:clamp(24px,3vw,32px); font-weight:500; white-space:nowrap; }
+.conta__l--soma{ background:var(--papel-2); }
+.conta__l--soma dd{ color:var(--ouro-txt); }
+.aviso{
+  margin-top:24px; padding:16px 18px; border-left:2px solid var(--ouro);
+  background:rgba(201,169,106,.1); font-size:13.5px; line-height:1.6; color:var(--tinta-2);
+}
+.aviso b{ color:var(--tinta); font-weight:500; }
+
+/* ---------- professores ---------- */
+.time{ display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(18px,2.4vw,30px); margin-top:54px; }
+.prof figure{ margin:0; position:relative; }
+.prof img{ width:100%; border-radius:var(--raio); border:1px solid var(--fio); }
+.prof figure::after{ content:""; position:absolute; inset:0; border-radius:var(--raio);
+  background:var(--ouro); mix-blend-mode:multiply; opacity:.13; pointer-events:none; }
+.prof__papel{ margin-top:18px; font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--ouro-txt); font-weight:500; }
+.prof h3{ font-size:22px; margin:9px 0 10px; }
+.prof p{ font-size:14.5px; color:var(--tinta-2); line-height:1.6; }
+
+/* ---------- para quem é / não é ---------- */
+.filtro{ display:grid; grid-template-columns:1fr 1fr; gap:0; margin-top:52px; border-top:1px solid var(--fio); }
+.filtro > div{ padding:34px 36px 0 0; }
+.filtro > div + div{ border-left:1px solid var(--fio); padding-left:36px; }
+.filtro h3{ font-size:24px; margin-bottom:22px; }
+.filtro ul{ list-style:none; margin:0; padding:0; }
+.filtro li{ display:flex; gap:13px; padding:14px 0; border-bottom:1px solid var(--fio); font-size:16px; }
+.filtro li i{ font-style:normal; flex:none; }
+.e i{ color:var(--ouro-txt); }
+.nao-e{ color:var(--tinta-2); }
+.nao-e i{ color:var(--tinta-3); }
+
+/* ---------- resultados ---------- */
+.galeria{ position:relative; margin-top:48px; }
+.galeria__grade{ columns:3; column-gap:clamp(14px,2vw,22px); }
+.galeria__grade figure{ margin:0 0 clamp(14px,2vw,22px); break-inside:avoid; }
+.galeria__grade img{ width:100%; border:1px solid var(--fio); border-radius:var(--raio); }
+.portao{
+  position:absolute; inset:0; z-index:5; display:grid; place-items:center; text-align:center;
+  padding:30px; background:rgba(247,244,239,.9); backdrop-filter:blur(13px);
+  border:1px solid var(--fio); border-radius:var(--raio);
+}
+.portao__in{ max-width:44ch; }
+.portao h3{ font-size:clamp(21px,2.6vw,28px); margin-bottom:14px; }
+.portao p{ color:var(--tinta-2); font-size:15.5px; }
+.galeria.liberada .portao{ display:none; }
+.galeria:not(.liberada) .galeria__grade{ filter:blur(15px); pointer-events:none; user-select:none; max-height:min(56vh,520px); overflow:hidden; }
+
+/* ---------- FAQ ---------- */
+.faq{ margin-top:48px; border-top:1px solid var(--fio); }
+details{ border-bottom:1px solid var(--fio); }
+summary{
+  display:flex; justify-content:space-between; align-items:flex-start; gap:24px;
+  padding:22px 0; cursor:pointer; list-style:none;
+  font-family:var(--serif); font-size:clamp(18px,2.1vw,21px); line-height:1.35; transition:color .25s;
+}
+summary::-webkit-details-marker{ display:none; }
+summary:hover{ color:var(--ouro-txt); }
+summary::after{
+  content:"+"; flex:none; font-family:var(--sans); font-weight:300; font-size:24px; line-height:1;
+  color:var(--ouro-txt); transition:transform .3s;
+}
+details[open] summary::after{ transform:rotate(45deg); }
+details .resposta{ padding:0 0 24px; max-width:74ch; color:var(--tinta-2); font-size:16px; }
+details .resposta b{ color:var(--tinta); font-weight:500; }
+
+/* ---------- fechamento ---------- */
+.fecho{ text-align:center; }
+.fecho h2{ font-size:clamp(32px,5vw,60px); max-width:22ch; margin-inline:auto; }
+.fecho .acoes{ justify-content:center; }
+.pratico{ display:grid; grid-template-columns:repeat(5,1fr); gap:0; margin-top:clamp(52px,6vw,80px); border-top:1px solid var(--fio-claro); text-align:left; }
+.pratico > div{ padding:26px 22px 0 0; }
+.pratico > div + div{ border-left:1px solid var(--fio-claro); padding-left:22px; }
+.pratico dt{ font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--ouro-luz); margin-bottom:11px; }
+.pratico dd{ margin:0; font-size:15px; color:var(--claro-2); line-height:1.55; }
+.pratico dd b{ color:var(--claro); font-weight:500; display:block; }
+
+/* ---------- rodapé ---------- */
+.rodape{ background:var(--breu-2); color:var(--claro-2); border-top:1px solid var(--fio-claro); padding-block:clamp(44px,5vw,64px); font-size:13.5px; line-height:1.7; }
+.rodape__grade{ display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:clamp(26px,4vw,56px); }
+.rodape h4{ font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--ouro-luz); margin-bottom:14px; font-family:var(--sans); font-weight:500; }
+.rodape a{ color:var(--claro); text-decoration:none; border-bottom:1px solid var(--fio-claro); }
+.rodape a:hover{ border-color:var(--ouro-luz); }
+.rodape__legal{ margin-top:40px; padding-top:24px; border-top:1px solid var(--fio-claro); font-size:12.5px; color:rgba(245,242,237,.5); display:flex; flex-wrap:wrap; gap:10px 28px; justify-content:space-between; }
+
+/* ---------- barra fixa mobile ---------- */
+.barra-mob{
+  position:fixed; inset:auto 0 0; z-index:60; display:none; gap:10px; padding:11px var(--gutter) calc(11px + env(safe-area-inset-bottom));
+  background:rgba(14,13,11,.96); backdrop-filter:blur(12px); border-top:1px solid var(--fio-claro);
+}
+.barra-mob .btn{ flex:1; padding:14px 12px; font-size:11.5px; }
+
+/* ---------- modal do vídeo ---------- */
+dialog{ border:1px solid var(--fio-forte); border-radius:var(--raio); padding:0; background:var(--breu); max-width:min(420px,92vw); }
+dialog::backdrop{ background:rgba(14,13,11,.86); backdrop-filter:blur(6px); }
+dialog video{ width:100%; height:auto; }
+.fechar{
+  position:absolute; top:10px; right:10px; width:36px; height:36px; border-radius:50%;
+  border:1px solid var(--fio-claro); background:rgba(14,13,11,.7); color:var(--claro);
+  font-size:19px; line-height:1; cursor:pointer;
+}
+
+/* ---------- revelação ---------- */
+.rev{ opacity:0; transform:translateY(18px); transition:opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1); }
+.rev.on{ opacity:1; transform:none; }
+
+/* ---------- responsivo ---------- */
+@media (max-width:1080px){
+  .time{ grid-template-columns:repeat(2,1fr); }
+  .pratico{ grid-template-columns:repeat(3,1fr); }
+  .pratico > div:nth-child(4){ border-left:0; padding-left:0; }
+}
+@media (max-width:900px){
+  body{ font-size:16.5px; }
+  .hero__grade{ grid-template-columns:1fr; }
+  .hero__figura{ max-width:440px; }
+  .hero__figura::before{ inset:12px -12px -12px 12px; }
+  .trio,.passos,.filtro,.planos,.dias,.roi{ grid-template-columns:1fr; }
+  .trio > article,.passo,.filtro > div{ padding:26px 0 0; border-left:0 !important; }
+  .trio > article + article,.passo + .passo,.filtro > div + div{ border-top:1px solid var(--fio); padding-left:0; }
+  .passo{ border-top:1px solid var(--fio); }
+  .galeria__grade{ columns:2; }
+  .rodape__grade{ grid-template-columns:1fr 1fr; }
+  .perfil{ grid-template-columns:1fr; gap:16px; }
+  .perfil__preco{ text-align:left; }
+  .perfil .btn{ width:100%; }
+}
+@media (max-width:760px){
+  :root{ --topo:52px; }
+  body{ padding-bottom:74px; }
+  .barra-mob{ display:flex; }
+  .topo__escassez{ display:none; }
+  /* o botão sai da barra de cima: ele já está fixo no rodapé do mobile */
+  .topo .btn{ display:none; }
+  .relogio{ margin-left:0; width:100%; justify-content:center; }
+  .relogio__n{ font-size:17px; }
+  .provas{ grid-template-columns:1fr 1fr; }
+  .prova{ padding:18px 14px 18px 0; border-bottom:1px solid var(--fio); }
+  .prova + .prova{ padding-left:18px; }
+  .prova:nth-child(odd){ border-left:0; padding-left:0; }
+  .modulo{ grid-template-columns:1fr; gap:6px; }
+  .duvida__item{ grid-template-columns:1fr; gap:8px; }
+  .duvida__resp{ text-align:left; }
+  .pratico{ grid-template-columns:1fr; }
+  .pratico > div{ padding:22px 0 0; border-left:0 !important; }
+  .pratico > div + div{ border-top:1px solid var(--fio-claro); }
+  .rodape__grade{ grid-template-columns:1fr; }
+  .galeria__grade{ columns:1; }
+  /* tabela comparativa empilhada: cada linha vira um bloco rotulado */
+  .tabela-env table,.tabela-env tbody,.tabela-env tr,.tabela-env th,.tabela-env td{ display:block; width:100%; }
+  .tabela-env thead{ display:none; }
+  .tabela-env tr{ padding:20px 0; border-bottom:1px solid var(--fio-claro); }
+  .tabela-env tr:last-child{ border-bottom:0; }
+  .tabela-env tbody th{ padding:0 0 14px; border:0; font-family:var(--serif); font-size:19px; color:var(--claro); }
+  .tabela-env td{ padding:8px 0; border:0; display:flex; align-items:baseline; justify-content:space-between; gap:18px; font-size:15px; }
+  .tabela-env td::before{
+    content:attr(data-mod); flex:none; color:var(--claro-2);
+    font-size:11px; letter-spacing:.15em; text-transform:uppercase;
+  }
+  .tabela-env td.preco-cel{ display:block; font-size:22px; padding:12px 0; }
+  .tabela-env td.preco-cel::before{ display:block; margin-bottom:5px; }
+  .tabela-env td.preco-cel span{ margin-top:3px; }
+}
+@media (prefers-reduced-motion:reduce){
+  html{ scroll-behavior:auto; }
+  .rev{ opacity:1; transform:none; transition:none; }
+  *{ animation-duration:.01ms !important; transition-duration:.01ms !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ BARRA FIXA SUPERIOR ══════════════════════════════════════ -->
+<header class="topo">
+  <div class="topo__in">
+    <p class="topo__escassez">Turma reduzida · <b>20 vagas para médicos</b></p>
+    <div class="relogio" id="relogio" aria-label="Tempo restante até o início da imersão">
+      <span class="relogio__un"><span class="relogio__n" data-c="d">--</span><span class="relogio__l">dias</span></span>
+      <span class="relogio__sep">·</span>
+      <span class="relogio__un"><span class="relogio__n" data-c="h">--</span><span class="relogio__l">h</span></span>
+      <span class="relogio__sep">·</span>
+      <span class="relogio__un"><span class="relogio__n" data-c="m">--</span><span class="relogio__l">min</span></span>
+    </div>
+    <a href="#modalidades" class="btn">Ver modalidades</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ══ HERO ═════════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="env hero__grade">
+    <div class="rev on">
+      <div class="marca">
+        <span class="marca__mono" aria-hidden="true">S</span>
+        <span class="marca__txt">Clínica Supreme apresenta<b>Full Body Experience</b></span>
+      </div>
+
+      <h1>O protocolo corporal que transforma a clínica em uma <em>operação premium</em>.</h1>
+
+      <p class="hero__promessa">Dois dias presenciais em Goiânia. <strong>No dia 28</strong>, os cinco protocolos Full Body aplicados sob supervisão. <strong>No dia 29</strong>, o modelo de gestão que sustenta o preço deles.</p>
+
+      <div class="acoes">
+        <a href="#modalidades" class="btn">Ver as modalidades</a>
+        <a href="#como-funciona" class="btn btn--fantasma">Como funcionam os dois dias</a>
+      </div>
+
+      <div class="provas">
+        <div class="prova"><div class="prova__n">2</div><div class="prova__l">dias<br>presenciais</div></div>
+        <div class="prova"><div class="prova__n">20</div><div class="prova__l">vagas<br>para médicos</div></div>
+        <div class="prova"><div class="prova__n">5</div><div class="prova__l">protocolos<br>aplicados</div></div>
+        <div class="prova"><div class="prova__n">4</div><div class="prova__l">professores<br>conduzindo</div></div>
+      </div>
+    </div>
+
+    <div class="rev on">
+      <div class="hero__figura">
+        <img src="images/hero-maria-ligia.webp" width="760" height="1013" alt="Dra. Maria Lígia Mendonça, dermatologista e fundadora da Clínica Supreme" fetchpriority="high">
+      </div>
+      <p class="hero__legenda"><b>Dra. Maria Lígia Mendonça</b>Idealizadora · Dermatologista<br>Clínica Supreme — Goiânia</p>
+      <button class="play" type="button" id="abrirConvite">
+        <span class="play__ico" aria-hidden="true">▶</span>
+        Ver o convite · 58s
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAIXA DE PÚBLICO ═════════════════════════════════════════ -->
+<div class="publico">
+  <div class="env publico__in">
+    <span class="publico__rot">Feito para</span>
+    <span class="chip">Dermatologia</span>
+    <span class="chip">Cirurgia vascular</span>
+    <span class="chip">Nutrologia</span>
+    <span class="chip">Médico full face</span>
+    <span class="chip">Gestor de clínica</span>
+  </div>
+</div>
+
+<!-- ══ 01 · O CENÁRIO ═══════════════════════════════════════════ -->
+<section class="secao" id="cenario">
+  <div class="env">
+    <p class="rotulo rev"><b>01</b> O cenário</p>
+    <h2 class="titulo rev">O facial saturou. O corporal <em>não</em>.</h2>
+    <p class="intro rev">Não é opinião de mercado, é o que aparece na agenda: a mesma técnica que abria diferença há cinco anos hoje é oferecida por dezenas de profissionais na mesma cidade.</p>
+
+    <div class="trio">
+      <article class="rev">
+        <span class="ordinal">01</span>
+        <h3>A concorrência multiplicou</h3>
+        <p>Preenchimento, bioestimulador e protocolo facial deixaram de ser diferencial. O paciente é impactado todos os dias por dezenas de profissionais oferecendo praticamente a mesma coisa, e o número de categorias autorizadas a atuar na estética cresceu rápido.</p>
+      </article>
+      <article class="rev">
+        <span class="ordinal">02</span>
+        <h3>O paciente corporal compra outra coisa</h3>
+        <p>Ele não busca melhorar uma área. Busca transformação — voltar a se sentir seguro dentro da própria roupa. Isso muda o valor percebido do tratamento, e muda o que ele aceita investir quando entende o que está comprando.</p>
+      </article>
+      <article class="rev">
+        <span class="ordinal">03</span>
+        <h3>O ticket e a recorrência são outros</h3>
+        <p>Protocolos corporais premium ocupam faixas de investimento que o facial não alcança, com retorno mais frequente e um portfólio que não se esgota em uma sessão. É o espaço menos disputado da estética hoje.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 02 · O MÉTODO ════════════════════════════════════════════ -->
+<section class="secao secao--alt" id="metodo">
+  <div class="env">
+    <p class="rotulo rev"><b>02</b> O conceito Supreme</p>
+    <h2 class="titulo titulo--largo rev">Tratar, modelar, sustentar, <em>ajustar</em>.</h2>
+    <p class="intro rev">A maioria dos profissionais aprende técnicas separadas. O problema é que o paciente premium não compra técnica — compra consistência. O método Supreme organiza a decisão clínica em quatro etapas, na ordem em que ela precisa acontecer.</p>
+
+    <div class="passos">
+      <div class="passo rev"><div class="passo__n">01</div><h3>Tratar</h3><p>O que limita o resultado antes da estética: retenção, processo inflamatório, lipedema. Sem isso, o contorno não se sustenta.</p></div>
+      <div class="passo rev"><div class="passo__n">02</div><h3>Modelar</h3><p>Contorno, definição e volumização com a técnica adequada a cada região e a cada tipo de corpo.</p></div>
+      <div class="passo rev"><div class="passo__n">03</div><h3>Sustentar</h3><p>Protocolos de manutenção pensados para durabilidade e recorrência — não para encerrar na primeira sessão.</p></div>
+      <div class="passo rev"><div class="passo__n">04</div><h3>Ajustar</h3><p>Planejamento fino por objetivo estético, biotipo e histórico clínico de cada paciente.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 03 · COMO FUNCIONA — antes de qualquer preço ══════════════ -->
+<section class="secao" id="como-funciona">
+  <div class="env">
+    <p class="rotulo rev"><b>03</b> Como funciona</p>
+    <h2 class="titulo rev">Antes do preço, entenda os <em>dois dias</em>.</h2>
+    <p class="intro rev">São dois dias com públicos diferentes. O dia 28 é exclusivo para médicos. O dia 29 abre para a equipe da clínica. Entender essa separação resolve praticamente toda a dúvida sobre qual modalidade escolher.</p>
+
+    <div class="dias">
+      <article class="dia rev">
+        <p class="dia__tag">Dia 1 · exclusivo para médicos</p>
+        <p class="dia__data">28 <span>de setembro, segunda</span></p>
+        <p class="dia__hora">A partir das 9h · dia inteiro</p>
+        <h3>Imersão Hands-On</h3>
+        <p class="dia__desc">Dia inteiro de prática supervisionada na Clínica Supreme, percorrendo os cinco protocolos corporais do método.</p>
+        <dl class="quem">
+          <dt>Participa deste dia</dt>
+          <dd class="sim"><i>✓</i> <span><b>Hands On</b> — executa os protocolos</span></dd>
+          <dd class="sim"><i>✓</i> <span><b>Observador</b> — acompanha a aplicação e o raciocínio clínico</span></dd>
+          <dt>Não participa</dt>
+          <dd class="nao"><i>×</i> <span>Quem comprou somente o Módulo de Gestão</span></dd>
+        </dl>
+      </article>
+
+      <article class="dia dia--aberto rev">
+        <p class="dia__tag">Dia 2 · aberto para a equipe</p>
+        <p class="dia__data">29 <span>de setembro, terça</span></p>
+        <p class="dia__hora">Das 9h às 13h</p>
+        <h3>Módulo de Gestão</h3>
+        <p class="dia__desc">Do Full Face ao Full Body: posicionamento, precificação e fidelização, com Silvane Castro, Dra. Maria Lígia Mendonça e Dr. Arthur Rocha.</p>
+        <dl class="quem">
+          <dt>Participa deste dia</dt>
+          <dd class="sim"><i>✓</i> <span><b>Hands On</b> e <b>Observador</b> — já está incluso no pacote</span></dd>
+          <dd class="sim"><i>✓</i> <span><b>Médico</b> que quer somente a gestão</span></dd>
+          <dd class="sim"><i>✓</i> <span><b>Gestor, sócio ou equipe</b> — não precisa ser médico</span></dd>
+          <dt>Não participa</dt>
+          <dd class="nao"><i>×</i> <span>Ninguém fica de fora. Este é o dia aberto.</span></dd>
+        </dl>
+      </article>
+    </div>
+
+    <div class="modulos rev">
+      <div class="modulo"><span class="modulo__dia">Dia 28</span><div><div class="modulo__nome">Glúteo Supreme</div><p class="modulo__desc">Volumização, sustentação e uso de enzimas.</p></div></div>
+      <div class="modulo"><span class="modulo__dia">Dia 28</span><div><div class="modulo__nome">Abdômen Supreme</div><p class="modulo__desc">Definição e marcação sem cirurgia.</p></div></div>
+      <div class="modulo"><span class="modulo__dia">Dia 28</span><div><div class="modulo__nome">Lipedema Protocol</div><p class="modulo__desc">Abordagem combinada e suporte inflamatório.</p></div></div>
+      <div class="modulo"><span class="modulo__dia">Dia 28</span><div><div class="modulo__nome">Pernas e Embelezamento Corporal</div><p class="modulo__desc">Celulite, flacidez e contorno.</p></div></div>
+      <div class="modulo"><span class="modulo__dia">Dia 28</span><div><div class="modulo__nome">Full Body Supreme</div><p class="modulo__desc">Protocolos globais e integrados.</p></div></div>
+      <div class="modulo"><span class="modulo__dia">Dia 29</span><div><div class="modulo__nome">Do Full Face ao Full Body</div><p class="modulo__desc">Gestão, posicionamento, precificação e fidelização.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 04 · MODALIDADES ═════════════════════════════════════════
+     Seção crítica do briefing. Duas faixas, nunca três cards soltos:
+     faixa 1 = médico, os dois dias · faixa 2 = só o dia 29.
+     ═══════════════════════════════════════════════════════════ -->
+<section class="secao secao--breu" id="modalidades">
+  <div class="env">
+    <p class="rotulo rev"><b>04</b> Modalidades</p>
+    <h2 class="titulo rev">Agora sim: escolha como você quer <em>viver</em> a imersão.</h2>
+    <p class="intro rev">São dois caminhos, não três. Ou você vem como médico e faz os dois dias, ou você vem só para o dia 29 de gestão. O que muda dentro do primeiro caminho é uma coisa só.</p>
+
+    <!-- Faixa 1 — o médico, os dois dias -->
+    <p class="faixa-rot rev">Faixa 1 · Para o médico — os dois dias</p>
+    <p class="faixa-nota rev"><b>A única diferença entre as duas é executar ou observar no dia 28.</b> As duas incluem o Módulo de Gestão do dia 29, o mesmo conteúdo, os mesmos professores e o mesmo material.</p>
+
+    <div class="planos">
+      <article class="plano plano--destaque rev">
+        <div class="plano__topo">
+          <h3>Hands On</h3>
+          <span class="vagas">10 vagas</span>
+        </div>
+        <p class="plano__linha">Você executa os protocolos, com supervisão direta dos professores durante todo o dia 28.</p>
+        <ul class="inclui">
+          <li><i>✓</i> Dia 28 executando os cinco protocolos</li>
+          <li><i>✓</i> Dia 29, Módulo de Gestão completo</li>
+          <li><i>✓</i> Material clínico dos protocolos</li>
+          <li><i>✓</i> Turma de 10 médicos por professor</li>
+        </ul>
+        <div class="plano__rodape">
+          <div class="plano__preco">
+            <div class="preco"><small>R$</small>16.899</div>
+            <p class="parcela">à vista · ou em até 6x de R$ 2.816,50</p>
+            <p class="composicao">Imersão Hands On <b>R$ 14.900</b> + Módulo de Gestão <b>R$ 1.999</b>.<br>O mesmo módulo custa <b>R$ 3.790</b> avulso — dentro do pacote ele entra por R$ 1.999.</p>
+          </div>
+          <button type="button" class="btn btn--ouro btn--bloco" data-modalidade="hands_on">Garantir vaga no Hands On</button>
+        </div>
+      </article>
+
+      <article class="plano rev">
+        <div class="plano__topo">
+          <h3>Observador</h3>
+          <span class="vagas">10 vagas</span>
+        </div>
+        <p class="plano__linha">Você acompanha de perto toda a aplicação e o raciocínio clínico por trás de cada decisão, sem executar.</p>
+        <ul class="inclui">
+          <li><i>✓</i> Dia 28 acompanhando os cinco protocolos</li>
+          <li><i>✓</i> Dia 29, Módulo de Gestão completo</li>
+          <li><i>✓</i> Material clínico dos protocolos</li>
+          <li><i>✓</i> Turma de 10 médicos por professor</li>
+        </ul>
+        <div class="plano__rodape">
+          <div class="plano__preco">
+            <div class="preco"><small>R$</small>12.899</div>
+            <p class="parcela">à vista · ou em até 6x de R$ 2.149,84</p>
+            <p class="composicao">Imersão Observador <b>R$ 10.900</b> + Módulo de Gestão <b>R$ 1.999</b>.<br>O mesmo módulo custa <b>R$ 3.790</b> avulso — dentro do pacote ele entra por R$ 1.999.</p>
+          </div>
+          <button type="button" class="btn btn--linha-clara btn--bloco" data-modalidade="observador">Garantir vaga como Observador</button>
+        </div>
+      </article>
+    </div>
+
+    <!-- Faixa 2 — só o dia 29 -->
+    <p class="faixa-rot rev">Faixa 2 · Somente o dia 29 — Módulo de Gestão</p>
+    <div class="gestao rev">
+      <div class="gestao__cab">
+        <h3>Do Full Face ao Full Body</h3>
+        <span class="vagas">30 vagas</span>
+      </div>
+      <p class="gestao__aviso">Não é uma terceira modalidade da imersão. É o dia 29 vendido separadamente, para quem não vai ao dia 28. Quem já comprou Hands On ou Observador <b>não precisa comprar isto</b> — já está incluso.</p>
+
+      <div class="perfis">
+        <div class="perfil">
+          <div class="perfil__quem">Gestor, sócio ou equipe da clínica<span>Não precisa ser médico. É o valor do acompanhante do dia 29.</span></div>
+          <div class="perfil__preco">
+            <div class="preco"><small>R$</small>1.499</div>
+            <p class="parcela">ou 6x de R$ 249,84</p>
+          </div>
+          <button type="button" class="btn btn--linha-clara" data-modalidade="gestao_gestor">Inscrever meu gestor</button>
+        </div>
+        <div class="perfil">
+          <div class="perfil__quem">Médico que quer somente a gestão<span>Para quem já domina a técnica e vem pela parte de negócio.</span></div>
+          <div class="perfil__preco">
+            <div class="preco"><small>R$</small>3.790</div>
+            <p class="parcela">ou 6x de R$ 631,67</p>
+          </div>
+          <button type="button" class="btn btn--linha-clara" data-modalidade="gestao_medico">Quero só o Módulo de Gestão</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabela comparativa -->
+    <div class="tabela-env rev">
+      <table>
+        <caption>Tudo lado a lado</caption>
+        <thead>
+          <tr><th scope="col">&nbsp;</th><th scope="col">Hands On</th><th scope="col">Observador</th><th scope="col">Só Gestão</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Dia 28 · executa os protocolos</th><td class="sim" data-mod="Hands On">Sim</td><td class="nao" data-mod="Observador">Não</td><td class="nao" data-mod="Só Gestão">Não</td></tr>
+          <tr><th scope="row">Dia 28 · acompanha a aplicação</th><td class="sim" data-mod="Hands On">Sim</td><td class="sim" data-mod="Observador">Sim</td><td class="nao" data-mod="Só Gestão">Não</td></tr>
+          <tr><th scope="row">Dia 29 · Módulo de Gestão</th><td class="sim" data-mod="Hands On">Incluso</td><td class="sim" data-mod="Observador">Incluso</td><td class="sim" data-mod="Só Gestão">Sim</td></tr>
+          <tr><th scope="row">Precisa ser médico</th><td class="sim" data-mod="Hands On">Sim</td><td class="sim" data-mod="Observador">Sim</td><td class="nao" data-mod="Só Gestão">Não</td></tr>
+          <tr><th scope="row">Vagas</th><td data-mod="Hands On">10</td><td data-mod="Observador">10</td><td data-mod="Só Gestão">30</td></tr>
+          <tr>
+            <th scope="row">Investimento</th>
+            <td class="preco-cel" data-mod="Hands On">R$ 16.899<span>6x de R$ 2.816,50</span></td>
+            <td class="preco-cel" data-mod="Observador">R$ 12.899<span>6x de R$ 2.149,84</span></td>
+            <td class="preco-cel" data-mod="Só Gestão">R$ 1.499<span>gestor acompanhante</span><span style="margin-top:10px">R$ 3.790 — médico avulso</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Ainda em dúvida -->
+    <div class="duvida rev">
+      <p class="faixa-rot" style="margin-top:0">Ainda em dúvida?</p>
+      <p class="faixa-nota">Encontre a frase que mais parece com a sua situação.</p>
+      <div class="duvida__lista">
+        <div class="duvida__item"><p class="duvida__fala">“Quero sair aplicando o protocolo na minha clínica.”</p><p class="duvida__resp">Hands On<span>R$ 16.899 · 10 vagas</span></p></div>
+        <div class="duvida__item"><p class="duvida__fala">“Prefiro absorver o raciocínio clínico antes de executar.”</p><p class="duvida__resp">Observador<span>R$ 12.899 · 10 vagas</span></p></div>
+        <div class="duvida__item"><p class="duvida__fala">“Não sou médico, cuido da gestão da clínica.”</p><p class="duvida__resp">Só Gestão<span>R$ 1.499 · dia 29</span></p></div>
+        <div class="duvida__item"><p class="duvida__fala">“Sou médico, já domino a técnica, quero a parte de negócio.”</p><p class="duvida__resp">Só Gestão<span>R$ 3.790 · dia 29</span></p></div>
+        <div class="duvida__item"><p class="duvida__fala">“Quero fazer a imersão e levar meu gestor comigo.”</p><p class="duvida__resp">Sua modalidade + R$ 1.499<span>o acompanhante entra no dia 29</span></p></div>
+      </div>
+    </div>
+
+    <div class="acoes rev">
+      <button type="button" class="btn btn--linha-clara" data-modalidade="whatsapp">Falar com a equipe no WhatsApp</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 05 · O RETORNO ═══════════════════════════════════════════ -->
+<section class="secao" id="retorno">
+  <div class="env">
+    <p class="rotulo rev"><b>05</b> O retorno</p>
+    <h2 class="titulo rev">Um paciente paga a <em>imersão</em>.</h2>
+    <div class="roi">
+      <div class="rev">
+        <p class="intro" style="margin-top:0">A conta que interessa não é quanto custa a imersão. É quantos pacientes você precisa atender para ela se pagar — e a partir de qual deles o protocolo vira margem.</p>
+        <p class="intro">É por isso que o dia 29 existe. A técnica faz o médico executar; é o posicionamento que faz o paciente aceitar o valor.</p>
+        <div class="aviso">
+          <b>Cenário ilustrativo.</b> A faixa acima foi construída a partir de valores praticados no mercado de harmonização corporal premium. Não é promessa nem garantia de resultado financeiro — o retorno depende da sua praça, do seu posicionamento, da sua estrutura e da sua operação comercial.
+        </div>
+      </div>
+      <dl class="conta rev">
+        <div class="conta__l"><dt>Protocolo Full Body, faixa de mercado</dt><dd>R$ 20.000</dd></div>
+        <div class="conta__l"><dt>Investimento no Hands On</dt><dd>R$ 16.899</dd></div>
+        <div class="conta__l conta__l--soma"><dt>Pacientes para cobrir a imersão</dt><dd>1</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 06 · QUEM CONDUZ ═════════════════════════════════════════ -->
+<section class="secao secao--alt" id="professores">
+  <div class="env">
+    <p class="rotulo rev"><b>06</b> Quem conduz</p>
+    <h2 class="titulo rev">Quem está na sala com <em>você</em>.</h2>
+    <p class="intro rev">Um time formado por quem constrói protocolo, resultado clínico e posicionamento de mercado todos os dias — não por quem só ensina.</p>
+
+    <div class="time">
+      <article class="prof rev">
+        <figure><img src="images/professores/maria-ligia.webp" width="560" height="747" alt="Dra. Maria Lígia Mendonça" loading="lazy"></figure>
+        <p class="prof__papel">Idealizadora</p>
+        <h3>Dra. Maria Lígia Mendonça</h3>
+        <p>Médica dermatologista, fundadora da Clínica Supreme. Atuação voltada para harmonização facial e corporal avançada, protocolos premium e construção de experiência clínica de alto padrão.</p>
+      </article>
+      <article class="prof rev">
+        <figure><img src="images/professores/ana-machado.webp" width="560" height="747" alt="Dra. Ana Machado" loading="lazy"></figure>
+        <p class="prof__papel">Corpo &amp; contorno</p>
+        <h3>Dra. Ana Machado</h3>
+        <p>Médica especialista em tratamentos corporais e protocolos avançados de harmonização, com abordagens combinadas para contorno, definição, sustentação e remodelação estética.</p>
+      </article>
+      <article class="prof rev">
+        <figure><img src="images/professores/arthur-rocha.webp" width="560" height="747" alt="Dr. Arthur Rocha" loading="lazy"></figure>
+        <p class="prof__papel">Participação especial</p>
+        <h3>Dr. Arthur Rocha</h3>
+        <p>Médico nutrólogo. Traz a visão de medicação, associação terapêutica e suporte clínico complementar — especialmente em casos de retenção, inflamação sistêmica e lipedema.</p>
+      </article>
+      <article class="prof rev">
+        <figure><img src="images/professores/silvane-castro.webp" width="560" height="747" alt="Silvane Castro" loading="lazy"></figure>
+        <p class="prof__papel">Módulo de gestão</p>
+        <h3>Silvane Castro</h3>
+        <p>CEO founder da Seven Gestão, advisor de negócios de saúde, empresária e palestrante. Coordenadora do Núcleo de Saúde da Câmara de Comércio Brasil-China.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 07 · PARA QUEM É / NÃO É ═════════════════════════════════ -->
+<section class="secao" id="para-quem">
+  <div class="env">
+    <p class="rotulo rev"><b>07</b> Antes de decidir</p>
+    <h2 class="titulo rev">Para quem é. E para quem <em>não é</em>.</h2>
+    <p class="intro rev">Uma turma de 10 médicos por professor só funciona se as pessoas certas estiverem nela. Prefira desistir agora a descobrir isso no dia 28.</p>
+
+    <div class="filtro">
+      <div class="rev">
+        <h3>É para você se</h3>
+        <ul class="e">
+          <li><i>✓</i> Já atua com harmonização facial e quer expandir para o corporal, ampliando ticket médio e portfólio.</li>
+          <li><i>✓</i> Quer entrar no corporal premium com protocolo claro, seguro e replicável — não com técnica solta.</li>
+          <li><i>✓</i> Atende casos de lipedema, celulite e flacidez e busca uma abordagem clínica combinada.</li>
+          <li><i>✓</i> Entende que autoridade e recorrência vêm de uma experiência completa, não de um procedimento isolado.</li>
+          <li><i>✓</i> Quer trazer quem cuida da gestão junto, para que a clínica inteira saia alinhada.</li>
+        </ul>
+      </div>
+      <div class="rev">
+        <h3 class="nao-e">Não é para você se</h3>
+        <ul class="nao-e">
+          <li><i>×</i> Procura um curso rápido para aprender uma técnica e aplicar no dia seguinte sem critério clínico.</li>
+          <li><i>×</i> Espera garantia de faturamento. Aqui se ensina protocolo e posicionamento — resultado depende da sua operação.</li>
+          <li><i>×</i> Não é médico e quer participar do dia 28. O hands-on é restrito por exigência técnica e legal.</li>
+          <li><i>×</i> Está procurando o menor preço do mercado. Esta imersão é cara, e a página não esconde isso.</li>
+          <li><i>×</i> Quer conteúdo gravado. Os dois dias são presenciais, em Goiânia, e não há versão on-line.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 08 · RESULTADOS ══════════════════════════════════════════
+     Galeria atrás de confirmação de público médico, conforme o
+     item 7 do briefing. Para liberar sem o portão, adicione a
+     classe "liberada" na div.galeria e remova o bloco .portao.
+     ═══════════════════════════════════════════════════════════ -->
+<section class="secao secao--alt" id="resultados">
+  <div class="env">
+    <p class="rotulo rev"><b>08</b> Resultados</p>
+    <h2 class="titulo rev">Registros clínicos dos <em>protocolos</em>.</h2>
+    <p class="intro rev">Casos conduzidos na Clínica Supreme com os protocolos ensinados na imersão.</p>
+
+    <div class="galeria rev" id="galeria">
+      <div class="portao" id="portao">
+        <div class="portao__in">
+          <p class="rotulo rotulo--centro">Conteúdo técnico-científico</p>
+          <h3>As imagens a seguir são registros clínicos dirigidos a profissionais da área médica.</h3>
+          <p>A exibição de imagens de antes e depois é restrita ao público profissional. Confirme abaixo para visualizar.</p>
+          <button type="button" class="btn" id="liberarGaleria" style="margin-top:24px">Sou profissional da área médica</button>
+        </div>
+      </div>
+
+      <div class="galeria__grade" aria-live="polite">
+        <figure><img src="images/resultados/antes-depois-03-gluteo-supreme.webp" width="800" height="701" alt="Registro clínico: antes e depois de protocolo de glúteo" loading="lazy"></figure>
+        <figure><img src="images/resultados/antes-depois-05-gluteo-pernas.webp" width="800" height="390" alt="Registro clínico: antes e depois de protocolo de glúteo e pernas" loading="lazy"></figure>
+        <figure><img src="images/resultados/antes-depois-07-abdomen.webp" width="880" height="866" alt="Registro clínico: antes e depois de protocolo de abdômen" loading="lazy"></figure>
+        <figure><img src="images/resultados/antes-depois-04-gluteo-aplicacao.webp" width="800" height="1422" alt="Registro clínico: aplicação e resultado de protocolo de glúteo" loading="lazy"></figure>
+        <figure><img src="images/resultados/antes-depois-06-abdomen-flacidez.webp" width="800" height="401" alt="Registro clínico: antes e depois de protocolo para flacidez abdominal" loading="lazy"></figure>
+        <figure><img src="images/resultados/antes-depois-02-gluteo-perfil.webp" width="800" height="1244" alt="Registro clínico: antes e depois de protocolo de glúteo, vista de perfil" loading="lazy"></figure>
+      </div>
+    </div>
+
+    <div class="aviso rev" style="max-width:78ch">
+      Os resultados podem variar de acordo com avaliação individual, indicação médica, resposta biológica e adesão ao plano terapêutico. <b>Imagens publicadas mediante autorização de uso de imagem dos pacientes.</b>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 09 · FAQ ═════════════════════════════════════════════════ -->
+<section class="secao" id="faq">
+  <div class="env">
+    <p class="rotulo rev"><b>09</b> Perguntas frequentes</p>
+    <h2 class="titulo rev">O que costuma ficar em <em>aberto</em>.</h2>
+
+    <div class="faq rev">
+      <details><summary>Qual é a diferença entre Hands On e Observador?</summary><div class="resposta"><p>Uma só: <b>no dia 28, o Hands On executa os protocolos e o Observador acompanha</b>, sem executar. Fora isso, os dois vivem exatamente a mesma imersão — mesmos protocolos, mesmos professores, mesmo material e o mesmo Módulo de Gestão no dia 29.</p></div></details>
+
+      <details><summary>Não sou médico. Posso participar?</summary><div class="resposta"><p>Do <b>dia 29</b>, sim. O Módulo de Gestão é aberto para gestores, sócios e equipe de clínica, por R$ 1.499. O <b>dia 28 é restrito a médicos</b>, por exigência técnica e legal do que é aplicado ali.</p></div></details>
+
+      <details><summary>Sou médico e quero só a gestão. Como funciona?</summary><div class="resposta"><p>Você compra o <b>Módulo de Gestão avulso, por R$ 3.790</b>, e participa apenas do dia 29, das 9h às 13h. É o mesmo módulo que está incluso nos pacotes Hands On e Observador — dentro deles ele entra por R$ 1.999.</p></div></details>
+
+      <details><summary>Posso levar meu gestor comigo?</summary><div class="resposta"><p>Pode. Você faz a sua modalidade normalmente e inscreve o acompanhante no Módulo de Gestão por <b>R$ 1.499</b>. Ele participa do dia 29 com você. Não precisa ser médico.</p></div></details>
+
+      <details><summary>O Módulo de Gestão está incluso no Hands On e no Observador?</summary><div class="resposta"><p>Está, sim — não é preciso comprar à parte. Ele entra na composição do pacote por <b>R$ 1.999</b>, enquanto o mesmo módulo vendido avulso para médico custa R$ 3.790.</p></div></details>
+
+      <details><summary>Preciso já atuar com harmonização corporal para participar?</summary><div class="resposta"><p>Não. A imersão foi estruturada para levar você da lógica do protocolo até a aplicação prática, mesmo que sua atuação hoje seja majoritariamente facial. O que se espera é formação médica e prática clínica em estética.</p></div></details>
+
+      <details><summary>Vou sair aplicando os protocolos na clínica?</summary><div class="resposta"><p>O dia 28 é hands-on, com prática supervisionada em Glúteo, Abdômen, Lipedema, Pernas e Full Body Supreme. Você sai com o raciocínio clínico e o protocolo estruturado. A velocidade de implantação depende da sua estrutura e do seu perfil de paciente.</p></div></details>
+
+      <details><summary>Quantas vagas existem, de verdade?</summary><div class="resposta"><p><b>10 no Hands On, 10 no Observador e 30 no Módulo de Gestão.</b> São 20 médicos no dia 28. O limite existe porque a prática é supervisionada — não é número de campanha.</p></div></details>
+
+      <details><summary>Como funciona o pagamento?</summary><div class="resposta"><p>Inscrição por link on-line, à vista ou <b>parcelado em até 6x</b>. Cada modalidade tem o seu link — ao clicar no botão da modalidade escolhida você vai direto para o checkout correspondente.</p></div></details>
+
+      <details><summary>Quando a minha vaga é confirmada?</summary><div class="resposta"><p><b>A vaga só é confirmada após o pagamento</b>, por ordem de inscrição. Enquanto o pagamento não é concluído, a vaga segue disponível para outro inscrito.</p></div></details>
+
+      <details><summary>Posso trocar de modalidade depois de pagar?</summary><div class="resposta"><p>As condições de troca de modalidade e de reembolso constam no contrato de inscrição. <!-- PENDÊNCIA 4 · texto a ser validado pelo jurídico do cliente antes de publicar --> Fale com a equipe comercial antes de concluir a compra se ainda estiver em dúvida sobre qual escolher.</p></div></details>
+
+      <details><summary>Terei suporte depois da imersão?</summary><div class="resposta"><p>Sim. Há acompanhamento próximo à imersão para dúvidas sobre a aplicação dos protocolos na sua prática clínica.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 10 · FECHAMENTO ══════════════════════════════════════════ -->
+<section class="secao secao--breu fecho" id="inscricao">
+  <div class="env">
+    <p class="rotulo rotulo--centro rev"><b>10</b> Inscrições</p>
+    <h2 class="rev">São <em>20 vagas</em> para médicos, e elas fecham por ordem de pagamento.</h2>
+    <div class="acoes rev">
+      <a href="#modalidades" class="btn btn--ouro">Escolher minha modalidade</a>
+      <button type="button" class="btn btn--linha-clara" data-modalidade="whatsapp">Tirar dúvida no WhatsApp</button>
+    </div>
+
+    <dl class="pratico rev">
+      <div><dt>Datas</dt><dd><b>28 e 29 de setembro de 2026</b>Dia 28 a partir das 9h<br>Dia 29 das 9h às 13h</dd></div>
+      <div><dt>Local</dt><dd><b>Clínica Supreme</b>Goiânia — GO</dd></div>
+      <div><dt>Vagas</dt><dd><b>10 · 10 · 30</b>Hands On, Observador<br>e Módulo de Gestão</dd></div>
+      <div><dt>Pagamento</dt><dd><b>Até 6x</b>À vista ou parcelado,<br>por link on-line</dd></div>
+      <div><dt>Confirmação</dt><dd><b>Após o pagamento</b>Por ordem de inscrição</dd></div>
+    </dl>
+  </div>
+</section>
+
+</main>
+
+<!-- ══ RODAPÉ ═══════════════════════════════════════════════════ -->
+<footer class="rodape">
+  <div class="env">
+    <div class="rodape__grade">
+      <div>
+        <h4>Supreme Full Body Experience</h4>
+        <p>Imersão presencial de harmonização corporal premium dirigida a médicos.<br>Clínica Supreme — Goiânia/GO.</p>
+      </div>
+      <div>
+        <h4>Responsável técnica</h4>
+        <p>Dra. Maria Lígia Mendonça<br>CRM-GO [A CONFIRMAR] · RQE [A CONFIRMAR]<br>Dermatologia</p>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <p><a href="#modalidades">Ver modalidades</a><br><a href="#" data-modalidade="whatsapp">WhatsApp comercial</a></p>
+      </div>
+    </div>
+    <div class="rodape__legal">
+      <span>Conteúdo técnico-científico dirigido a profissionais da área médica. Não constitui publicidade de procedimento ao público leigo nem promessa de resultado.</span>
+      <span>© 2026 Clínica Supreme · CNPJ [A CONFIRMAR] — desenvolvido por 3ADS</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ BARRA FIXA MOBILE ════════════════════════════════════════ -->
+<nav class="barra-mob" aria-label="Ações rápidas">
+  <a href="#modalidades" class="btn btn--ouro">Ver modalidades</a>
+  <button type="button" class="btn btn--linha-clara" data-modalidade="whatsapp">WhatsApp</button>
+</nav>
+
+<!-- ══ MODAL DO CONVITE ═════════════════════════════════════════ -->
+<dialog id="modalConvite" aria-label="Convite em vídeo">
+  <button class="fechar" type="button" id="fecharConvite" aria-label="Fechar">×</button>
+  <video id="videoConvite" controls playsinline preload="none" poster="images/convite-poster.webp" width="540" height="960">
+    <source src="images/convite-full-body.mp4" type="video/mp4">
+  </video>
+</dialog>
+
+<!-- ══ DADOS ESTRUTURADOS ═══════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationEvent",
+  "name": "Supreme Full Body Experience",
+  "description": "Imersão presencial de harmonização corporal premium para médicos, com dois dias na Clínica Supreme: prática supervisionada nos cinco protocolos Full Body e módulo de gestão, posicionamento e precificação.",
+  "startDate": "2026-09-28T09:00:00-03:00",
+  "endDate": "2026-09-29T13:00:00-03:00",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "inLanguage": "pt-BR",
+  "image": "https://fullbodyexperience.com.br/images/og-cover.jpg",
+  "url": "https://fullbodyexperience.com.br/",
+  "location": {
+    "@type": "Place",
+    "name": "Clínica Supreme",
+    "address": { "@type": "PostalAddress", "addressLocality": "Goiânia", "addressRegion": "GO", "addressCountry": "BR" }
+  },
+  "organizer": { "@type": "Organization", "name": "Clínica Supreme", "url": "https://fullbodyexperience.com.br/" },
+  "performer": [
+    { "@type": "Person", "name": "Dra. Maria Lígia Mendonça" },
+    { "@type": "Person", "name": "Dra. Ana Machado" },
+    { "@type": "Person", "name": "Dr. Arthur Rocha" },
+    { "@type": "Person", "name": "Silvane Castro" }
+  ],
+  "offers": [
+    { "@type": "Offer", "name": "Hands On", "price": "16899.00", "priceCurrency": "BRL", "availability": "https://schema.org/InStock", "url": "https://fullbodyexperience.com.br/#modalidades", "validFrom": "2026-08-18T00:00:00-03:00" },
+    { "@type": "Offer", "name": "Observador", "price": "12899.00", "priceCurrency": "BRL", "availability": "https://schema.org/InStock", "url": "https://fullbodyexperience.com.br/#modalidades", "validFrom": "2026-08-18T00:00:00-03:00" },
+    { "@type": "Offer", "name": "Módulo de Gestão — médico avulso", "price": "3790.00", "priceCurrency": "BRL", "availability": "https://schema.org/InStock", "url": "https://fullbodyexperience.com.br/#modalidades", "validFrom": "2026-08-18T00:00:00-03:00" },
+    { "@type": "Offer", "name": "Módulo de Gestão — gestor acompanhante", "price": "1499.00", "priceCurrency": "BRL", "availability": "https://schema.org/InStock", "url": "https://fullbodyexperience.com.br/#modalidades", "validFrom": "2026-08-18T00:00:00-03:00" }
+  ]
+}
+</script>
+
+<script>
+/* ══════════════════════════════════════════════════════════════
+   CONFIGURAÇÃO — é aqui que se mexe antes de publicar.
+   Enquanto CHECKOUT vier vazio, o botão da modalidade cai para o
+   WhatsApp com a mensagem certa, em vez de levar a lugar nenhum.
+   ══════════════════════════════════════════════════════════════ */
+const CONFIG = {
+  // PENDÊNCIA 2 · quatro links de checkout, um por modalidade (Monique)
+  checkout: {
+    hands_on:      "",
+    observador:    "",
+    gestao_gestor: "",
+    gestao_medico: ""
+  },
+  // PENDÊNCIA 3 · confirmar o número comercial oficial.
+  // O valor abaixo é o que está na LP atual do SprintHub.
+  whatsapp: "5562998432153",
+
+  // Rastreamento — preencher com os IDs da Dayana (gestora de tráfego).
+  metaPixelId: "",
+  ga4Id: "",
+
+  // Início da imersão, para o contador. Não reinicia e não é falso.
+  inicio: "2026-09-28T09:00:00-03:00"
+};
+
+const MENSAGENS = {
+  hands_on:      "Olá, vim pela página da Full Body Experience e quero saber mais sobre a modalidade Hands On.",
+  observador:    "Olá, vim pela página da Full Body Experience e quero saber mais sobre a modalidade Observador.",
+  gestao_gestor: "Olá, vim pela página da Full Body Experience e quero inscrever um gestor no Módulo de Gestão do dia 29.",
+  gestao_medico: "Olá, sou médico, vim pela página da Full Body Experience e quero saber mais sobre o Módulo de Gestão avulso.",
+  whatsapp:      "Olá, vim pela página da Full Body Experience e gostaria de tirar uma dúvida."
+};
+
+const EVENTOS = {
+  hands_on: "clique_hands_on",
+  observador: "clique_observador",
+  gestao_gestor: "clique_gestao_gestor",
+  gestao_medico: "clique_gestao_medico",
+  whatsapp: "clique_whatsapp"
+};
+
+const VALORES = { hands_on:16899, observador:12899, gestao_gestor:1499, gestao_medico:3790 };
+
+/* ── carga condicional de Pixel e GA4 ───────────────────────── */
+(function(){
+  if (CONFIG.metaPixelId) {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+    (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', CONFIG.metaPixelId); fbq('track', 'PageView');
+  }
+  if (CONFIG.ga4Id) {
+    const s = document.createElement('script');
+    s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + CONFIG.ga4Id;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ dataLayer.push(arguments); };
+    gtag('js', new Date()); gtag('config', CONFIG.ga4Id);
+  }
+})();
+
+function track(evento, dados){
+  dados = dados || {};
+  if (window.gtag) gtag('event', evento, dados);
+  if (window.fbq) fbq('trackCustom', evento, dados);
+  if (!CONFIG.metaPixelId && !CONFIG.ga4Id) console.info('[rastreio pendente]', evento, dados);
+}
+
+/* ── UTMs preservadas na passagem para checkout e WhatsApp ──── */
+const PARAMS_REPASSE = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid','fbclid'];
+function comUtms(url){
+  try{
+    const origem = new URLSearchParams(location.search);
+    const destino = new URL(url, location.href);
+    PARAMS_REPASSE.forEach(p => { if (origem.has(p)) destino.searchParams.set(p, origem.get(p)); });
+    return destino.toString();
+  } catch(e){ return url; }
+}
+function linkWhats(modalidade){
+  const texto = MENSAGENS[modalidade] || MENSAGENS.whatsapp;
+  const utms = PARAMS_REPASSE.filter(p => new URLSearchParams(location.search).has(p))
+    .map(p => `${p}=${new URLSearchParams(location.search).get(p)}`).join(' | ');
+  const sufixo = utms ? `\n\n[origem: ${utms}]` : '';
+  return `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(texto + sufixo)}`;
+}
+
+/* ── CTAs ───────────────────────────────────────────────────── */
+document.querySelectorAll('[data-modalidade]').forEach(el => {
+  el.addEventListener('click', ev => {
+    ev.preventDefault();
+    const m = el.dataset.modalidade;
+    track(EVENTOS[m], { modalidade: m, valor: VALORES[m] || 0, moeda: 'BRL' });
+
+    if (m === 'whatsapp') { window.open(linkWhats(m), '_blank', 'noopener'); return; }
+
+    const url = CONFIG.checkout[m];
+    if (url) {
+      if (window.fbq) fbq('track', 'InitiateCheckout', { value: VALORES[m], currency: 'BRL', content_name: m });
+      window.location.href = comUtms(url);
+    } else {
+      console.warn(`[checkout ausente] Modalidade "${m}" sem link em CONFIG.checkout — caindo para o WhatsApp.`);
+      window.open(linkWhats(m), '_blank', 'noopener');
+    }
+  });
+});
+
+/* ── contador regressivo real ───────────────────────────────── */
+(function(){
+  const alvo = new Date(CONFIG.inicio).getTime();
+  const campos = {
+    d: document.querySelector('[data-c="d"]'),
+    h: document.querySelector('[data-c="h"]'),
+    m: document.querySelector('[data-c="m"]')
+  };
+  const barra = document.getElementById('relogio');
+  function tick(){
+    const resta = alvo - Date.now();
+    if (resta <= 0){
+      if (barra) barra.innerHTML = '<span class="relogio__l" style="letter-spacing:.18em">A imersão começou</span>';
+      return;
+    }
+    const dias = Math.floor(resta / 864e5);
+    const horas = Math.floor(resta % 864e5 / 36e5);
+    const mins = Math.floor(resta % 36e5 / 6e4);
+    campos.d.textContent = dias;
+    campos.h.textContent = String(horas).padStart(2,'0');
+    campos.m.textContent = String(mins).padStart(2,'0');
+  }
+  tick(); setInterval(tick, 30000);
+})();
+
+/* ── galeria de resultados atrás da confirmação ─────────────── */
+(function(){
+  const galeria = document.getElementById('galeria');
+  const botao = document.getElementById('liberarGaleria');
+  if (!galeria || !botao) return;
+  if (sessionStorage.getItem('fbe_medico') === '1') galeria.classList.add('liberada');
+  botao.addEventListener('click', () => {
+    galeria.classList.add('liberada');
+    sessionStorage.setItem('fbe_medico','1');
+    track('liberou_galeria');
+  });
+})();
+
+/* ── vídeo do convite ───────────────────────────────────────── */
+(function(){
+  const modal = document.getElementById('modalConvite');
+  const abrir = document.getElementById('abrirConvite');
+  const fechar = document.getElementById('fecharConvite');
+  const video = document.getElementById('videoConvite');
+  if (!modal || !abrir) return;
+  abrir.addEventListener('click', () => { modal.showModal(); video.play(); track('abriu_convite'); });
+  fechar.addEventListener('click', () => modal.close());
+  modal.addEventListener('close', () => { video.pause(); });
+  modal.addEventListener('click', ev => { if (ev.target === modal) modal.close(); });
+})();
+
+/* ── revelação na entrada + ViewContent nas modalidades ─────── */
+(function(){
+  const itens = document.querySelectorAll('.rev:not(.on)');
+  if (!('IntersectionObserver' in window)) { itens.forEach(i => i.classList.add('on')); return; }
+  const obs = new IntersectionObserver((entradas) => {
+    entradas.forEach(e => { if (e.isIntersecting){ e.target.classList.add('on'); obs.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: .08 });
+  itens.forEach((el, i) => { el.style.transitionDelay = `${Math.min(i % 4, 3) * 70}ms`; obs.observe(el); });
+
+  const modalidades = document.getElementById('modalidades');
+  if (modalidades){
+    const vc = new IntersectionObserver((es) => {
+      es.forEach(e => {
+        if (e.isIntersecting){
+          if (window.fbq) fbq('track','ViewContent',{ content_name:'modalidades', content_type:'product_group' });
+          track('viu_modalidades');
+          vc.disconnect();
+        }
+      });
+    }, { threshold: .2 });
+    vc.observe(modalidades);
+  }
+})();
+
+/* ── profundidade de rolagem ────────────────────────────────── */
+(function(){
+  const marcos = [25,50,75,100];
+  const vistos = new Set();
+  let travado = false;
+  addEventListener('scroll', () => {
+    if (travado) return;
+    travado = true;
+    requestAnimationFrame(() => {
+      const doc = document.documentElement;
+      const pct = (doc.scrollTop + innerHeight) / doc.scrollHeight * 100;
+      marcos.forEach(m => { if (pct >= m && !vistos.has(m)){ vistos.add(m); track('scroll_depth', { profundidade: m }); } });
+      travado = false;
+    });
+  }, { passive:true });
+})();
+</script>
+</body>
+</html>
