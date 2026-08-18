@@ -96,7 +96,7 @@ composição do pacote e sempre ao lado do "avulso custa R$ 3.790". E as modalid
 | — | O convite | Vídeo de 58s da Dra. Maria Lígia e da Dra. Ana Machado, em modal |
 | 01 | O cenário | Por que o facial saturou e o corporal não, em 3 blocos |
 | 02 | **Como funciona** | Os dois dias, com quem participa e quem não participa de cada um, + os 6 módulos em cartões com ícone |
-| 03 | O conceito Supreme | Tratar, modelar, sustentar, ajustar, ao lado da composição em perspectiva |
+| 03 | O conceito Supreme | Tratar, modelar, sustentar, ajustar, ao lado da figura das quatro etapas |
 | 04 | **Modalidades** | Dois caminhos: médico (Hands On / Observador) e gestão avulsa · fecha com "em uma frase", 3 linhas de autosseleção |
 | 05 | O retorno | A conta do ROI, rotulada como cenário ilustrativo |
 | 06 | Quem conduz | Os 4 professores |
@@ -198,14 +198,10 @@ com ícone e texto**, por decisão do cliente em 18/08. Os ícones são SVG de t
 para esta página e vivem no sprite no topo do `<body>` (`#m-gluteo`, `#m-abdomen`,
 `#m-lipedema`, `#m-pernas`, `#m-fullbody`, `#m-gestao`).
 
-### Ainda em placeholder — 1 na página
+### Nenhum placeholder pendente
 
-| Onde | O que precisa | Formato |
-|---|---|---|
-| O conceito Supreme | **Pilha em perspectiva do material**: apostila, ficha de avaliação e registro de aplicação sobrepostos e inclinados | PNG fundo transparente, 1400×1100 |
-
-**A confirmar:** se a decisão de não usar composição vale também para esta, o bloco vira
-texto e o placeholder sai.
+A figura das quatro etapas do método (`images/metodo-etapas.webp`) chegou em 18/08 e fechou
+o último. A página está com arte final em todas as seções.
 
 ---
 
@@ -325,6 +321,7 @@ lp-full-body-experience/
 ├── images/
 │   ├── hero-desktop.webp         arte do hero, 1920×874
 │   ├── hero-mobile.webp          arte do hero, 809×1641
+│   ├── metodo-etapas.webp        as quatro etapas do método
 │   ├── convite-full-body.mp4     vídeo do convite (clique)
 │   ├── convite-poster.webp
 │   ├── professores/              4 retratos
