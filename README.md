@@ -109,6 +109,10 @@ composição do pacote e sempre ao lado do "avulso custa R$ 3.790". E as modalid
 | — | Rodapé | Responsável técnica, aviso de conteúdo técnico-científico |
 | — | Barra fixa inferior (mobile) | Ver modalidades + WhatsApp |
 
+**Pendência de link:** o crédito no rodapé aponta para `https://3ads.com.br`, que é um palpite.
+Confirmar o domínio oficial da agência antes de publicar em campanha (há um comentário
+`PENDÊNCIA` no HTML marcando o ponto).
+
 **Regra de escrita:** a copy não usa travessão (—). Onde havia, a frase foi reescrita com
 dois pontos, vírgula ou ponto final. Vale para qualquer edição futura.
 
@@ -135,7 +139,10 @@ O que veio da referência:
 - **CTA em pílula com degradê bronze** e seta diagonal, repetido ao longo da página
 - **Alternância clara/escura** entre seções, com cartões de canto arredondado
 - **Barra fixa superior em dourado escuro**, com o CTA em pílula clara para saltar do fundo
-- **Hero de seção inteira**, com recorte, cartões flutuantes e monograma na própria arte
+- **Hero de seção inteira**, com recorte, cartões flutuantes e monograma na própria arte.
+  A arte acompanha a **altura** da seção (`background-size:auto 95%`), ancorada em `51% bottom`,
+  que é onde o recorte começa: assim a figura cresce junto com o texto em vez de encolher em
+  telas menores. Abaixo de 1000px o hero empilha e passa a usar a arte vertical
 - **Composições em perspectiva** nas seções de conteúdo
 - **FAQ em pílulas escuras** sobre fundo claro
 
