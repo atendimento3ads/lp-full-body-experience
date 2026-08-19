@@ -110,10 +110,10 @@ composição do pacote e sempre ao lado do "avulso custa R$ 3.790". E as modalid
 | — | Rodapé | Responsável técnica, aviso de conteúdo técnico-científico |
 | — | Barra fixa inferior (mobile) | Ver modalidades + WhatsApp |
 
-**Mudança de oferta em 18/08, a confirmar:** o cliente informou que o Observador **paga o
-Módulo de Gestão à parte**. A página foi ajustada para Observador **R$ 10.900** com o módulo
-opcional por R$ 1.999 — usando apenas números que já constavam no briefing, sem inventar
-preço. Se o valor do Observador for outro, é uma linha no `index.html` e uma no schema.
+**Oferta confirmada em 19/08:** o pacote Observador custa **R$ 12.899**, composto pela
+imersão Observador de **R$ 10.900** + Módulo de Gestão de **R$ 1.999**. Assim como no Hands
+On, o módulo já está incluso no pacote. Avulso, o Módulo de Gestão custa **R$ 3.790** para
+médicos ou **R$ 1.499** para o gestor acompanhante.
 
 **Pendência de link:** o crédito no rodapé aponta para `https://3ads.com.br`, que é um palpite.
 Confirmar o domínio oficial da agência antes de publicar em campanha (há um comentário

@@ -218,14 +218,14 @@ p:last-child{ margin-bottom:0; }
 .hero__txt{ width:min(48%,560px); padding-block:clamp(22px,3vw,40px); }
 .hero__vaga{ display:none; }       /* só no mobile, reserva a área da figura */
 
-.marca{ display:flex; align-items:center; gap:13px; margin-bottom:20px; }
-.marca__s{
-  width:44px; height:44px; flex:none; display:grid; place-items:center; border-radius:12px;
-  border:1px solid rgba(116,86,31,.42); background:rgba(255,255,255,.34);
-  font-family:var(--serif); font-style:italic; font-size:23px; color:var(--ouro-hero);
+.marca{ display:flex; align-items:center; gap:15px; margin-bottom:20px; }
+.marca__logo{ width:clamp(112px,10vw,138px); height:auto; flex:none; }
+.marca__div{ width:1px; height:40px; flex:none; background:rgba(116,86,31,.32); }
+.marca__data{
+  color:var(--tinta-2); font-size:10px; line-height:1.55; letter-spacing:.17em;
+  text-transform:uppercase; white-space:nowrap;
 }
-.marca__n{ font-size:10.5px; letter-spacing:.3em; text-transform:uppercase; color:var(--tinta-2); line-height:1.7; }
-.marca__n b{ display:block; color:var(--tinta); font-weight:600; letter-spacing:.2em; font-size:12px; }
+.marca__data b{ display:block; color:var(--ouro-hero); font-size:12px; font-weight:600; letter-spacing:.13em; }
 .hero h1{ font-size:clamp(30px,3.4vw,43px); font-weight:300; max-width:17ch; }
 .hero h1 b{ font-weight:600; }
 .hero h1 .dourado{ color:var(--ouro-hero); }
@@ -493,6 +493,7 @@ details .resp b{ color:var(--claro); font-weight:500; }
 /* ─── rodapé ─────────────────────────────────────────────────── */
 .rodape{ background:var(--papel-2); border-top:1px solid var(--fio); padding-block:clamp(40px,5vw,58px); font-size:13px; color:var(--tinta-2); text-align:center; }
 .rodape__g{ display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:clamp(24px,4vw,52px); }
+.rodape__logo{ width:clamp(138px,15vw,178px); height:auto; margin:0 auto 14px; }
 .rodape h4{ font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--ouro-txt); margin-bottom:12px; font-weight:600; }
 .rodape a{ border-bottom:1px solid var(--fio); }
 .credito{
@@ -573,6 +574,11 @@ dialog::backdrop{ background:rgba(14,12,9,.88); backdrop-filter:blur(6px); }
   .sem-mobile{ display:none; }
   .duvida__i{ grid-template-columns:1fr; gap:8px; }
   .duvida__r{ text-align:left; }
+  .marca{ gap:12px; margin-bottom:17px; }
+  .marca__logo{ width:108px; }
+  .marca__div{ height:34px; }
+  .marca__data{ font-size:9px; letter-spacing:.13em; }
+  .marca__data b{ font-size:11px; }
   .pratico{ grid-template-columns:1fr; }
   .rodape__g{ grid-template-columns:1fr; }
   .galeria__g{ columns:1; }
@@ -626,8 +632,9 @@ dialog::backdrop{ background:rgba(14,12,9,.88); backdrop-filter:blur(6px); }
 
     <div class="hero__txt rev on">
       <div class="marca">
-        <span class="marca__s" aria-hidden="true">S</span>
-        <span class="marca__n">Clínica Supreme apresenta<b>Full Body Experience</b></span>
+        <img class="marca__logo" src="images/%5BFull%20Body%20Experience%5D%20Logo%201.png" width="1726" height="884" alt="Supreme Lifestyle Clinic">
+        <span class="marca__div" aria-hidden="true"></span>
+        <time class="marca__data" datetime="2026-10-19"><b>19 e 20</b>de outubro</time>
       </div>
 
       <h1>O protocolo corporal que transforma a clínica em uma <b class="dourado">operação premium</b>.</h1>
@@ -687,7 +694,7 @@ dialog::backdrop{ background:rgba(14,12,9,.88); backdrop-filter:blur(6px); }
 <!-- ══ 01 · O CENÁRIO ═══════════════════════════════════════════ -->
 <section class="secao secao--alt" id="cenario">
   <div class="env">
-    <span class="olho olho--centro rev">01 · O cenário</span>
+    <span class="olho olho--centro rev">O cenário</span>
     <h2 class="tit tit--centro rev">O facial saturou.<b>O corporal <span class="it dourado">não</span>.</b></h2>
     <p class="texto texto--centro rev" style="margin-top:20px">Não é opinião de mercado, é o que aparece na agenda: a mesma técnica que abria diferença há cinco anos hoje é oferecida por dezenas de profissionais na mesma cidade.</p>
 
@@ -715,7 +722,7 @@ dialog::backdrop{ background:rgba(14,12,9,.88); backdrop-filter:blur(6px); }
 <section class="secao secao--breu" id="como-funciona">
   <span class="mono mono--esq mono--cheio" aria-hidden="true">S</span>
   <div class="env">
-    <span class="olho rev">02 · Como funciona</span>
+    <span class="olho rev">Como funciona</span>
     <h2 class="tit rev">Antes do preço,<b>entenda os <span class="it dourado">dois dias</span>.</b></h2>
     <p class="texto rev" style="margin-top:20px">São dois dias com públicos diferentes. O dia 19 é exclusivo para médicos. O dia 20 abre para a equipe da clínica. Entender essa separação resolve praticamente toda a dúvida sobre qual modalidade escolher.</p>
 
@@ -744,7 +751,7 @@ dialog::backdrop{ background:rgba(14,12,9,.88); backdrop-filter:blur(6px); }
         <dl class="quem">
           <dt>Participa deste dia</dt>
           <dd class="sim"><i>✓</i><span><b>Hands On</b>: já está incluso no pacote</span></dd>
-          <dd class="sim"><i>✓</i><span><b>Observador</b> que adquiriu o módulo de gestão</span></dd>
+          <dd class="sim"><i>✓</i><span><b>Observador</b>: já está incluso no pacote</span></dd>
           <dd class="sim"><i>✓</i><span><b>Médico</b> que quer somente a gestão</span></dd>
           <dd class="sim"><i>✓</i><span><b>Gestor, sócio ou equipe</b>: não precisa ser médico</span></dd>
           <dt style="margin-top:18px">Não participa</dt>
@@ -835,7 +842,7 @@ dialog::backdrop{ background:rgba(14,12,9,.88); backdrop-filter:blur(6px); }
       </figure>
 
       <div class="rev">
-        <span class="olho">03 · O conceito Supreme</span>
+        <span class="olho">O conceito Supreme</span>
         <h2 class="tit">Tratar, modelar, sustentar,<b><span class="it dourado">ajustar</span>.</b></h2>
         <p class="texto" style="margin-top:20px">A maioria dos profissionais aprende técnicas separadas. O problema é que o paciente premium não compra técnica, compra consistência. O método organiza a decisão clínica em quatro etapas, na ordem em que ela precisa acontecer.</p>
         <ul class="marcas">
@@ -855,7 +862,7 @@ dialog::backdrop{ background:rgba(14,12,9,.88); backdrop-filter:blur(6px); }
 <!-- ══ 04 · SOMENTE DE GESTÃO ═══════════════════════════════════ -->
 <section class="secao secao--alt" id="gestao">
   <div class="env">
-    <span class="olho olho--centro rev">04 · Somente de gestão</span>
+    <span class="olho olho--centro rev">Somente de gestão</span>
     <h2 class="tit tit--centro rev" style="max-width:24ch">Do Full Face ao Full Body:<b>o dia que muda a <span class="it dourado">conta da clínica</span>.</b></h2>
     <p class="texto texto--centro rev" style="margin-top:20px">A técnica faz o médico executar. É o posicionamento que faz o paciente aceitar o valor. O dia 20 é o único da imersão aberto a quem não é médico, porque quem precifica, atende e negocia dentro da clínica precisa entender a mesma lógica.</p>
 
@@ -889,12 +896,12 @@ dialog::backdrop{ background:rgba(14,12,9,.88); backdrop-filter:blur(6px); }
 <section class="secao secao--breu" id="modalidades">
   <span class="mono mono--dir" aria-hidden="true">S</span>
   <div class="env">
-    <span class="olho rev">05 · Modalidades</span>
+    <span class="olho rev">Modalidades</span>
     <h2 class="tit rev">Agora sim: escolha como<b>você quer <span class="it dourado">viver</span> a imersão.</b></h2>
     <p class="texto rev" style="margin-top:20px">São <b>dois caminhos</b>. Médico faz os dois dias. Quem cuida da gestão vem só no dia 20.</p>
 
     <p class="faixa-rot rev">Para o médico · os dois dias</p>
-    <p class="faixa-nota rev"><b>No dia 19, uma executa e a outra acompanha.</b> A outra diferença é o dia 20: o Módulo de Gestão já vem no Hands On e, no Observador, é opcional.</p>
+    <p class="faixa-nota rev"><b>No dia 19, uma executa e a outra acompanha.</b> No dia 20, as duas modalidades participam do Módulo de Gestão, já incluso nos pacotes.</p>
 
     <div class="planos">
       <article class="plano plano--dest rev">
@@ -921,13 +928,13 @@ dialog::backdrop{ background:rgba(14,12,9,.88); backdrop-filter:blur(6px); }
         <ul class="marcas">
           <li><svg><use href="#i-check"/></svg><span>Dia 19 acompanhando os cinco protocolos</span></li>
           <li><svg><use href="#i-check"/></svg><span>Material clínico dos protocolos</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Módulo de Gestão do dia 20 opcional</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Dia 20, Módulo de Gestão completo</span></li>
         </ul>
         <div class="plano__pe">
           <div class="plano__pr">
-            <p class="preco"><small>R$</small>10.900</p>
-            <p class="parcela">à vista · ou em até 6x de R$ 1.816,67</p>
-            <p class="compo">O <b>Módulo de Gestão</b> do dia 20 não entra neste pacote. Pode ser somado por <b>R$ 1.999</b>, contra <b>R$ 3.790</b> do valor avulso.</p>
+            <p class="preco"><small>R$</small>12.899</p>
+            <p class="parcela">à vista · ou em até 6x de R$ 2.149,84</p>
+            <p class="compo">Imersão Observador <b>R$ 10.900</b> + Módulo de Gestão <b>R$ 1.999</b>.<br>O mesmo módulo custa <b>R$ 3.790</b> avulso. Dentro do pacote, entra por R$ 1.999.</p>
           </div>
           <button type="button" class="btn btn--vazado btn--bloco" data-modalidade="observador">Garantir vaga como Observador <i><svg><use href="#i-seta"/></svg></i></button>
         </div>
@@ -969,7 +976,7 @@ dialog::backdrop{ background:rgba(14,12,9,.88); backdrop-filter:blur(6px); }
 <!-- ══ 06 · O RETORNO ═══════════════════════════════════════════ -->
 <section class="secao secao--alt" id="retorno">
   <div class="env">
-    <span class="olho rev">06 · O retorno</span>
+    <span class="olho rev">O retorno</span>
     <h2 class="tit rev">Um paciente paga<b>a <span class="it dourado">imersão</span>.</b></h2>
     <div class="dupla" style="margin-top:40px">
       <div class="rev">
@@ -989,7 +996,7 @@ dialog::backdrop{ background:rgba(14,12,9,.88); backdrop-filter:blur(6px); }
 <!-- ══ 07 · QUEM CONDUZ ═════════════════════════════════════════ -->
 <section class="secao" id="professores">
   <div class="env">
-    <span class="olho olho--centro rev">07 · Quem conduz</span>
+    <span class="olho olho--centro rev">Quem conduz</span>
     <h2 class="tit tit--centro rev">Quem está na sala<b>com <span class="it dourado">você</span>.</b></h2>
     <p class="texto texto--centro rev" style="margin-top:20px">Um time formado por quem constrói protocolo, resultado clínico e posicionamento de mercado todos os dias, não por quem só ensina.</p>
 
@@ -1021,7 +1028,7 @@ dialog::backdrop{ background:rgba(14,12,9,.88); backdrop-filter:blur(6px); }
 <!-- ══ 08 · PARA QUEM É / NÃO É ═════════════════════════════════ -->
 <section class="secao secao--alt" id="para-quem">
   <div class="env">
-    <span class="olho olho--centro rev">08 · Antes de decidir</span>
+    <span class="olho olho--centro rev">Antes de decidir</span>
     <h2 class="tit tit--centro rev">Para quem é.<b>E para quem <span class="it dourado">não é</span>.</b></h2>
     <p class="texto texto--centro rev" style="margin-top:20px">Uma turma reduzida só funciona se as pessoas certas estiverem nela. Prefira desistir agora a descobrir isso no dia 19.</p>
 
@@ -1058,7 +1065,7 @@ dialog::backdrop{ background:rgba(14,12,9,.88); backdrop-filter:blur(6px); }
 <section class="secao secao--breu" id="resultados">
   <span class="mono mono--esq mono--cheio" aria-hidden="true">S</span>
   <div class="env">
-    <span class="olho olho--centro rev">09 · Resultados</span>
+    <span class="olho olho--centro rev">Resultados</span>
     <h2 class="tit tit--centro rev">Registros clínicos<b>dos <span class="it dourado">protocolos</span>.</b></h2>
     <p class="texto texto--centro rev" style="margin-top:20px">Casos conduzidos na Clínica Supreme com os protocolos ensinados na imersão.</p>
 
@@ -1090,15 +1097,15 @@ dialog::backdrop{ background:rgba(14,12,9,.88); backdrop-filter:blur(6px); }
 <!-- ══ 10 · FAQ ═════════════════════════════════════════════════ -->
 <section class="secao" id="faq">
   <div class="env">
-    <span class="olho olho--centro rev">10 · Perguntas frequentes</span>
+    <span class="olho olho--centro rev">Perguntas frequentes</span>
     <h2 class="tit tit--centro rev">O que costuma ficar em <b class="it dourado">aberto</b></h2>
 
     <div class="faq rev">
-      <details><summary>Qual é a diferença entre Hands On e Observador?</summary><div class="resp"><p>No dia 19, <b>o Hands On executa os protocolos e o Observador acompanha</b>, sem executar. Os dois têm os mesmos protocolos, os mesmos professores e o mesmo material. A outra diferença é o dia 20: <b>o Módulo de Gestão já vem no Hands On</b> e, no Observador, é opcional, por R$ 1.999.</p></div></details>
+      <details><summary>Qual é a diferença entre Hands On e Observador?</summary><div class="resp"><p>No dia 19, <b>o Hands On executa os protocolos e o Observador acompanha</b>, sem executar. Os dois têm os mesmos protocolos, os mesmos professores, o mesmo material e o <b>Módulo de Gestão do dia 20 incluso</b>.</p></div></details>
       <details><summary>Não sou médico. Posso participar?</summary><div class="resp"><p>Do <b>dia 20</b>, sim. O Módulo de Gestão é aberto para gestores, sócios e equipe de clínica, por R$ 1.499. O <b>dia 19 é restrito a médicos</b>, por exigência técnica e legal do que é aplicado ali.</p></div></details>
       <details><summary>Sou médico e quero só a gestão. Como funciona?</summary><div class="resp"><p>Você compra o <b>Módulo de Gestão avulso, por R$ 3.790</b>, e participa apenas do dia 20, das 9h às 13h. É o mesmo módulo que está incluso nos pacotes Hands On e Observador. Dentro deles, entra por R$ 1.999.</p></div></details>
       <details><summary>Posso levar meu gestor comigo?</summary><div class="resp"><p>Pode. Você faz a sua modalidade normalmente e inscreve o acompanhante no Módulo de Gestão por <b>R$ 1.499</b>. Ele participa do dia 20 com você. Não precisa ser médico.</p></div></details>
-      <details><summary>O Módulo de Gestão está incluso na minha modalidade?</summary><div class="resp"><p>No <b>Hands On</b>, sim: já entra na composição do pacote. No <b>Observador</b>, é opcional e custa <b>R$ 1.999</b> à parte, contra R$ 3.790 do valor avulso para médico.</p></div></details>
+      <details><summary>O Módulo de Gestão está incluso na minha modalidade?</summary><div class="resp"><p>Sim. No <b>Hands On</b> e no <b>Observador</b>, o Módulo de Gestão já entra na composição do pacote por <b>R$ 1.999</b>, contra R$ 3.790 do valor avulso para médico.</p></div></details>
       <details><summary>Preciso já atuar com harmonização corporal para participar?</summary><div class="resp"><p>Não. A imersão foi estruturada para levar você da lógica do protocolo até a aplicação prática, mesmo que sua atuação hoje seja majoritariamente facial. O que se espera é formação médica e prática clínica em estética.</p></div></details>
       <details><summary>Vou sair aplicando os protocolos na clínica?</summary><div class="resp"><p>O dia 19 é hands-on, com prática supervisionada em Glúteo, Abdômen, Lipedema, Pernas e Full Body Supreme. Você sai com o raciocínio clínico e o protocolo estruturado. A velocidade de implantação depende da sua estrutura e do seu perfil de paciente.</p></div></details>
       <details><summary>Quantas vagas existem, de verdade?</summary><div class="resp"><p><b>10 no Hands On, 10 no Observador e 30 no Módulo de Gestão.</b> São 20 médicos no dia 19. O limite existe porque a prática é supervisionada, não é número de campanha.</p></div></details>
@@ -1118,7 +1125,7 @@ dialog::backdrop{ background:rgba(14,12,9,.88); backdrop-filter:blur(6px); }
 <section class="secao secao--breu" id="inscricao">
   <span class="mono mono--dir" aria-hidden="true">S</span>
   <div class="env" style="text-align:center">
-    <span class="olho olho--centro rev">11 · Inscrições</span>
+    <span class="olho olho--centro rev">Inscrições</span>
     <h2 class="tit tit--centro rev" style="max-width:24ch">São <span class="it dourado">20 vagas</span> para médicos,<b>e elas fecham por ordem de pagamento.</b></h2>
     <div class="acoes acoes--centro rev">
       <a href="#modalidades" class="btn">Escolher minha modalidade <i><svg><use href="#i-seta"/></svg></i></a>
@@ -1142,7 +1149,7 @@ dialog::backdrop{ background:rgba(14,12,9,.88); backdrop-filter:blur(6px); }
   <div class="env">
     <div class="rodape__g">
       <div>
-        <h4>Supreme Full Body Experience</h4>
+        <img class="rodape__logo" src="images/%5BFull%20Body%20Experience%5D%20Logo%201.png" width="1726" height="884" alt="Supreme Lifestyle Clinic" loading="lazy">
         <p>Imersão presencial de harmonização corporal premium dirigida a médicos.<br>Clínica Supreme, Goiânia/GO.</p>
       </div>
       <div>
@@ -1205,7 +1212,7 @@ dialog::backdrop{ background:rgba(14,12,9,.88); backdrop-filter:blur(6px); }
   ],
   "offers": [
     { "@type": "Offer", "name": "Hands On", "price": "16899.00", "priceCurrency": "BRL", "availability": "https://schema.org/InStock", "url": "https://fullbodyexperience.com.br/#modalidades", "validFrom": "2026-08-18T00:00:00-03:00" },
-    { "@type": "Offer", "name": "Observador", "price": "10900.00", "priceCurrency": "BRL", "availability": "https://schema.org/InStock", "url": "https://fullbodyexperience.com.br/#modalidades", "validFrom": "2026-08-18T00:00:00-03:00" },
+    { "@type": "Offer", "name": "Observador", "price": "12899.00", "priceCurrency": "BRL", "availability": "https://schema.org/InStock", "url": "https://fullbodyexperience.com.br/#modalidades", "validFrom": "2026-08-18T00:00:00-03:00" },
     { "@type": "Offer", "name": "Módulo de Gestão, médico avulso", "price": "3790.00", "priceCurrency": "BRL", "availability": "https://schema.org/InStock", "url": "https://fullbodyexperience.com.br/#modalidades", "validFrom": "2026-08-18T00:00:00-03:00" },
     { "@type": "Offer", "name": "Módulo de Gestão, gestor acompanhante", "price": "1499.00", "priceCurrency": "BRL", "availability": "https://schema.org/InStock", "url": "https://fullbodyexperience.com.br/#modalidades", "validFrom": "2026-08-18T00:00:00-03:00" }
   ]
@@ -1254,7 +1261,7 @@ const EVENTOS = {
   whatsapp: "clique_whatsapp"
 };
 
-const VALORES = { hands_on:16899, observador:10900, gestao_gestor:1499, gestao_medico:3790 };
+const VALORES = { hands_on:16899, observador:12899, gestao_gestor:1499, gestao_medico:3790 };
 
 /* ── carga condicional de Pixel e GA4 ───────────────────────── */
 (function(){
