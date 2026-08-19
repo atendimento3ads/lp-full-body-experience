@@ -1,7 +1,7 @@
 # LP — Supreme Full Body Experience
 
 Landing page de venda da imersão presencial **Supreme Full Body Experience**, dias
-**28 e 29 de setembro de 2026**, na Clínica Supreme — Goiânia/GO.
+**19 e 20 de outubro de 2026**, na Clínica Supreme — Goiânia/GO.
 
 - **Cliente:** Clínica Supreme (Dra. Maria Lígia Mendonça) — ponto focal: Monique Mendonça
 - **Público:** médicos (dermatologista, vascular, nutrólogo) + gestores/sócios de clínica
@@ -44,10 +44,10 @@ ver *Bloqueios* e *Composições a produzir*.
 | Marco | Data | Dias a partir de hoje |
 |---|---|---|
 | Go live da LP | 28/08 | 10 |
-| Fim da janela de campanha | 27/09 | 40 |
-| Imersão | 28 e 29/09 | 41 |
+| Fim da janela de campanha | 18/10 | 40 |
+| Imersão | 28 e 20/10 | 41 |
 
-A campanha tem **30 dias de veiculação** entre o go live e o dia 27/09. Se a página atrasar,
+A campanha tem **30 dias de veiculação** entre o go live e o dia 18/10. Se a página atrasar,
 a verba perde janela — a data não muda.
 
 ---
@@ -92,22 +92,28 @@ composição do pacote e sempre ao lado do "avulso custa R$ 3.790". E as modalid
 
 | # | Seção | O que resolve |
 |---|---|---|
-| — | Barra fixa superior | Escassez + contador real para 28/09 às 9h + CTA |
+| — | Barra fixa superior | Escassez + contador real para 19/10 às 9h + CTA |
 | — | Hero | Promessa em uma frase que já ensina os dois dias · 4 provas · vídeo do convite |
 | — | Faixa diagonal | Marquee de marca entre os blocos, três vezes na página |
 | — | O convite | Vídeo de 58s da Dra. Maria Lígia e da Dra. Ana Machado, em modal |
 | 01 | O cenário | Por que o facial saturou e o corporal não, em 3 blocos |
 | 02 | **Como funciona** | Os dois dias, com quem participa e quem não participa de cada um, + os 6 módulos em cartões com ícone |
 | 03 | O conceito Supreme | Tratar, modelar, sustentar, ajustar, ao lado da figura das quatro etapas |
-| 04 | **Modalidades** | Dois caminhos: médico (Hands On / Observador) e gestão avulsa · fecha com "em uma frase", 3 linhas de autosseleção |
-| 05 | O retorno | A conta do ROI, rotulada como cenário ilustrativo |
-| 06 | Quem conduz | Os 4 professores |
-| 07 | Antes de decidir | Para quem é / para quem não é |
-| 08 | Resultados | Galeria de antes e depois + disclaimer com a marcação de conteúdo técnico-científico |
-| 09 | FAQ | 12 perguntas, **5 dedicadas a modalidade** |
-| 10 | Inscrições | CTA final + quadro de informações práticas |
+| 04 | **Somente de gestão** | O dia 20 explicado à parte, com Silvane Castro como autoridade do módulo |
+| 05 | **Modalidades** | Dois caminhos: médico (Hands On / Observador) e gestão avulsa · fecha com "em uma frase", 3 linhas de autosseleção |
+| 06 | O retorno | A conta do ROI, rotulada como cenário ilustrativo |
+| 07 | Quem conduz | Os 4 professores |
+| 08 | Antes de decidir | Para quem é / para quem não é |
+| 09 | Resultados | Galeria de antes e depois + disclaimer com a marcação de conteúdo técnico-científico |
+| 10 | FAQ | 12 perguntas, **5 dedicadas a modalidade** |
+| 11 | Inscrições | CTA final + quadro de informações práticas |
 | — | Rodapé | Responsável técnica, aviso de conteúdo técnico-científico |
 | — | Barra fixa inferior (mobile) | Ver modalidades + WhatsApp |
+
+**Mudança de oferta em 18/08, a confirmar:** o cliente informou que o Observador **paga o
+Módulo de Gestão à parte**. A página foi ajustada para Observador **R$ 10.900** com o módulo
+opcional por R$ 1.999 — usando apenas números que já constavam no briefing, sem inventar
+preço. Se o valor do Observador for outro, é uma linha no `index.html` e uma no schema.
 
 **Pendência de link:** o crédito no rodapé aponta para `https://3ads.com.br`, que é um palpite.
 Confirmar o domínio oficial da agência antes de publicar em campanha (há um comentário
@@ -207,10 +213,12 @@ com ícone e texto**, por decisão do cliente em 18/08. Os ícones são SVG de t
 para esta página e vivem no sprite no topo do `<body>` (`#m-gluteo`, `#m-abdomen`,
 `#m-lipedema`, `#m-pernas`, `#m-fullbody`, `#m-gestao`).
 
-### Nenhum placeholder pendente
+### Pendente: fotos dos 6 procedimentos
 
-A figura das quatro etapas do método (`images/metodo-etapas.webp`) chegou em 18/08 e fechou
-o último. A página está com arte final em todas as seções.
+Cada cartão de módulo tem uma área de foto em 4:3 marcada como "FOTO · A RECEBER", aguardando
+o registro de cada procedimento (glúteo, abdômen, lipedema, pernas, full body e o módulo de
+gestão). O ícone e o texto já estão finalizados; basta trocar o bloco `.modulo__foto` por um
+`<img>`.
 
 ---
 
