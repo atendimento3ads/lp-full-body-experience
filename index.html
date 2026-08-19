@@ -218,14 +218,8 @@ p:last-child{ margin-bottom:0; }
 .hero__txt{ width:min(48%,560px); padding-block:clamp(22px,3vw,40px); }
 .hero__vaga{ display:none; }       /* só no mobile, reserva a área da figura */
 
-.marca{ display:flex; align-items:center; gap:15px; margin-bottom:20px; }
-.marca__logo{ width:clamp(112px,10vw,138px); height:auto; flex:none; }
-.marca__div{ width:1px; height:40px; flex:none; background:rgba(116,86,31,.32); }
-.marca__data{
-  color:var(--tinta-2); font-size:10px; line-height:1.55; letter-spacing:.17em;
-  text-transform:uppercase; white-space:nowrap;
-}
-.marca__data b{ display:block; color:var(--ouro-hero); font-size:12px; font-weight:600; letter-spacing:.13em; }
+.marca{ margin-bottom:20px; }
+.marca__tag{ display:block; width:min(100%,464px); height:auto; }
 .hero h1{ font-size:clamp(30px,3.4vw,43px); font-weight:300; max-width:17ch; }
 .hero h1 b{ font-weight:600; }
 .hero h1 .dourado{ color:var(--ouro-hero); }
@@ -574,11 +568,7 @@ dialog::backdrop{ background:rgba(14,12,9,.88); backdrop-filter:blur(6px); }
   .sem-mobile{ display:none; }
   .duvida__i{ grid-template-columns:1fr; gap:8px; }
   .duvida__r{ text-align:left; }
-  .marca{ gap:12px; margin-bottom:17px; }
-  .marca__logo{ width:108px; }
-  .marca__div{ height:34px; }
-  .marca__data{ font-size:9px; letter-spacing:.13em; }
-  .marca__data b{ font-size:11px; }
+  .marca{ margin-bottom:17px; }
   .pratico{ grid-template-columns:1fr; }
   .rodape__g{ grid-template-columns:1fr; }
   .galeria__g{ columns:1; }
@@ -632,9 +622,7 @@ dialog::backdrop{ background:rgba(14,12,9,.88); backdrop-filter:blur(6px); }
 
     <div class="hero__txt rev on">
       <div class="marca">
-        <img class="marca__logo" src="images/%5BFull%20Body%20Experience%5D%20Logo%201.png" width="1726" height="884" alt="Supreme Lifestyle Clinic">
-        <span class="marca__div" aria-hidden="true"></span>
-        <time class="marca__data" datetime="2026-10-19"><b>19 e 20</b>de outubro</time>
+        <img class="marca__tag" src="images/tag-hero.svg" width="464" height="76" alt="Clínica Supreme apresenta Full Body Experience, 19 e 20 de outubro">
       </div>
 
       <h1>O protocolo corporal que transforma a clínica em uma <b class="dourado">operação premium</b>.</h1>
@@ -730,9 +718,9 @@ dialog::backdrop{ background:rgba(14,12,9,.88); backdrop-filter:blur(6px); }
       <article class="dia rev">
         <p class="dia__tag">Dia 1 · exclusivo para médicos</p>
         <p class="dia__d"><strong>19</strong><span>de outubro, segunda</span></p>
-        <p class="dia__h">A partir das 9h · dia inteiro</p>
+        <p class="dia__h">A partir das 9h</p>
         <h3>Imersão teórica e prática</h3>
-        <p class="dia__desc">Dia inteiro de prática supervisionada na Clínica Supreme, percorrendo os cinco protocolos corporais do método.</p>
+        <p class="dia__desc">Prática supervisionada na Clínica Supreme, percorrendo os cinco protocolos corporais do método.</p>
         <dl class="quem">
           <dt>Participa deste dia</dt>
           <dd class="sim"><i>✓</i><span><b>Hands On</b>: executa os protocolos</span></dd>
