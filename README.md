@@ -75,7 +75,8 @@ Os três primeiros não têm alternativa técnica. Tudo se resolve no bloco `CON
 5. **Política de troca e reembolso.** O FAQ tem a pergunta, mas a resposta remete ao contrato
    sem detalhar prazo. Há um comentário `PENDÊNCIA 4` no HTML marcando o ponto exato.
    *(Cliente/jurídico)*
-6. **CRM, RQE e CNPJ** — estão como `[A CONFIRMAR]` no rodapé.
+6. **CNPJ** — está como `[A CONFIRMAR]` no rodapé. O CRM-GO 14358 e o RQE 8544 vieram no
+   crédito da própria peça do cliente (pasta "geral") e já estão preenchidos.
 7. **Autorização de uso de imagem** dos pacientes da galeria — ver *Publicidade médica*.
 
 ---
@@ -218,29 +219,26 @@ com ícone e texto**, por decisão do cliente em 18/08. Os ícones são SVG de t
 para esta página e vivem no sprite no topo do `<body>` (`#m-gluteo`, `#m-abdomen`,
 `#m-lipedema`, `#m-pernas`, `#m-fullbody`, `#m-gestao`).
 
-### Fotos dos módulos: 3 de 6
+### Fotos dos módulos: 6 de 6
 
-O cliente enviou em 21/08 três pastas de antes e depois (Bumbum Supreme, Abdomen Sculpt e
-Embelezamento Pernas), que entraram em `images/modulos/`. **Faltam três**, e a área continua
-marcada como "FOTO · A RECEBER" nesses cartões:
+O cliente enviou as fotos em duas levas, em 21/08. Todas em `images/modulos/`, recortadas em
+4:3 a 760×570 e exportadas em WebP.
 
-| Módulo | Situação |
-|---|---|
-| Glúteo Supreme | ✔ `modulos/gluteo.webp` |
-| Abdômen Supreme | ✔ `modulos/abdomen.webp` |
-| Pernas e Embelezamento | ✔ `modulos/pernas.webp` |
-| **Lipedema Protocol** | falta |
-| **Full Body Supreme** | falta |
-| **Do Full Face ao Full Body** | falta |
+| Módulo | Arquivo | Pasta de origem |
+|---|---|---|
+| Glúteo Supreme | `gluteo.webp` | Bumbum Supreme |
+| Abdômen Supreme | `abdomen.webp` | Abdomen Sculpt |
+| Lipedema Protocol | `lipedema.webp` | Lipedema |
+| Pernas e Embelezamento | `pernas.webp` | Embelezamento Pernas |
+| Full Body Supreme | `fullbody.webp` | geral |
+| Do Full Face ao Full Body | `fullface.webp` | Full Face |
 
-Sobre o Lipedema: a pasta "Embelezamento Pernas" tem casos com aspecto vascular e de edema
-que **podem** ser lipedema, mas classificar isso é decisão clínica, não de quem diagrama.
-Pedir ao cliente um caso identificado como lipedema.
+São todas registros de antes e depois, não de aplicação. No cartão do Full Body foi usada a
+peça composta da pasta "geral", recortada no miolo para que apareça mais de uma área e o
+cartão comunique "protocolo integrado".
 
-Para o módulo de gestão, o registro não é de procedimento: serve uma foto da sala, da turma
-ou dos três condutores.
-
-Formato: 4:3, mínimo 760×570, exportar em WebP.
+**Isso soma seis fotos de paciente à página, além das seis da galeria de resultados.** Todas
+entram na mesma pendência de autorização de uso de imagem.
 
 ---
 

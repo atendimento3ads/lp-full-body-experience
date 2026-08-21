@@ -322,19 +322,11 @@ p:last-child{ margin-bottom:0; }
 }
 .modulo--gestao{ border-color:var(--fio-forte); background:linear-gradient(165deg,rgba(201,169,106,.17),rgba(201,169,106,.03)); }
 .modulo__foto{
-  position:relative; aspect-ratio:4/3; border-radius:var(--r-sm); overflow:hidden;
   margin:calc(-1 * clamp(22px,2.4vw,30px)) calc(-1 * clamp(22px,2.4vw,30px)) 20px;
-  border-bottom:1px solid var(--fio-claro);
-  display:grid; place-content:center; justify-items:center; gap:5px; text-align:center; padding:16px;
-  background:
-    repeating-linear-gradient(135deg, rgba(201,169,106,.055) 0 11px, transparent 11px 22px),
-    linear-gradient(150deg, rgba(201,169,106,.12), rgba(201,169,106,.02));
+  aspect-ratio:4/3; overflow:hidden; border-bottom:1px solid var(--fio-claro);
+  border-radius:var(--r-sm) var(--r-sm) 0 0; padding:0; background:none;
 }
-.modulo__foto{ margin-block-start:calc(-1 * clamp(22px,2.4vw,30px)); }
-figure.modulo__foto{ padding:0; background:none; }
 .modulo__foto img{ width:100%; height:100%; object-fit:cover; }
-.modulo__foto span{ font-size:9.5px; letter-spacing:.22em; text-transform:uppercase; color:var(--ouro-luz); font-weight:600; }
-.modulo__foto small{ font-size:11.5px; color:var(--claro-2); line-height:1.45; }
 .modulo__ico{
   width:44px; height:44px; border-radius:13px; display:grid; place-items:center; margin-bottom:16px;
   border:1px solid var(--fio-claro); background:rgba(201,169,106,.10); color:var(--ouro-luz);
@@ -770,10 +762,9 @@ dialog::backdrop{ background:rgba(14,12,9,.88); backdrop-filter:blur(6px); }
           <p class="modulo__d">Definição e marcação sem cirurgia.</p>
         </article>
         <article class="modulo">
-          <div class="modulo__foto">
-            <span>Foto · a receber</span>
-            <small>Registro do lipedema, 4:3</small>
-          </div>
+          <figure class="modulo__foto">
+            <img src="images/modulos/lipedema.webp" width="760" height="570" alt="Antes e depois do protocolo para lipedema" loading="lazy">
+          </figure>
           <span class="modulo__ico"><svg><use href="#m-lipedema"/></svg></span>
           <p class="modulo__dia">Dia 19</p><h3 class="modulo__t">Lipedema Protocol</h3>
           <p class="modulo__d">Abordagem combinada e suporte inflamatório.</p>
@@ -787,19 +778,17 @@ dialog::backdrop{ background:rgba(14,12,9,.88); backdrop-filter:blur(6px); }
           <p class="modulo__d">Celulite, flacidez e contorno.</p>
         </article>
         <article class="modulo">
-          <div class="modulo__foto">
-            <span>Foto · a receber</span>
-            <small>Registro do full body, 4:3</small>
-          </div>
+          <figure class="modulo__foto">
+            <img src="images/modulos/fullbody.webp" width="760" height="570" alt="Antes e depois de protocolo corporal integrado, em várias áreas" loading="lazy">
+          </figure>
           <span class="modulo__ico"><svg><use href="#m-fullbody"/></svg></span>
           <p class="modulo__dia">Dia 19</p><h3 class="modulo__t">Full Body Supreme</h3>
           <p class="modulo__d">Protocolos globais e integrados.</p>
         </article>
         <article class="modulo modulo--gestao">
-          <div class="modulo__foto">
-            <span>Foto · a receber</span>
-            <small>Registro do módulo de gestão, 4:3</small>
-          </div>
+          <figure class="modulo__foto">
+            <img src="images/modulos/fullface.webp" width="760" height="570" alt="Antes e depois de protocolo facial, ponto de partida do Full Face ao Full Body" loading="lazy">
+          </figure>
           <span class="modulo__ico"><svg><use href="#m-gestao"/></svg></span>
           <p class="modulo__dia">Dia 20</p><h3 class="modulo__t">Do Full Face ao Full Body</h3>
           <p class="modulo__d">Gestão, posicionamento, precificação e fidelização.</p>
@@ -1141,7 +1130,7 @@ dialog::backdrop{ background:rgba(14,12,9,.88); backdrop-filter:blur(6px); }
       </div>
       <div>
         <h4>Responsável técnica</h4>
-        <p>Dra. Maria Lígia Mendonça<br>CRM-GO [A CONFIRMAR] · RQE [A CONFIRMAR]<br>Dermatologia</p>
+        <p>Dra. Maria Lígia Mendonça<br>CRM-GO 14358 · RQE 8544<br>Dermatologia</p>
       </div>
       <div>
         <h4>Contato</h4>
