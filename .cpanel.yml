@@ -1,0 +1,9 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home2/hg3ads37/fullbodyexperience.com.br/
+    - /bin/mkdir -p "$DEPLOYPATH/fonts" "$DEPLOYPATH/images"
+    - /bin/cp index.html "$DEPLOYPATH"
+    - /bin/cp index-versaoantiga.html "$DEPLOYPATH"
+    - /bin/cp -R fonts/. "$DEPLOYPATH/fonts/"
+    - /bin/cp -R images/. "$DEPLOYPATH/images/"
