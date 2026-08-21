@@ -7,3 +7,4 @@ deployment:
     - /bin/cp index-versaoantiga.html "$DEPLOYPATH"
     - /bin/cp -R fonts/. "$DEPLOYPATH/fonts/"
     - /bin/cp -R images/. "$DEPLOYPATH/images/"
+    - /bin/rm -f "$DEPLOYPATH/images/modulos/fullface.webp"

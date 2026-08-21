@@ -327,6 +327,8 @@ p:last-child{ margin-bottom:0; }
   border-radius:var(--r-sm) var(--r-sm) 0 0; padding:0; background:none;
 }
 .modulo__foto img{ width:100%; height:100%; object-fit:cover; }
+.modulo__foto--professores{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--fio-claro); }
+.modulo__foto--professores img{ min-width:0; object-position:center top; }
 .modulo__ico{
   width:44px; height:44px; border-radius:13px; display:grid; place-items:center; margin-bottom:16px;
   border:1px solid var(--fio-claro); background:rgba(201,169,106,.10); color:var(--ouro-luz);
@@ -782,8 +784,10 @@ dialog::backdrop{ background:rgba(14,12,9,.88); backdrop-filter:blur(6px); }
           <p class="modulo__d">Protocolos globais e integrados.</p>
         </article>
         <article class="modulo modulo--gestao">
-          <figure class="modulo__foto">
-            <img src="images/modulos/fullface.webp" width="760" height="570" alt="Antes e depois de protocolo facial, ponto de partida do Full Face ao Full Body" loading="lazy">
+          <figure class="modulo__foto modulo__foto--professores">
+            <img src="images/professores/maria-ligia.webp" width="560" height="747" alt="Dra. Maria Lígia Mendonça" loading="lazy">
+            <img src="images/professores/arthur-rocha.webp" width="560" height="747" alt="Dr. Arthur Rocha" loading="lazy">
+            <img src="images/professores/silvane-castro.webp" width="560" height="747" alt="Silvane Castro" loading="lazy">
           </figure>
           <span class="modulo__ico"><svg><use href="#m-gestao"/></svg></span>
           <p class="modulo__dia">Dia 20</p><h3 class="modulo__t">Do Full Face ao Full Body</h3>

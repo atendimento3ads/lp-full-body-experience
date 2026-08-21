@@ -219,8 +219,9 @@ para esta página e vivem no sprite no topo do `<body>` (`#m-gluteo`, `#m-abdome
 
 ### Fotos dos módulos: 6 de 6
 
-O cliente enviou as fotos em duas levas, em 21/08. Todas em `images/modulos/`, recortadas em
-4:3 a 760×570 e exportadas em WebP.
+O cliente enviou as fotos em duas levas, em 21/08. Os cinco módulos clínicos usam imagens
+em `images/modulos/`, recortadas em 4:3 a 760×570 e exportadas em WebP. O Módulo de Gestão
+usa uma composição com os retratos dos três professores.
 
 | Módulo | Arquivo | Pasta de origem |
 |---|---|---|
@@ -229,13 +230,13 @@ O cliente enviou as fotos em duas levas, em 21/08. Todas em `images/modulos/`, r
 | Lipedema Protocol | `lipedema.webp` | Lipedema |
 | Pernas e Embelezamento | `pernas.webp` | Embelezamento Pernas |
 | Full Body Supreme | `fullbody.webp` | geral |
-| Do Full Face ao Full Body | `fullface.webp` | Full Face |
+| Do Full Face ao Full Body | `maria-ligia.webp`, `arthur-rocha.webp`, `silvane-castro.webp` | professores |
 
-São todas registros de antes e depois, não de aplicação. No cartão do Full Body foi usada a
+As cinco imagens clínicas são registros de antes e depois, não de aplicação. No cartão do Full Body foi usada a
 peça composta da pasta "geral", recortada no miolo para que apareça mais de uma área e o
 cartão comunique "protocolo integrado".
 
-**Isso soma seis fotos de paciente à página, além das seis da galeria de resultados.** Todas
+**Isso soma cinco fotos de paciente à página, além das seis da galeria de resultados.** Todas
 entram na mesma pendência de autorização de uso de imagem.
 
 ---
