@@ -13,7 +13,7 @@ Landing page de venda da imersão presencial **Supreme Full Body Experience**, d
 
 > ⚠️ **O GitHub Pages é público.** Qualquer pessoa com o link vê a página e as fotos de
 > pacientes da seção de resultados. Enquanto a autorização de uso de imagem não estiver
-> confirmada (pendência 7), tratar este link como **interno**: usar para aprovação do
+> confirmada (pendência 6), tratar este link como **interno**: usar para aprovação do
 > cliente e revisão da equipe, não divulgar e não apontar campanha para ele. O endereço de
 > campanha é o `fullbodyexperience.com.br`, no cPanel.
 
@@ -75,9 +75,7 @@ Os três primeiros não têm alternativa técnica. Tudo se resolve no bloco `CON
 5. **Política de troca e reembolso.** O FAQ tem a pergunta, mas a resposta remete ao contrato
    sem detalhar prazo. Há um comentário `PENDÊNCIA 4` no HTML marcando o ponto exato.
    *(Cliente/jurídico)*
-6. **CNPJ** — está como `[A CONFIRMAR]` no rodapé. O CRM-GO 14358 e o RQE 8544 vieram no
-   crédito da própria peça do cliente (pasta "geral") e já estão preenchidos.
-7. **Autorização de uso de imagem** dos pacientes da galeria — ver *Publicidade médica*.
+6. **Autorização de uso de imagem** dos pacientes da galeria — ver *Publicidade médica*.
 
 ---
 
