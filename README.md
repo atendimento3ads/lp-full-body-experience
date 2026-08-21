@@ -122,10 +122,15 @@ Confirmar o domínio oficial da agência antes de publicar em campanha (há um c
 **Regra de escrita:** a copy não usa travessão (—). Onde havia, a frase foi reescrita com
 dois pontos, vírgula ou ponto final. Vale para qualquer edição futura.
 
-**Nada do que o briefing pediu para não fazer está na página:** sem contador falso, sem
-"vagas limitadas" sem número, sem promessa de resultado financeiro, sem três cards iguais
-lado a lado, sem preço antes da explicação dos dois dias, e o nome da Dra. Ana Machado está
-grafado de uma forma só.
+**Do que o briefing pediu para não fazer, um item foi revertido pelo cliente.** Não há
+contador falso, nem promessa de resultado financeiro, nem três cards iguais lado a lado, nem
+preço antes da explicação dos dois dias, e o nome da Dra. Ana Machado está grafado de uma
+forma só.
+
+A exceção é o item *"não escrever vagas limitadas sem dizer o número"*: em 19/08 o cliente
+pediu para trocar todas as contagens por **turmas reduzidas**, e a arte nova do hero já veio
+com "VAGAS LIMITADAS". Decisão registrada; o argumento do briefing era que dizer 10 é mais
+forte que dizer limitadas.
 
 ---
 
@@ -185,7 +190,7 @@ Todas as variáveis estão no topo do `index.html` — mexer lá muda a página 
 - **Poppins** — títulos, corpo e interface. Geométrica, como a referência, e já é a fonte
   da LP atual do SprintHub, então mantém continuidade de marca.
 - **Playfair Display itálico** — só nas palavras de acento (*Experience*, *ajustar*, *não*,
-  *20 vagas*). É o que sobra da serifada de alto contraste que o briefing pedia.
+  *turmas são reduzidas*). É o que sobra da serifada de alto contraste que o briefing pedia.
 
 Ambas via Google Fonts, licença SIL OFL. Ver `fonts/LEIA-ME.txt`.
 
