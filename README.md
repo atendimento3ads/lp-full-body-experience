@@ -218,12 +218,29 @@ com ícone e texto**, por decisão do cliente em 18/08. Os ícones são SVG de t
 para esta página e vivem no sprite no topo do `<body>` (`#m-gluteo`, `#m-abdomen`,
 `#m-lipedema`, `#m-pernas`, `#m-fullbody`, `#m-gestao`).
 
-### Pendente: fotos dos 6 procedimentos
+### Fotos dos módulos: 3 de 6
 
-Cada cartão de módulo tem uma área de foto em 4:3 marcada como "FOTO · A RECEBER", aguardando
-o registro de cada procedimento (glúteo, abdômen, lipedema, pernas, full body e o módulo de
-gestão). O ícone e o texto já estão finalizados; basta trocar o bloco `.modulo__foto` por um
-`<img>`.
+O cliente enviou em 21/08 três pastas de antes e depois (Bumbum Supreme, Abdomen Sculpt e
+Embelezamento Pernas), que entraram em `images/modulos/`. **Faltam três**, e a área continua
+marcada como "FOTO · A RECEBER" nesses cartões:
+
+| Módulo | Situação |
+|---|---|
+| Glúteo Supreme | ✔ `modulos/gluteo.webp` |
+| Abdômen Supreme | ✔ `modulos/abdomen.webp` |
+| Pernas e Embelezamento | ✔ `modulos/pernas.webp` |
+| **Lipedema Protocol** | falta |
+| **Full Body Supreme** | falta |
+| **Do Full Face ao Full Body** | falta |
+
+Sobre o Lipedema: a pasta "Embelezamento Pernas" tem casos com aspecto vascular e de edema
+que **podem** ser lipedema, mas classificar isso é decisão clínica, não de quem diagrama.
+Pedir ao cliente um caso identificado como lipedema.
+
+Para o módulo de gestão, o registro não é de procedimento: serve uma foto da sala, da turma
+ou dos três condutores.
+
+Formato: 4:3, mínimo 760×570, exportar em WebP.
 
 ---
 
