@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MS8VK2NT');</script>
+<!-- End Google Tag Manager -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Supreme Full Body Experience · Imersão para Médicos · 19 e 20 de outubro</title>
@@ -574,6 +581,10 @@ dialog::backdrop{ background:rgba(14,12,9,.88); backdrop-filter:blur(6px); }
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MS8VK2NT"
+height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- ícones reutilizados -->
 <svg style="display:none" aria-hidden="true">
@@ -1212,7 +1223,8 @@ const CONFIG = {
   // O valor abaixo é o que está na LP atual do SprintHub.
   whatsapp: "5562998432153",
 
-  // Rastreamento — preencher com os IDs da Dayana (gestora de tráfego).
+  // Rastreamento direto opcional. O GTM-MS8VK2NT já está instalado.
+  // Manter vazio se Pixel e GA4 forem configurados no GTM, para evitar duplicidade.
   metaPixelId: "",
   ga4Id: "",
 
@@ -1260,9 +1272,10 @@ const VALORES = { hands_on:16899, observador:10900, gestao_gestor:1499, gestao_m
 
 function track(evento, dados){
   dados = dados || {};
+  if (window.dataLayer) dataLayer.push(Object.assign({ event: evento }, dados));
   if (window.gtag) gtag('event', evento, dados);
   if (window.fbq) fbq('trackCustom', evento, dados);
-  if (!CONFIG.metaPixelId && !CONFIG.ga4Id) console.info('[rastreio pendente]', evento, dados);
+  if (!window.dataLayer && !CONFIG.metaPixelId && !CONFIG.ga4Id) console.info('[rastreio pendente]', evento, dados);
 }
 
 /* ── UTMs preservadas na passagem para checkout e WhatsApp ──── */

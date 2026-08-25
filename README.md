@@ -66,7 +66,10 @@ Os três primeiros não têm alternativa técnica. Tudo se resolve no bloco `CON
    `55 62 99843-2153`, que é o que a LP atual usa. **Confirmar se é esse mesmo** e se ele
    aguenta o volume do lançamento. *(Monique)*
 3. **Os IDs de rastreamento** — `CONFIG.metaPixelId` e `CONFIG.ga4Id`. Enquanto vazios, o
-   Pixel e o GA4 não carregam e os eventos só aparecem no console como `[rastreio pendente]`.
+   Pixel e o GA4 não carregam diretamente pelo HTML. O container **GTM-MS8VK2NT** está
+   instalado e recebe os eventos personalizados da LP pelo `dataLayer`; Pixel e GA4 podem
+   ser configurados dentro dele. Evitar configurar a mesma tag no GTM e diretamente no HTML,
+   para não duplicar eventos.
    A verificação de domínio da Meta já está configurada pelo arquivo
    `rjyjo827kvy6idt3f86dxno0txx412.html`; ela não substitui o ID do Pixel.
    *(Dayana)*
@@ -303,8 +306,10 @@ oficial com ela.
 
 ### Rastreamento
 
-Preencher `CONFIG.metaPixelId` e `CONFIG.ga4Id` liga tudo. O Pixel e o GA4 só são carregados
-se o ID existir — página sem ID não faz requisição para eles.
+O container `GTM-MS8VK2NT` está instalado nas duas páginas. Todos os eventos personalizados
+abaixo entram no `dataLayer` e podem ser usados como gatilhos no GTM. Os campos
+`CONFIG.metaPixelId` e `CONFIG.ga4Id` são uma alternativa de carregamento direto; devem
+permanecer vazios quando Pixel e GA4 forem configurados no GTM, para evitar duplicidade.
 
 Eventos separados por modalidade, como pede o briefing:
 `clique_hands_on` · `clique_observador` · `clique_gestao_gestor` · `clique_gestao_medico` ·
