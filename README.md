@@ -67,6 +67,8 @@ Os três primeiros não têm alternativa técnica. Tudo se resolve no bloco `CON
    aguenta o volume do lançamento. *(Monique)*
 3. **Os IDs de rastreamento** — `CONFIG.metaPixelId` e `CONFIG.ga4Id`. Enquanto vazios, o
    Pixel e o GA4 não carregam e os eventos só aparecem no console como `[rastreio pendente]`.
+   A verificação de domínio da Meta já está configurada pelo arquivo
+   `rjyjo827kvy6idt3f86dxno0txx412.html`; ela não substitui o ID do Pixel.
    *(Dayana)*
 4. **Quantas vagas, afinal.** A página inteira usa **10 Hands On + 10 Observador + 30
    Gestão**, conforme o onboarding e o briefing. A LP atual anuncia "até 15 médicos". São

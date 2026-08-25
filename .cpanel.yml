@@ -5,6 +5,7 @@ deployment:
     - /bin/mkdir -p "$DEPLOYPATH/fonts" "$DEPLOYPATH/images"
     - /bin/cp index.html "$DEPLOYPATH"
     - /bin/cp index-versaoantiga.html "$DEPLOYPATH"
+    - /bin/cp rjyjo827kvy6idt3f86dxno0txx412.html "$DEPLOYPATH"
     - /bin/cp -R fonts/. "$DEPLOYPATH/fonts/"
     - /bin/cp -R images/. "$DEPLOYPATH/images/"
     - /bin/rm -f "$DEPLOYPATH/images/modulos/fullface.webp"
