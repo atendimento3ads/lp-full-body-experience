@@ -310,6 +310,8 @@ O container `GTM-MS8VK2NT` está instalado nas duas páginas. Todos os eventos p
 abaixo entram no `dataLayer` e podem ser usados como gatilhos no GTM. Os campos
 `CONFIG.metaPixelId` e `CONFIG.ga4Id` são uma alternativa de carregamento direto; devem
 permanecer vazios quando Pixel e GA4 forem configurados no GTM, para evitar duplicidade.
+O Microsoft Clarity também está instalado diretamente nas duas páginas com o projeto
+`y93eyiurs9`.
 
 Eventos separados por modalidade, como pede o briefing:
 `clique_hands_on` · `clique_observador` · `clique_gestao_gestor` · `clique_gestao_medico` ·
