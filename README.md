@@ -17,8 +17,8 @@ Landing page de venda da imersão presencial **Supreme Full Body Experience**, d
 > cliente e revisão da equipe, não divulgar e não apontar campanha para ele. O endereço de
 > campanha é o `fullbodyexperience.com.br`, no cPanel.
 
-Página única em `index.html` — HTML + CSS + JS em arquivo único, sem framework, sem
-dependência externa além do Google Fonts.
+A interface fica em `index.html` — HTML + CSS + JS em arquivo único, sem framework. O envio
+dos leads usa o endpoint PHP pequeno e independente `lead.php`.
 
 ### Duas versões no repositório
 
@@ -27,9 +27,8 @@ dependência externa além do Google Fonts.
 | **`index.html`** | **Versão atual.** Diagramação refeita sobre a referência aprovada em 18/08 |
 | `index-versaoantiga.html` | Primeira versão, editorial de canto reto. Mantida para comparação |
 
-As duas têm exatamente a **mesma copy, a mesma arquitetura de seções e o mesmo
-comportamento** (contador, rastreamento, portão da galeria, CTAs). O que muda é a
-diagramação. A referência está em `_material-cliente/referencias/`.
+`index-versaoantiga.html` é mantido apenas como histórico. Novas implementações, incluindo
+o formulário de qualificação, ficam somente em `index.html`.
 
 ---
 
@@ -57,11 +56,11 @@ a verba perde janela — a data não muda.
 Os três primeiros não têm alternativa técnica. Tudo se resolve no bloco `CONFIG`, no topo do
 `<script>` do `index.html`.
 
-1. **Os 4 links de checkout** — `CONFIG.checkout.hands_on`, `.observador`, `.gestao_gestor`,
-   `.gestao_medico`. São quatro links distintos, não um só. *(Monique)*
-   > Enquanto estiverem vazios, o botão da modalidade **cai para o WhatsApp** com a mensagem
-   > certa daquela modalidade, em vez de levar a lugar nenhum. Isso é proposital, para a
-   > página poder ir para revisão sem perder lead — mas não é o estado de publicação.
+1. **Os 2 links de checkout do Módulo de Gestão** — `CONFIG.checkout.gestao_gestor` e
+   `.gestao_medico`. Hands On e Observador agora passam pelo formulário de qualificação.
+   *(Monique)*
+   > Enquanto os links de gestão estiverem vazios, esses botões **caem para o WhatsApp** com
+   > a mensagem certa da modalidade.
 2. **O número de WhatsApp comercial** — `CONFIG.whatsapp`. Está preenchido com
    `55 62 99843-2153`, que é o que a LP atual usa. **Confirmar se é esse mesmo** e se ele
    aguenta o volume do lançamento. *(Monique)*
@@ -105,6 +104,7 @@ composição do pacote e sempre ao lado do "avulso custa R$ 3.790". E as modalid
 | 03 | O conceito Supreme | Tratar, modelar, sustentar, ajustar, ao lado da figura das quatro etapas |
 | 04 | **Somente de gestão** | O dia 20 explicado à parte, com Silvane Castro como autoridade do módulo |
 | 05 | **Modalidades** | Dois caminhos: médico (Hands On / Observador) e gestão avulsa · fecha com "em uma frase", 3 linhas de autosseleção |
+| — | **Qualificação** | Fluxo em 7 etapas para candidatos médicos, com encerramento condicional e coleta de contato somente no final |
 | 06 | O retorno | A conta do ROI, rotulada como cenário ilustrativo |
 | 07 | Quem conduz | Os 4 professores |
 | 08 | Antes de decidir | Para quem é / para quem não é |
@@ -112,7 +112,7 @@ composição do pacote e sempre ao lado do "avulso custa R$ 3.790". E as modalid
 | 10 | FAQ | 12 perguntas, **5 dedicadas a modalidade** |
 | 11 | Inscrições | CTA final + quadro de informações práticas |
 | — | Rodapé | Responsável técnica, aviso de conteúdo técnico-científico |
-| — | Barra fixa inferior (mobile) | Ver modalidades + WhatsApp |
+| — | Barra fixa inferior (mobile) | Ver modalidades + formulário de qualificação |
 
 **Oferta confirmada em 19/08:** o pacote Observador custa **R$ 12.899**, composto pela
 imersão Observador de **R$ 10.900** + Módulo de Gestão de **R$ 1.999**. Assim como no Hands
@@ -319,6 +319,13 @@ Eventos separados por modalidade, como pede o briefing:
 `InitiateCheckout` no clique com link de checkout, `scroll_depth` em 25/50/75/100%, e
 `abriu_convite` / `liberou_galeria`.
 
+O formulário atual também envia `formulario_qualificacao_iniciado` e
+`formulario_desqualificado`. O evento padrão `Lead` é enviado **somente depois** de uma
+resposta `ok` do servidor para um cadastro qualificado. Ele leva especialidade, atuação,
+modalidade, disponibilidade e prazo de decisão, mas não leva nome, telefone ou e-mail para
+o `dataLayer`. Os caminhos "Não sou médico(a)" e "Não consigo participar nessa data" não
+solicitam contato, não abrem WhatsApp e não disparam `Lead`.
+
 **UTMs são preservadas** na passagem para o checkout (viram query string) e para o WhatsApp
 (entram no fim da mensagem como `[origem: ...]`, para o vendedor ver de onde o lead veio).
 Testado com `utm_source`, `utm_campaign`, `utm_content`, `utm_term`, `utm_medium`, `gclid`
@@ -349,6 +356,27 @@ dobra, `width`/`height` declarados em todas para não haver deslocamento de layo
   modalidade. Era o ponto do checklist do briefing; testado a 375 px sem estouro horizontal
 - Na barra superior do mobile o botão sai e fica só o contador, já que a barra fixa de baixo
   repete o CTA
+- O formulário mostra uma pergunta por vez, informa a etapa em um `progressbar`, mantém as
+  respostas ao voltar e foi verificado a 390 px sem estouro horizontal
+
+### Recebimento dos leads
+
+`lead.php` recebe o formulário em JSON e valida novamente todos os critérios no servidor.
+Somente cadastros médicos, com disponibilidade elegível, respostas completas, contato
+válido e consentimento são gravados. O endpoint também limita o tamanho da requisição,
+valida a origem, usa um campo honeypot e protege o CSV contra fórmulas executáveis.
+
+No cPanel, os leads ficam em:
+
+```text
+/home2/hg3ads37/fullbodyexperience-leads/leads.csv
+```
+
+A pasta fica fora do diretório público do site e é criada automaticamente no primeiro
+cadastro. O CSV usa ponto e vírgula, abre no Excel e preserva as respostas de qualificação,
+UTMs, `gclid` e `fbclid`. Atualmente não há integração com CRM nem aviso por e-mail; a
+equipe deve baixar o arquivo pelo Gerenciador de Arquivos do cPanel até que um destino de
+CRM/webhook seja definido.
 
 ### SEO
 
@@ -363,6 +391,8 @@ com data, local, professores e as quatro ofertas com preço.
 lp-full-body-experience/
 ├── index.html                    a página (versão da referência)
 ├── index-versaoantiga.html       primeira versão, editorial
+├── lead.php                      valida e grava os leads qualificados
+├── .cpanel.yml                   receita de implantação do Git Version Control
 ├── images/
 │   ├── hero-desktop.webp         arte do hero, 1920×874
 │   ├── hero-mobile.webp          arte do hero, 809×1641
@@ -384,14 +414,18 @@ lp-full-body-experience/
 ## Rodar localmente
 
 ```bash
-cd "/Users/jpedrojunqueira/Desktop/Projetos/3ADS Geral/lp-full-body-experience" && python3 -m http.server 8080
+cd "/caminho/para/lp-full-body-experience" && php -S 127.0.0.1:8080
 ```
 
 ## Publicar
 
-O preview no GitHub Pages republica sozinho a cada push na `main`.
+O preview no GitHub Pages republica sozinho a cada push na `main`. Nele, o HTML é exibido,
+mas o envio do formulário não funciona porque o GitHub Pages não executa PHP.
 
-Para o domínio de campanha, enviar ao cPanel o conteúdo da pasta **exceto**
-`_material-cliente/`, `README.md`, `.gitignore`, `.git/` e `index-versaoantiga.html`.
+No domínio de campanha, usar o **Git Version Control** do cPanel e executar **Deploy HEAD
+Commit**. O arquivo `.cpanel.yml` copia `index.html`, `lead.php`, o arquivo de verificação da
+Meta, fontes e imagens para `/home2/hg3ads37/fullbodyexperience.com.br/`. O deploy exige a
+branch do checkout do cPanel sem alterações locais; qualquer edição deve ser feita no Git e
+recebida com `Update from Remote` antes do deploy.
 
 Desenvolvido por **3ADS**.

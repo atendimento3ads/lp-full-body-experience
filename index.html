@@ -424,6 +424,61 @@ p:last-child{ margin-bottom:0; }
 .duvida__r{ font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--ouro-luz); text-align:right; white-space:nowrap; }
 .duvida__r span{ display:block; text-transform:none; letter-spacing:0; font-size:12.5px; color:var(--claro-2); margin-top:3px; }
 
+/* ─── formulário de qualificação ────────────────────────────── */
+.qualificacao{ background:var(--papel-2); }
+.qualificacao__intro{ max-width:670px; margin-inline:auto; text-align:center; }
+.qualificacao__card{
+  max-width:760px; margin:clamp(34px,4vw,48px) auto 0; padding:clamp(24px,4vw,44px);
+  border-radius:var(--r); border:1px solid var(--fio-forte); color:var(--claro);
+  background:linear-gradient(155deg,#211C16,var(--breu) 62%); box-shadow:0 24px 70px rgba(23,19,15,.16);
+}
+.qualificacao__topo{ display:flex; align-items:center; justify-content:space-between; gap:20px; margin-bottom:28px; }
+.qualificacao__etapa{ margin:0; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--ouro-luz); font-weight:600; }
+.qualificacao__progresso{ flex:1; max-width:250px; height:3px; border-radius:99px; overflow:hidden; background:rgba(235,217,174,.16); }
+.qualificacao__progresso span{ display:block; width:14.285%; height:100%; border-radius:inherit; background:var(--ouro-luz); transition:width .35s ease; }
+.qual-etapa[hidden],.qual-fim[hidden],.qualificacao__topo[hidden]{ display:none !important; }
+.qual-etapa fieldset{ min-width:0; margin:0; padding:0; border:0; }
+.qual-etapa legend{ width:100%; margin-bottom:10px; font-size:clamp(24px,3.2vw,34px); line-height:1.18; font-weight:500; letter-spacing:-.025em; }
+.qual-etapa__apoio{ margin:0 0 22px; color:var(--claro-2); font-size:14px; }
+.qual-opcoes{ display:grid; gap:10px; margin-top:24px; }
+.qual-opcao{ position:relative; display:block; cursor:pointer; }
+.qual-opcao input{ position:absolute; opacity:0; pointer-events:none; }
+.qual-opcao span{
+  position:relative; display:flex; align-items:center; min-height:58px; padding:14px 48px 14px 18px;
+  border:1px solid var(--fio-claro); border-radius:var(--r-sm); background:rgba(201,169,106,.045);
+  color:var(--claro-2); font-size:14.5px; line-height:1.42; transition:border-color .2s,background .2s,color .2s;
+}
+.qual-opcao span::after{
+  content:""; position:absolute; right:18px; width:17px; height:17px; border-radius:50%;
+  border:1px solid rgba(235,217,174,.42); box-shadow:inset 0 0 0 4px transparent; transition:.2s;
+}
+.qual-opcao:hover span{ border-color:var(--fio-forte); color:var(--claro); }
+.qual-opcao input:checked + span{ border-color:var(--ouro); background:rgba(201,169,106,.14); color:var(--claro); }
+.qual-opcao input:checked + span::after{ border-color:var(--ouro-luz); background:var(--ouro-luz); box-shadow:inset 0 0 0 4px var(--breu); }
+.qual-opcao input:focus-visible + span{ outline:2px solid var(--ouro-luz); outline-offset:3px; }
+.qual-acoes{ display:flex; align-items:center; gap:12px; margin-top:26px; }
+.qual-acoes .btn:last-child{ margin-left:auto; }
+.qual-voltar{ border:0; background:none; color:var(--claro-2); font:inherit; font-size:13px; cursor:pointer; padding:12px 4px; }
+.qual-voltar:hover{ color:var(--claro); }
+.qual-erro{ min-height:1.4em; margin:13px 0 0; color:#F3B7A9; font-size:12.5px; }
+.qual-campos{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px; }
+.qual-campo:first-child{ grid-column:1/-1; }
+.qual-campo label{ display:block; margin-bottom:7px; color:var(--claro-2); font-size:12px; letter-spacing:.04em; }
+.qual-campo input{
+  width:100%; min-height:52px; border:1px solid var(--fio-claro); border-radius:var(--r-sm);
+  padding:12px 14px; background:rgba(255,255,255,.055); color:var(--claro); font:inherit; font-size:15px;
+}
+.qual-campo input::placeholder{ color:var(--claro-3); }
+.qual-campo input:focus{ outline:2px solid var(--ouro-luz); outline-offset:2px; border-color:transparent; }
+.qual-consentimento{ position:relative; display:flex; gap:10px; align-items:flex-start; margin-top:18px; color:var(--claro-2); font-size:12.5px; line-height:1.5; cursor:pointer; }
+.qual-consentimento input{ flex:none; width:17px; height:17px; margin-top:2px; accent-color:var(--ouro); }
+.qual-honeypot{ position:absolute !important; left:-9999px !important; width:1px !important; height:1px !important; overflow:hidden !important; }
+.qual-enviar[aria-busy="true"]{ pointer-events:none; opacity:.7; }
+.qual-fim{ padding:clamp(16px,3vw,28px) 0; text-align:center; }
+.qual-fim h3{ margin:12px auto 14px; max-width:24ch; font-size:clamp(25px,3.4vw,36px); }
+.qual-fim p{ max-width:58ch; margin-inline:auto; color:var(--claro-2); }
+.qual-fim .acoes{ justify-content:center; margin-top:25px; }
+
 /* ─── retorno ────────────────────────────────────────────────── */
 .conta{ border-radius:var(--r); border:1px solid var(--fio-forte); background:rgba(255,255,255,.6); overflow:hidden; }
 .conta__l{ display:flex; justify-content:space-between; align-items:baseline; gap:18px; padding:20px clamp(20px,3vw,30px); border-bottom:1px solid var(--fio); }
@@ -570,6 +625,13 @@ dialog::backdrop{ background:rgba(14,12,9,.88); backdrop-filter:blur(6px); }
   .topo .btn{ display:none; }
   .relogio{ margin-left:0; width:100%; justify-content:center; }
   .passos,.modulos{ grid-template-columns:1fr; }
+  .qualificacao__card{ padding:24px 18px; }
+  .qualificacao__topo{ align-items:flex-start; flex-direction:column; gap:10px; }
+  .qualificacao__progresso{ width:100%; max-width:none; }
+  .qual-campos{ grid-template-columns:1fr; }
+  .qual-campo:first-child{ grid-column:auto; }
+  .qual-acoes{ align-items:stretch; flex-direction:column-reverse; }
+  .qual-acoes .btn,.qual-acoes .btn:last-child{ width:100%; margin-left:0; }
   /* no mobile as duas fitas se sobrepõem: fica só uma */
   .faixa__fita--a{ transform:translateY(-50%) rotate(-2.6deg); }
   .faixa__fita--b{ display:none; }
@@ -914,7 +976,7 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
             <p class="parcela">à vista · ou em até 6x de R$ 2.816,50</p>
             <p class="compo">Imersão Hands On <b>R$ 14.900</b> + Módulo de Gestão <b>R$ 1.999</b>.<br>O mesmo módulo custa <b>R$ 3.790</b> avulso. Dentro do pacote, entra por R$ 1.999.</p>
           </div>
-          <button type="button" class="btn btn--bloco" data-modalidade="hands_on">Garantir vaga no Hands On <i><svg><use href="#i-seta"/></svg></i></button>
+          <button type="button" class="btn btn--bloco" data-qualificacao="hands_on">Quero me candidatar ao Hands On <i><svg><use href="#i-seta"/></svg></i></button>
         </div>
       </article>
 
@@ -932,7 +994,7 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
             <p class="parcela">à vista · ou em até 6x de R$ 1.816,67</p>
             <p class="compo">O <b>Módulo de Gestão</b> do dia 20 não entra neste pacote. Pode ser somado por <b>R$ 1.999</b>, contra <b>R$ 3.790</b> do valor avulso.</p>
           </div>
-          <button type="button" class="btn btn--vazado btn--bloco" data-modalidade="observador">Garantir vaga como Observador <i><svg><use href="#i-seta"/></svg></i></button>
+          <button type="button" class="btn btn--vazado btn--bloco" data-qualificacao="observador">Quero me candidatar como Observador <i><svg><use href="#i-seta"/></svg></i></button>
         </div>
       </article>
     </div>
@@ -963,7 +1025,142 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
         <div class="duvida__i"><p class="duvida__f">“Vou só ao dia 20, pela parte de gestão.”</p><p class="duvida__r">Módulo de Gestão</p></div>
       </div>
       <div class="acoes">
-        <button type="button" class="btn btn--vazado" data-modalidade="whatsapp">Ainda em dúvida? Fale com a equipe</button>
+        <button type="button" class="btn btn--vazado" data-qualificacao="duvida">Ainda em dúvida? Receba orientação</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ QUALIFICAÇÃO ════════════════════════════════════════════ -->
+<section class="secao qualificacao" id="qualificacao">
+  <div class="env">
+    <div class="qualificacao__intro">
+      <span class="olho olho--centro rev">Quero participar</span>
+      <h2 class="tit tit--centro rev">Conte um pouco sobre você.<b>Leva menos de <span class="it dourado">dois minutos</span>.</b></h2>
+      <p class="texto texto--centro rev" style="margin-top:20px">Suas respostas ajudam nossa equipe a entender seu momento e orientar a modalidade mais adequada.</p>
+    </div>
+
+    <div class="qualificacao__card rev" id="qualificacaoCard">
+      <div class="qualificacao__topo" id="qualificacaoTopo">
+        <p class="qualificacao__etapa" id="qualificacaoEtapa">Etapa 1 de 7</p>
+        <div class="qualificacao__progresso" id="qualificacaoProgresso" role="progressbar" aria-label="Progresso do formulário" aria-valuemin="1" aria-valuemax="7" aria-valuenow="1"><span></span></div>
+      </div>
+
+      <form id="formQualificacao" action="lead.php" method="post" novalidate>
+        <div class="qual-etapa" data-etapa="1">
+          <fieldset>
+            <legend>Você é médico(a)?</legend>
+            <div class="qual-opcoes">
+              <label class="qual-opcao"><input type="radio" name="medico" value="sim" required><span>Sim, sou médico(a)</span></label>
+              <label class="qual-opcao"><input type="radio" name="medico" value="nao" required><span>Não sou médico(a)</span></label>
+            </div>
+          </fieldset>
+          <p class="qual-erro" role="alert"></p>
+          <div class="qual-acoes"><button type="button" class="btn" data-proximo>Continuar <i><svg><use href="#i-seta"/></svg></i></button></div>
+        </div>
+
+        <div class="qual-etapa" data-etapa="2" hidden>
+          <fieldset>
+            <legend>Qual é sua principal área de atuação médica?</legend>
+            <div class="qual-opcoes">
+              <label class="qual-opcao"><input type="radio" name="especialidade" value="dermatologia" required><span>Dermatologia</span></label>
+              <label class="qual-opcao"><input type="radio" name="especialidade" value="cirurgia_plastica" required><span>Cirurgia Plástica</span></label>
+              <label class="qual-opcao"><input type="radio" name="especialidade" value="clinica_medica" required><span>Clínica Médica / Clínica Geral</span></label>
+              <label class="qual-opcao"><input type="radio" name="especialidade" value="endocrinologia" required><span>Endocrinologia</span></label>
+              <label class="qual-opcao"><input type="radio" name="especialidade" value="ginecologia" required><span>Ginecologia</span></label>
+              <label class="qual-opcao"><input type="radio" name="especialidade" value="medicina_esporte" required><span>Medicina do Esporte</span></label>
+              <label class="qual-opcao"><input type="radio" name="especialidade" value="medicina_estetica" required><span>Atuo com Medicina Estética</span></label>
+              <label class="qual-opcao"><input type="radio" name="especialidade" value="outra" required><span>Outra especialidade</span></label>
+            </div>
+          </fieldset>
+          <p class="qual-erro" role="alert"></p>
+          <div class="qual-acoes"><button type="button" class="qual-voltar" data-voltar>Voltar</button><button type="button" class="btn" data-proximo>Continuar <i><svg><use href="#i-seta"/></svg></i></button></div>
+        </div>
+
+        <div class="qual-etapa" data-etapa="3" hidden>
+          <fieldset>
+            <legend>Qual opção melhor descreve sua atuação com estética atualmente?</legend>
+            <div class="qual-opcoes">
+              <label class="qual-opcao"><input type="radio" name="atuacao_estetica" value="facial_corporal" required><span>Já atuo com estética facial e corporal</span></label>
+              <label class="qual-opcao"><input type="radio" name="atuacao_estetica" value="facial_expandir" required><span>Atuo com estética facial e quero expandir para corporal</span></label>
+              <label class="qual-opcao"><input type="radio" name="atuacao_estetica" value="iniciando" required><span>Estou iniciando minha atuação em estética</span></label>
+              <label class="qual-opcao"><input type="radio" name="atuacao_estetica" value="medico_sem_estetica" required><span>Sou médico(a), mas atualmente não atuo com estética</span></label>
+            </div>
+          </fieldset>
+          <p class="qual-erro" role="alert"></p>
+          <div class="qual-acoes"><button type="button" class="qual-voltar" data-voltar>Voltar</button><button type="button" class="btn" data-proximo>Continuar <i><svg><use href="#i-seta"/></svg></i></button></div>
+        </div>
+
+        <div class="qual-etapa" data-etapa="4" hidden>
+          <fieldset>
+            <legend>Qual experiência mais combina com o que você busca no Full Body Experience?</legend>
+            <div class="qual-opcoes">
+              <label class="qual-opcao"><input type="radio" name="modalidade_interesse" value="hands_on" required><span>Hands On: quero executar os protocolos com supervisão</span></label>
+              <label class="qual-opcao"><input type="radio" name="modalidade_interesse" value="observador" required><span>Observador: quero acompanhar os protocolos e o raciocínio clínico</span></label>
+              <label class="qual-opcao"><input type="radio" name="modalidade_interesse" value="duvida" required><span>Ainda estou em dúvida e quero orientação da equipe</span></label>
+            </div>
+          </fieldset>
+          <p class="qual-erro" role="alert"></p>
+          <div class="qual-acoes"><button type="button" class="qual-voltar" data-voltar>Voltar</button><button type="button" class="btn" data-proximo>Continuar <i><svg><use href="#i-seta"/></svg></i></button></div>
+        </div>
+
+        <div class="qual-etapa" data-etapa="5" hidden>
+          <fieldset>
+            <legend>Você consegue participar presencialmente em Goiânia na data do evento?</legend>
+            <p class="qual-etapa__apoio">19 e 20 de outubro de 2026</p>
+            <div class="qual-opcoes">
+              <label class="qual-opcao"><input type="radio" name="disponibilidade" value="disponivel" required><span>Sim, já tenho disponibilidade</span></label>
+              <label class="qual-opcao"><input type="radio" name="disponibilidade" value="consigo_organizar" required><span>Sim, consigo me organizar para participar</span></label>
+              <label class="qual-opcao"><input type="radio" name="disponibilidade" value="confirmar_agenda" required><span>Ainda preciso confirmar minha agenda</span></label>
+              <label class="qual-opcao"><input type="radio" name="disponibilidade" value="nao" required><span>Não consigo participar nessa data</span></label>
+            </div>
+          </fieldset>
+          <p class="qual-erro" role="alert"></p>
+          <div class="qual-acoes"><button type="button" class="qual-voltar" data-voltar>Voltar</button><button type="button" class="btn" data-proximo>Continuar <i><svg><use href="#i-seta"/></svg></i></button></div>
+        </div>
+
+        <div class="qual-etapa" data-etapa="6" hidden>
+          <fieldset>
+            <legend>Quando você pretende decidir sobre sua participação?</legend>
+            <div class="qual-opcoes">
+              <label class="qual-opcao"><input type="radio" name="prazo_decisao" value="proximos_dias" required><span>Quero falar com a equipe e decidir nos próximos dias</span></label>
+              <label class="qual-opcao"><input type="radio" name="prazo_decisao" value="esta_semana" required><span>Pretendo decidir ainda esta semana</span></label>
+              <label class="qual-opcao"><input type="radio" name="prazo_decisao" value="proximas_semanas" required><span>Estou avaliando para as próximas semanas</span></label>
+              <label class="qual-opcao"><input type="radio" name="prazo_decisao" value="buscando_informacoes" required><span>Neste momento estou apenas buscando informações</span></label>
+            </div>
+          </fieldset>
+          <p class="qual-erro" role="alert"></p>
+          <div class="qual-acoes"><button type="button" class="qual-voltar" data-voltar>Voltar</button><button type="button" class="btn" data-proximo>Continuar <i><svg><use href="#i-seta"/></svg></i></button></div>
+        </div>
+
+        <div class="qual-etapa" data-etapa="7" hidden>
+          <fieldset>
+            <legend>Para finalizar, informe seus dados de contato.</legend>
+            <p class="qual-etapa__apoio">Nossa equipe usará esses dados somente para conversar sobre o Full Body Experience.</p>
+            <div class="qual-campos">
+              <div class="qual-campo"><label for="qualNome">Nome completo</label><input id="qualNome" name="nome" type="text" autocomplete="name" maxlength="120" placeholder="Seu nome completo" required></div>
+              <div class="qual-campo"><label for="qualTelefone">WhatsApp/telefone</label><input id="qualTelefone" name="telefone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="(62) 99999-9999" required></div>
+              <div class="qual-campo"><label for="qualEmail">E-mail</label><input id="qualEmail" name="email" type="email" autocomplete="email" maxlength="160" placeholder="voce@exemplo.com" required></div>
+            </div>
+            <div class="qual-honeypot" aria-hidden="true"><label for="qualWebsite">Não preencha</label><input id="qualWebsite" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+            <label class="qual-consentimento"><input name="consentimento" type="checkbox" value="sim" required><span>Autorizo o contato da equipe da Clínica Supreme pelos dados informados para receber orientações sobre esta edição.</span></label>
+          </fieldset>
+          <p class="qual-erro" role="alert"></p>
+          <div class="qual-acoes"><button type="button" class="qual-voltar" data-voltar>Voltar</button><button type="submit" class="btn qual-enviar">Enviar informações <i><svg><use href="#i-seta"/></svg></i></button></div>
+        </div>
+      </form>
+
+      <div class="qual-fim" id="qualificacaoDesqualificado" hidden tabindex="-1">
+        <span class="olho olho--centro">Agradecemos seu interesse</span>
+        <h3>Neste momento, esta experiência é direcionada aos profissionais que atendem aos critérios desta edição.</h3>
+        <p>Suas respostas não foram enviadas como lead e nenhum dado de contato foi solicitado.</p>
+      </div>
+
+      <div class="qual-fim" id="qualificacaoSucesso" hidden tabindex="-1">
+        <span class="olho olho--centro">Cadastro recebido</span>
+        <h3>Recebemos suas informações!</h3>
+        <p>Nossa equipe entrará em contato para entender seu momento e orientar sobre a modalidade mais adequada.</p>
+        <div class="acoes"><a class="btn" id="qualificacaoWhatsApp" href="#" target="_blank" rel="noopener">Falar com a equipe no WhatsApp <i><svg><use href="#i-seta"/></svg></i></a></div>
       </div>
     </div>
   </div>
@@ -1112,7 +1309,7 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
     </div>
 
     <div class="acoes acoes--centro rev">
-      <a href="#modalidades" class="btn">Escolher minha modalidade <i><svg><use href="#i-seta"/></svg></i></a>
+      <a href="#qualificacao" class="btn" data-qualificacao="duvida">Quero participar <i><svg><use href="#i-seta"/></svg></i></a>
     </div>
   </div>
 </section>
@@ -1124,8 +1321,8 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
     <span class="olho olho--centro rev">Inscrições</span>
     <h2 class="tit tit--centro rev" style="max-width:26ch">As <span class="it dourado">turmas são reduzidas</span><b>e fecham por ordem de pagamento.</b></h2>
     <div class="acoes acoes--centro rev">
-      <a href="#modalidades" class="btn">Escolher minha modalidade <i><svg><use href="#i-seta"/></svg></i></a>
-      <button type="button" class="btn btn--vazado" data-modalidade="whatsapp">Tirar dúvida no WhatsApp</button>
+      <a href="#qualificacao" class="btn" data-qualificacao="duvida">Quero participar <i><svg><use href="#i-seta"/></svg></i></a>
+      <button type="button" class="btn btn--vazado" data-qualificacao="duvida">Receber orientação da equipe</button>
     </div>
 
     <dl class="pratico rev" style="text-align:left">
@@ -1154,7 +1351,7 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
       </div>
       <div>
         <h4>Contato</h4>
-        <p><a href="#modalidades">Ver modalidades</a><br><a href="#" data-modalidade="whatsapp">WhatsApp comercial</a></p>
+        <p><a href="#modalidades">Ver modalidades</a><br><a href="#qualificacao" data-qualificacao="duvida">Solicitar contato</a></p>
       </div>
     </div>
     <div class="rodape__l">
@@ -1168,7 +1365,7 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
 <!-- ══ BARRA FIXA MOBILE ════════════════════════════════════════ -->
 <nav class="barra-mob" aria-label="Ações rápidas">
   <a href="#modalidades" class="btn">Ver modalidades</a>
-  <button type="button" class="btn btn--vazado" data-modalidade="whatsapp">WhatsApp</button>
+  <a href="#qualificacao" class="btn btn--vazado" data-qualificacao="duvida">Quero participar</a>
 </nav>
 
 <!-- ══ MODAL DO CONVITE ═════════════════════════════════════════ -->
@@ -1221,7 +1418,8 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
    WhatsApp com a mensagem certa, em vez de levar a lugar nenhum.
    ══════════════════════════════════════════════════════════════ */
 const CONFIG = {
-  // PENDÊNCIA 2 · quatro links de checkout, um por modalidade (Monique)
+  // Hands On e Observador passam pelo formulário de qualificação.
+  // PENDÊNCIA 2 · links de checkout do Módulo de Gestão (Monique)
   checkout: {
     hands_on:      "",
     observador:    "",
@@ -1246,6 +1444,7 @@ const MENSAGENS = {
   observador:    "Olá, vim pela página da Full Body Experience e quero saber mais sobre a modalidade Observador.",
   gestao_gestor: "Olá, vim pela página da Full Body Experience e quero inscrever um gestor no Módulo de Gestão do dia 20.",
   gestao_medico: "Olá, sou médico, vim pela página da Full Body Experience e quero saber mais sobre o Módulo de Gestão avulso.",
+  qualificado:   "Olá, preenchi o formulário de qualificação da Full Body Experience e gostaria de falar com a equipe.",
   whatsapp:      "Olá, vim pela página da Full Body Experience e gostaria de tirar uma dúvida."
 };
 
@@ -1258,6 +1457,7 @@ const EVENTOS = {
 };
 
 const VALORES = { hands_on:16899, observador:10900, gestao_gestor:1499, gestao_medico:3790 };
+window.dataLayer = window.dataLayer || [];
 
 /* ── carga condicional de Pixel e GA4 ───────────────────────── */
 (function(){
@@ -1324,6 +1524,193 @@ document.querySelectorAll('[data-modalidade]').forEach(el => {
     }
   });
 });
+
+/* ── formulário de qualificação ────────────────────────────── */
+(function(){
+  const form = document.getElementById('formQualificacao');
+  if (!form) return;
+
+  const card = document.getElementById('qualificacaoCard');
+  const topo = document.getElementById('qualificacaoTopo');
+  const textoEtapa = document.getElementById('qualificacaoEtapa');
+  const progresso = document.getElementById('qualificacaoProgresso');
+  const barra = progresso.querySelector('span');
+  const etapas = [...form.querySelectorAll('[data-etapa]')];
+  const desqualificado = document.getElementById('qualificacaoDesqualificado');
+  const sucesso = document.getElementById('qualificacaoSucesso');
+  const whatsSucesso = document.getElementById('qualificacaoWhatsApp');
+  const telefone = document.getElementById('qualTelefone');
+  const botaoEnviar = form.querySelector('.qual-enviar');
+  const textoEnviar = botaoEnviar.innerHTML;
+  let etapaAtual = 1;
+  let iniciado = false;
+  let enviando = false;
+  let leadDisparado = false;
+
+  function marcarInicio(origem, interesse){
+    if (iniciado) return;
+    iniciado = true;
+    track('formulario_qualificacao_iniciado', { origem: origem || 'formulario', interesse_inicial: interesse || 'nao_informado' });
+  }
+
+  function erroDaEtapa(etapa, mensagem){
+    const erro = etapa.querySelector('.qual-erro');
+    if (erro) erro.textContent = mensagem || '';
+  }
+
+  function mostrarEtapa(numero, moverFoco){
+    etapaAtual = Math.max(1, Math.min(numero, etapas.length));
+    etapas.forEach(etapa => { etapa.hidden = Number(etapa.dataset.etapa) !== etapaAtual; });
+    textoEtapa.textContent = `Etapa ${etapaAtual} de ${etapas.length}`;
+    progresso.setAttribute('aria-valuenow', String(etapaAtual));
+    barra.style.width = `${etapaAtual / etapas.length * 100}%`;
+    erroDaEtapa(etapas[etapaAtual - 1], '');
+    if (moverFoco) {
+      const titulo = etapas[etapaAtual - 1].querySelector('legend');
+      if (titulo) { titulo.tabIndex = -1; titulo.focus({ preventScroll:true }); }
+      card.scrollIntoView({ behavior:'smooth', block:'center' });
+    }
+  }
+
+  function valorMarcado(nome){
+    const campo = form.querySelector(`input[name="${nome}"]:checked`);
+    return campo ? campo.value : '';
+  }
+
+  function encerrarDesqualificado(motivo){
+    form.hidden = true;
+    topo.hidden = true;
+    sucesso.hidden = true;
+    desqualificado.hidden = false;
+    desqualificado.focus({ preventScroll:true });
+    card.scrollIntoView({ behavior:'smooth', block:'center' });
+    track('formulario_desqualificado', { motivo });
+  }
+
+  const camposPorEtapa = {
+    1:'medico', 2:'especialidade', 3:'atuacao_estetica',
+    4:'modalidade_interesse', 5:'disponibilidade', 6:'prazo_decisao'
+  };
+
+  form.querySelectorAll('[data-proximo]').forEach(botao => {
+    botao.addEventListener('click', () => {
+      marcarInicio('formulario');
+      const etapa = etapas[etapaAtual - 1];
+      const nome = camposPorEtapa[etapaAtual];
+      const valor = valorMarcado(nome);
+      if (!valor) {
+        erroDaEtapa(etapa, 'Selecione uma opção para continuar.');
+        const primeiro = etapa.querySelector('input[type="radio"]');
+        if (primeiro) primeiro.focus();
+        return;
+      }
+      if (etapaAtual === 1 && valor === 'nao') { encerrarDesqualificado('nao_medico'); return; }
+      if (etapaAtual === 5 && valor === 'nao') { encerrarDesqualificado('sem_disponibilidade'); return; }
+      mostrarEtapa(etapaAtual + 1, true);
+    });
+  });
+
+  form.querySelectorAll('[data-voltar]').forEach(botao => {
+    botao.addEventListener('click', () => mostrarEtapa(etapaAtual - 1, true));
+  });
+
+  form.addEventListener('change', () => {
+    marcarInicio('formulario');
+    erroDaEtapa(etapas[etapaAtual - 1], '');
+  });
+
+  document.querySelectorAll('[data-qualificacao]').forEach(gatilho => {
+    gatilho.addEventListener('click', evento => {
+      evento.preventDefault();
+      const interesse = gatilho.dataset.qualificacao || 'duvida';
+      const opcao = form.querySelector(`input[name="modalidade_interesse"][value="${interesse}"]`);
+      if (opcao) opcao.checked = true;
+      marcarInicio('cta', interesse);
+      document.getElementById('qualificacao').scrollIntoView({ behavior:'smooth', block:'start' });
+    });
+  });
+
+  telefone.addEventListener('input', () => {
+    const digitos = telefone.value.replace(/\D/g, '').slice(0, 13);
+    const nacional = digitos.startsWith('55') && digitos.length > 11 ? digitos.slice(2) : digitos;
+    const prefixo = nacional !== digitos ? '+55 ' : '';
+    if (nacional.length <= 2) telefone.value = prefixo + nacional;
+    else if (nacional.length <= 6) telefone.value = `${prefixo}(${nacional.slice(0,2)}) ${nacional.slice(2)}`;
+    else if (nacional.length <= 10) telefone.value = `${prefixo}(${nacional.slice(0,2)}) ${nacional.slice(2,6)}-${nacional.slice(6)}`;
+    else telefone.value = `${prefixo}(${nacional.slice(0,2)}) ${nacional.slice(2,7)}-${nacional.slice(7,11)}`;
+  });
+
+  function dispararLead(dados){
+    if (leadDisparado) return;
+    leadDisparado = true;
+    const parametros = {
+      lead_qualificado:true,
+      especialidade:dados.especialidade,
+      atuacao_estetica:dados.atuacao_estetica,
+      modalidade_interesse:dados.modalidade_interesse,
+      disponibilidade:dados.disponibilidade,
+      prazo_decisao:dados.prazo_decisao
+    };
+    if (window.dataLayer) dataLayer.push(Object.assign({ event:'Lead' }, parametros));
+    if (CONFIG.metaPixelId && window.fbq) fbq('track', 'Lead', { content_name:'formulario_qualificacao', content_category:dados.modalidade_interesse });
+    if (CONFIG.ga4Id && window.gtag) gtag('event', 'generate_lead', { currency:'BRL', value:0, modalidade_interesse:dados.modalidade_interesse });
+  }
+
+  form.addEventListener('submit', async evento => {
+    evento.preventDefault();
+    marcarInicio('formulario');
+    const etapa = etapas[etapaAtual - 1];
+    if (!form.checkValidity()) {
+      erroDaEtapa(etapa, 'Confira os campos obrigatórios antes de enviar.');
+      form.reportValidity();
+      return;
+    }
+    if (enviando) return;
+    enviando = true;
+    erroDaEtapa(etapa, '');
+    botaoEnviar.setAttribute('aria-busy', 'true');
+    botaoEnviar.textContent = 'Enviando...';
+
+    const dados = Object.fromEntries(new FormData(form).entries());
+    const busca = new URLSearchParams(location.search);
+    PARAMS_REPASSE.forEach(chave => { if (busca.has(chave)) dados[chave] = busca.get(chave); });
+
+    try {
+      const controle = new AbortController();
+      const limite = setTimeout(() => controle.abort(), 12000);
+      const resposta = await fetch(form.action, {
+        method:'POST',
+        headers:{ 'Content-Type':'application/json', 'Accept':'application/json' },
+        credentials:'same-origin',
+        body:JSON.stringify(dados),
+        signal:controle.signal
+      });
+      clearTimeout(limite);
+      const retorno = await resposta.json().catch(() => ({}));
+      if (!resposta.ok || !retorno.ok) throw new Error(retorno.message || 'Não foi possível enviar agora.');
+
+      if (!retorno.suppressed) dispararLead(dados);
+      form.hidden = true;
+      topo.hidden = true;
+      desqualificado.hidden = true;
+      whatsSucesso.href = linkWhats('qualificado');
+      sucesso.hidden = false;
+      sucesso.focus({ preventScroll:true });
+      card.scrollIntoView({ behavior:'smooth', block:'center' });
+    } catch (erro) {
+      const mensagem = erro.name === 'AbortError'
+        ? 'O envio demorou mais que o esperado. Verifique sua conexão e tente novamente.'
+        : (erro.message || 'Não foi possível enviar agora. Tente novamente.');
+      erroDaEtapa(etapa, mensagem);
+    } finally {
+      enviando = false;
+      botaoEnviar.removeAttribute('aria-busy');
+      botaoEnviar.innerHTML = textoEnviar;
+    }
+  });
+
+  mostrarEtapa(1, false);
+})();
 
 /* ── contador regressivo real ───────────────────────────────── */
 (function(){
