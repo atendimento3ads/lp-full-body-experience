@@ -53,18 +53,12 @@ a verba perde janela — a data não muda.
 
 ## Bloqueios de publicação
 
-Os três primeiros não têm alternativa técnica. Tudo se resolve no bloco `CONFIG`, no topo do
-`<script>` do `index.html`.
+Os itens abaixo ainda precisam de confirmação antes da publicação definitiva.
 
-1. **Os 2 links de checkout do Módulo de Gestão** — `CONFIG.checkout.gestao_gestor` e
-   `.gestao_medico`. Hands On e Observador agora passam pelo formulário de qualificação.
-   *(Monique)*
-   > Enquanto os links de gestão estiverem vazios, esses botões **caem para o WhatsApp** com
-   > a mensagem certa da modalidade.
-2. **O número de WhatsApp comercial** — `CONFIG.whatsapp`. Está preenchido com
+1. **O número de WhatsApp comercial** — `CONFIG.whatsapp`. Está preenchido com
    `55 62 99843-2153`, que é o que a LP atual usa. **Confirmar se é esse mesmo** e se ele
    aguenta o volume do lançamento. *(Monique)*
-3. **Os IDs de rastreamento** — `CONFIG.metaPixelId` e `CONFIG.ga4Id`. Enquanto vazios, o
+2. **Os IDs de rastreamento** — `CONFIG.metaPixelId` e `CONFIG.ga4Id`. Enquanto vazios, o
    Pixel e o GA4 não carregam diretamente pelo HTML. O container **GTM-MS8VK2NT** está
    instalado e recebe os eventos personalizados da LP pelo `dataLayer`; Pixel e GA4 podem
    ser configurados dentro dele. Evitar configurar a mesma tag no GTM e diretamente no HTML,
@@ -72,14 +66,14 @@ Os três primeiros não têm alternativa técnica. Tudo se resolve no bloco `CON
    A verificação de domínio da Meta já está configurada pelo arquivo
    `rjyjo827kvy6idt3f86dxno0txx412.html`; ela não substitui o ID do Pixel.
    *(Dayana)*
-4. **Quantas vagas, afinal.** A página inteira usa **10 Hands On + 10 Observador + 30
+3. **Quantas vagas, afinal.** A página inteira usa **10 Hands On + 10 Observador + 30
    Gestão**, conforme o onboarding e o briefing. A LP atual anuncia "até 15 médicos". São
    números diferentes — confirmar antes do go live, porque aparece em 6 lugares na página.
    *(Monique)*
-5. **Política de troca e reembolso.** O FAQ tem a pergunta, mas a resposta remete ao contrato
+4. **Política de troca e reembolso.** O FAQ tem a pergunta, mas a resposta remete ao contrato
    sem detalhar prazo. Há um comentário `PENDÊNCIA 4` no HTML marcando o ponto exato.
    *(Cliente/jurídico)*
-6. **Autorização de uso de imagem** dos pacientes da galeria — ver *Publicidade médica*.
+5. **Autorização de uso de imagem** dos pacientes da galeria — ver *Publicidade médica*.
 
 ---
 
@@ -95,7 +89,7 @@ composição do pacote e sempre ao lado do "avulso custa R$ 3.790". E as modalid
 
 | # | Seção | O que resolve |
 |---|---|---|
-| — | Barra fixa superior | Escassez + contador real para 19/10 às 9h + CTA |
+| — | Barra fixa superior | Escassez + contador real para 19/10 às 9h + CTA para qualificação |
 | — | Hero | Promessa em uma frase que já ensina os dois dias · 4 provas · vídeo do convite |
 | — | Faixa diagonal | Marquee de marca entre os blocos, três vezes na página |
 | — | O convite | Vídeo de 58s da Dra. Maria Lígia e da Dra. Ana Machado, em modal |
@@ -112,7 +106,7 @@ composição do pacote e sempre ao lado do "avulso custa R$ 3.790". E as modalid
 | 10 | FAQ | 12 perguntas, **5 dedicadas a modalidade** |
 | 11 | Inscrições | CTA final + quadro de informações práticas |
 | — | Rodapé | Responsável técnica, aviso de conteúdo técnico-científico |
-| — | Barra fixa inferior (mobile) | Ver modalidades + formulário de qualificação |
+| — | Barra fixa inferior (mobile) | Dois acessos ao formulário de qualificação |
 
 **Oferta confirmada em 19/08:** o pacote Observador custa **R$ 12.899**, composto pela
 imersão Observador de **R$ 10.900** + Módulo de Gestão de **R$ 1.999**. Assim como no Hands
