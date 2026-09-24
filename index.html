@@ -529,19 +529,24 @@ p:last-child{ margin-bottom:0; }
 details{
   background:var(--breu); border-radius:var(--r-sm); margin-bottom:11px;
   border:1px solid rgba(201,169,106,.16); overflow:hidden;
+  transition:border-color .3s ease, background-color .3s ease;
 }
+details[open]{ border-color:rgba(201,169,106,.32); background:var(--breu-2); }
 summary{
   display:flex; justify-content:space-between; align-items:center; gap:20px;
   padding:19px 24px; cursor:pointer; list-style:none;
   font-size:15.5px; font-weight:400; color:var(--claro); line-height:1.4;
 }
 summary::-webkit-details-marker{ display:none; }
+summary:focus-visible{ outline:2px solid var(--ouro-luz); outline-offset:-4px; border-radius:var(--r-sm); }
 summary::after{
   content:""; flex:none; width:11px; height:11px; border-right:1.5px solid var(--ouro-luz);
   border-bottom:1.5px solid var(--ouro-luz); transform:rotate(45deg) translateY(-3px); transition:transform .3s;
 }
 details[open] summary::after{ transform:rotate(-135deg) translateY(-3px); }
-details .resp{ padding:0 24px 22px; color:var(--claro-2); font-size:14.5px; }
+.faq--js details.is-closing summary::after{ transform:rotate(45deg) translateY(-3px); }
+details .resp{ padding:0 24px 22px; color:var(--claro-2); font-size:14.5px; overflow:hidden; }
+.faq--js details:not([open]) .resp{ height:0; padding-bottom:0; opacity:0; }
 details .resp b{ color:var(--claro); font-weight:500; }
 
 /* ─── fechamento ─────────────────────────────────────────────── */
@@ -1288,18 +1293,18 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
     <h2 class="tit tit--centro rev">O que costuma ficar em <b class="it dourado">aberto</b></h2>
 
     <div class="faq rev">
-      <details><summary>Qual é a diferença entre Hands On e Observador?</summary><div class="resp"><p>No dia 19, <b>o Hands On executa os protocolos e o Observador acompanha</b>, sem executar. Os dois têm os mesmos protocolos, os mesmos professores e o mesmo material. A outra diferença é o dia 20: <b>o Módulo de Gestão já vem no Hands On</b> e, no Observador, é opcional, por R$ 1.999.</p></div></details>
-      <details><summary>Não sou médico. Posso participar?</summary><div class="resp"><p>Do <b>dia 20</b>, sim. O Módulo de Gestão é aberto para gestores, sócios e equipe de clínica, por R$ 1.499. O <b>dia 19 é restrito a médicos</b>, por exigência técnica e legal do que é aplicado ali.</p></div></details>
-      <details><summary>Sou médico e quero só a gestão. Como funciona?</summary><div class="resp"><p>Você compra o <b>Módulo de Gestão avulso, por R$ 3.790</b>, e participa apenas do dia 20, das 9h às 13h. É o mesmo módulo que está incluso nos pacotes Hands On e Observador. Dentro deles, entra por R$ 1.999.</p></div></details>
-      <details><summary>Posso levar meu gestor comigo?</summary><div class="resp"><p>Pode. Você faz a sua modalidade normalmente e inscreve o acompanhante no Módulo de Gestão por <b>R$ 1.499</b>. Ele participa do dia 20 com você. Não precisa ser médico.</p></div></details>
-      <details><summary>O Módulo de Gestão está incluso na minha modalidade?</summary><div class="resp"><p>No <b>Hands On</b>, sim: já entra na composição do pacote. No <b>Observador</b>, é opcional e custa <b>R$ 1.999</b> à parte, contra R$ 3.790 do valor avulso para médico.</p></div></details>
-      <details><summary>Preciso já atuar com harmonização corporal para participar?</summary><div class="resp"><p>Não. A imersão foi estruturada para levar você da lógica do protocolo até a aplicação prática, mesmo que sua atuação hoje seja majoritariamente facial. O que se espera é formação médica e prática clínica em estética.</p></div></details>
-      <details><summary>Vou sair aplicando os protocolos na clínica?</summary><div class="resp"><p>O dia 19 é hands-on, com prática supervisionada em Glúteo, Abdômen, Lipedema, Pernas e Full Body Supreme. Você sai com o raciocínio clínico e o protocolo estruturado. A velocidade de implantação depende da sua estrutura e do seu perfil de paciente.</p></div></details>
-      <details><summary>A turma é grande?</summary><div class="resp"><p>Não. <b>As turmas são reduzidas</b>, porque a prática do dia 19 é supervisionada de perto e isso só funciona com poucos médicos por professor. O número exato de cada modalidade a equipe comercial confirma no atendimento.</p></div></details>
-      <details><summary>Como funciona o pagamento?</summary><div class="resp"><p>Inscrição por link on-line, à vista ou <b>parcelado em até 6x</b>. Cada modalidade tem o seu link: ao clicar no botão da modalidade escolhida você vai direto para o checkout correspondente.</p></div></details>
-      <details><summary>Quando a minha vaga é confirmada?</summary><div class="resp"><p><b>A vaga só é confirmada após o pagamento</b>, por ordem de inscrição. Enquanto o pagamento não é concluído, a vaga segue disponível para outro inscrito.</p></div></details>
-      <details><summary>Posso trocar de modalidade depois de pagar?</summary><div class="resp"><p>As condições de troca de modalidade e de reembolso constam no contrato de inscrição. <!-- PENDÊNCIA 4 · texto a ser validado pelo jurídico do cliente antes de publicar --> Fale com a equipe comercial antes de concluir a compra se ainda estiver em dúvida sobre qual escolher.</p></div></details>
-      <details><summary>Terei suporte depois da imersão?</summary><div class="resp"><p>Sim. Há acompanhamento próximo à imersão para dúvidas sobre a aplicação dos protocolos na sua prática clínica.</p></div></details>
+      <details name="faq-full-body"><summary>Qual é a diferença entre Hands On e Observador?</summary><div class="resp"><p>No dia 19, <b>o Hands On executa os protocolos e o Observador acompanha</b>, sem executar. Os dois têm os mesmos protocolos, os mesmos professores e o mesmo material. A outra diferença é o dia 20: <b>o Módulo de Gestão já vem no Hands On</b> e, no Observador, é opcional, por R$ 1.999.</p></div></details>
+      <details name="faq-full-body"><summary>Não sou médico. Posso participar?</summary><div class="resp"><p>Do <b>dia 20</b>, sim. O Módulo de Gestão é aberto para gestores, sócios e equipe de clínica, por R$ 1.499. O <b>dia 19 é restrito a médicos</b>, por exigência técnica e legal do que é aplicado ali.</p></div></details>
+      <details name="faq-full-body"><summary>Sou médico e quero só a gestão. Como funciona?</summary><div class="resp"><p>Você compra o <b>Módulo de Gestão avulso, por R$ 3.790</b>, e participa apenas do dia 20, das 9h às 13h. É o mesmo módulo que está incluso nos pacotes Hands On e Observador. Dentro deles, entra por R$ 1.999.</p></div></details>
+      <details name="faq-full-body"><summary>Posso levar meu gestor comigo?</summary><div class="resp"><p>Pode. Você faz a sua modalidade normalmente e inscreve o acompanhante no Módulo de Gestão por <b>R$ 1.499</b>. Ele participa do dia 20 com você. Não precisa ser médico.</p></div></details>
+      <details name="faq-full-body"><summary>O Módulo de Gestão está incluso na minha modalidade?</summary><div class="resp"><p>No <b>Hands On</b>, sim: já entra na composição do pacote. No <b>Observador</b>, é opcional e custa <b>R$ 1.999</b> à parte, contra R$ 3.790 do valor avulso para médico.</p></div></details>
+      <details name="faq-full-body"><summary>Preciso já atuar com harmonização corporal para participar?</summary><div class="resp"><p>Não. A imersão foi estruturada para levar você da lógica do protocolo até a aplicação prática, mesmo que sua atuação hoje seja majoritariamente facial. O que se espera é formação médica e prática clínica em estética.</p></div></details>
+      <details name="faq-full-body"><summary>Vou sair aplicando os protocolos na clínica?</summary><div class="resp"><p>O dia 19 é hands-on, com prática supervisionada em Glúteo, Abdômen, Lipedema, Pernas e Full Body Supreme. Você sai com o raciocínio clínico e o protocolo estruturado. A velocidade de implantação depende da sua estrutura e do seu perfil de paciente.</p></div></details>
+      <details name="faq-full-body"><summary>A turma é grande?</summary><div class="resp"><p>Não. <b>As turmas são reduzidas</b>, porque a prática do dia 19 é supervisionada de perto e isso só funciona com poucos médicos por professor. O número exato de cada modalidade a equipe comercial confirma no atendimento.</p></div></details>
+      <details name="faq-full-body"><summary>Como funciona o pagamento?</summary><div class="resp"><p>Inscrição por link on-line, à vista ou <b>parcelado em até 6x</b>. Cada modalidade tem o seu link: ao clicar no botão da modalidade escolhida você vai direto para o checkout correspondente.</p></div></details>
+      <details name="faq-full-body"><summary>Quando a minha vaga é confirmada?</summary><div class="resp"><p><b>A vaga só é confirmada após o pagamento</b>, por ordem de inscrição. Enquanto o pagamento não é concluído, a vaga segue disponível para outro inscrito.</p></div></details>
+      <details name="faq-full-body"><summary>Posso trocar de modalidade depois de pagar?</summary><div class="resp"><p>As condições de troca de modalidade e de reembolso constam no contrato de inscrição. <!-- PENDÊNCIA 4 · texto a ser validado pelo jurídico do cliente antes de publicar --> Fale com a equipe comercial antes de concluir a compra se ainda estiver em dúvida sobre qual escolher.</p></div></details>
+      <details name="faq-full-body"><summary>Terei suporte depois da imersão?</summary><div class="resp"><p>Sim. Há acompanhamento próximo à imersão para dúvidas sobre a aplicação dos protocolos na sua prática clínica.</p></div></details>
     </div>
 
     <div class="acoes acoes--centro rev">
@@ -1518,6 +1523,88 @@ document.querySelectorAll('[data-modalidade]').forEach(el => {
     }
   });
 });
+
+/* ── FAQ em sanfona exclusiva com animação progressiva ─────── */
+(function(){
+  const faq = document.querySelector('.faq');
+  if (!faq) return;
+
+  const itens = [...faq.querySelectorAll('details')];
+  const reduzirMovimento = matchMedia('(prefers-reduced-motion: reduce)');
+  const animacoes = new WeakMap();
+  faq.classList.add('faq--js');
+
+  function cancelar(item){
+    const animacao = animacoes.get(item);
+    if (animacao) animacao.cancel();
+    animacoes.delete(item);
+  }
+
+  function abrir(item){
+    const resumo = item.querySelector('summary');
+    const resposta = item.querySelector('.resp');
+    cancelar(item);
+    item.classList.remove('is-closing');
+    item.open = true;
+    resumo.setAttribute('aria-expanded', 'true');
+
+    if (reduzirMovimento.matches) return;
+    const altura = resposta.scrollHeight;
+    const animacao = resposta.animate([
+      { height:'0px', opacity:0, paddingBottom:'0px' },
+      { height:`${altura}px`, opacity:1, paddingBottom:'22px' }
+    ], { duration:320, easing:'cubic-bezier(.22,.61,.36,1)' });
+    animacoes.set(item, animacao);
+    animacao.finished.catch(() => {}).finally(() => {
+      if (animacoes.get(item) === animacao) animacoes.delete(item);
+    });
+  }
+
+  function fechar(item){
+    if (!item.open) return;
+    const resumo = item.querySelector('summary');
+    const resposta = item.querySelector('.resp');
+    cancelar(item);
+    resumo.setAttribute('aria-expanded', 'false');
+    item.classList.add('is-closing');
+
+    if (reduzirMovimento.matches) {
+      item.open = false;
+      item.classList.remove('is-closing');
+      return;
+    }
+
+    const altura = resposta.getBoundingClientRect().height;
+    const animacao = resposta.animate([
+      { height:`${altura}px`, opacity:1, paddingBottom:'22px' },
+      { height:'0px', opacity:0, paddingBottom:'0px' }
+    ], { duration:280, easing:'cubic-bezier(.55,.06,.68,.19)', fill:'forwards' });
+    animacoes.set(item, animacao);
+    animacao.finished.then(() => {
+      if (animacoes.get(item) !== animacao) return;
+      item.open = false;
+      item.classList.remove('is-closing');
+      animacoes.delete(item);
+      animacao.cancel();
+    }).catch(() => {});
+  }
+
+  itens.forEach(item => {
+    const resumo = item.querySelector('summary');
+    item.removeAttribute('name');
+    resumo.setAttribute('aria-expanded', String(item.open));
+    resumo.addEventListener('click', evento => {
+      evento.preventDefault();
+      const deveAbrir = !item.open || item.classList.contains('is-closing');
+      if (deveAbrir) {
+        itens.forEach(outro => { if (outro !== item) fechar(outro); });
+        abrir(item);
+      } else {
+        fechar(item);
+      }
+    });
+  });
+})();
 
 /* ── formulário de qualificação ────────────────────────────── */
 (function(){
