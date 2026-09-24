@@ -235,7 +235,9 @@ p:last-child{ margin-bottom:0; }
 .hero__vaga{ display:none; }       /* só no mobile, reserva a área da figura */
 
 .marca{ margin-bottom:20px; }
-.marca__tag{ display:block; width:min(100%,464px); height:auto; }
+.marca__link{ display:block; width:min(100%,464px); border-radius:4px; }
+.marca__link:focus-visible{ outline:2px solid var(--ouro-hero); outline-offset:4px; }
+.marca__tag{ display:block; width:100%; height:auto; }
 .hero h1{ font-size:clamp(30px,3.4vw,43px); font-weight:300; max-width:17ch; }
 .hero h1 b{ font-weight:600; }
 .hero h1 .dourado{ color:var(--ouro-hero); }
@@ -701,7 +703,9 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
 
     <div class="hero__txt rev on">
       <div class="marca">
-        <img class="marca__tag" src="images/tag-hero.svg" width="464" height="76" alt="Clínica Supreme apresenta Full Body Experience, 19 e 20 de outubro">
+        <a href="#qualificacao" class="marca__link" data-qualificacao="duvida" aria-label="Quero participar da Full Body Experience">
+          <img class="marca__tag" src="images/tag-hero.svg" width="464" height="76" alt="Clínica Supreme apresenta Full Body Experience, 19 e 20 de outubro">
+        </a>
       </div>
 
       <h1>O protocolo corporal que transforma a clínica em uma <b class="dourado">operação premium</b>.</h1>
