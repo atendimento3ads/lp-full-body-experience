@@ -412,6 +412,9 @@ falando **só do dia 20** (Módulo de Gestão). Endereço previsto:
 - **Eventos:** `clique_cta_gestao` (com a vaga), `lead_gestao` (+ `Lead` no Pixel),
   `viu_vagas_gestao` (+ `ViewContent`), `clique_whatsapp`, `scroll_depth`, e
   `InitiateCheckout` no botão de pagamento. Contador real para 20/10 às 9h.
+- **Protótipo de referência:** `gestao/prototipo.html` é o HTML do Drive com as fotos e o
+  formulário adaptados, publicado no Pages só para comparação:
+  <https://atendimento3ads.github.io/lp-full-body-experience/gestao/prototipo.html>
 - **Pendências próprias:** links de checkout por vaga (Monique) e `og-cover`, compartilhado
   com a LP principal.
 
@@ -422,6 +425,7 @@ lp-full-body-experience/
 ├── index.html                    a página (versão da referência)
 ├── index-versaoantiga.html       primeira versão, editorial
 ├── gestao/index.html             página só do Módulo de Gestão (dia 20)
+├── gestao/prototipo.html         protótipo do Drive, só para comparação (não vai ao cPanel)
 ├── lead.php                      valida e grava os leads (qualificação e gestão)
 ├── .cpanel.yml                   receita de implantação do Git Version Control
 ├── images/

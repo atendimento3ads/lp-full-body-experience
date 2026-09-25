@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Módulo de Gestão · Full Body Experience · Clínica Supreme</title>
+<meta name="description" content="Módulo de Gestão do Full Body Experience: posicionamento, precificação e fidelização de protocolos corporais premium. 20 de outubro, das 9h às 13h, na Clínica Supreme, em Goiânia.">
+<link rel="icon" href="../images/brand/favicon-supreme.svg" type="image/svg+xml">
+<link rel="canonical" href="https://fullbodyexperience.com.br/gestao/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+<style>
+  /* ---------- tokens: pele da LP validada ---------- */
+  :root {
+    --bg-dark: #17120e;
+    --surface-dark: #1f1915;
+    --surface-dark-2: #26201a;
+    --bg-cream: #efe8db;
+    --surface-cream: #f7f2e9;
+    --gold: #c9a961;
+    --gold-deep: #a8853f;
+    --gold-soft: #e3cf9a;
+    --t-dark-1: #f3ece0;
+    --t-dark-2: #c8bcaa;
+    --t-dark-3: #948a7b;
+    --t-cream-1: #1b1611;
+    --t-cream-2: #5f554a;
+    --border-dark: rgba(201, 169, 97, 0.32);
+    --border-cream: rgba(27, 22, 17, 0.12);
+    --font-sans: 'Poppins', 'Segoe UI', Helvetica, Arial, sans-serif;
+    --font-serif: 'Cormorant Garamond', 'Times New Roman', Georgia, serif;
+    --max: 1160px;
+    --radius: 18px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    overflow-x: hidden;
+    background: var(--bg-dark);
+    color: var(--t-dark-1);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+  section { position: relative; padding: 96px 0; overflow: hidden; }
+  .cream { background: var(--bg-cream); color: var(--t-cream-1); }
+  .dark { background: var(--bg-dark); color: var(--t-dark-1); }
+  .dark + .dark { border-top: 1px solid rgba(201,169,97,0.16); }
+
+  .kicker {
+    display: inline-block;
+    font-size: 11.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin: 0 0 18px;
+  }
+  h1, h2, h3 { font-family: var(--font-sans); font-weight: 600; line-height: 1.12; margin: 0; letter-spacing: -0.01em; }
+  h1 { font-size: clamp(34px, 4.6vw, 56px); }
+  h2 { font-size: clamp(28px, 3.4vw, 42px); }
+  h3 { font-size: 20px; }
+  .hl { font-family: var(--font-serif); font-style: italic; font-weight: 500; color: var(--gold); font-size: 1.16em; }
+  .cream .hl { color: var(--gold-deep); }
+  .lead { font-size: 18px; color: var(--t-dark-2); margin: 22px 0 0; max-width: 640px; }
+  .cream .lead { color: var(--t-cream-2); }
+  p { margin: 0; }
+  .center { text-align: center; }
+  .center .lead { margin-left: auto; margin-right: auto; }
+
+  /* botões */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    height: 54px; padding: 0 30px; border-radius: 999px;
+    font-family: var(--font-sans); font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+    text-decoration: none; cursor: pointer; border: 1px solid transparent; white-space: nowrap;
+    transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+  }
+  .btn-primary { background: linear-gradient(135deg, #e3cf9a 0%, #c9a961 45%, #a8853f 100%); color: #1b1611; box-shadow: 0 10px 30px rgba(201,169,97,0.25); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 34px rgba(201,169,97,0.35); }
+  .btn-outline { background: transparent; color: var(--t-dark-1); border-color: var(--border-dark); }
+  .btn-outline:hover { border-color: var(--gold); }
+  .cream .btn-outline { color: var(--t-cream-1); border-color: rgba(27,22,17,0.3); }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+  .cta-center { display: flex; justify-content: center; margin-top: 48px; }
+
+  /* nav */
+  .nav { position: sticky; top: 0; z-index: 30; background: rgba(23,18,14,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(201,169,97,0.18); }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .brand { display: flex; align-items: center; gap: 14px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--t-dark-1); }
+  .brand .mono { font-family: var(--font-serif); font-style: italic; font-size: 30px; color: var(--gold); line-height: 1; }
+  .brand span { color: var(--t-dark-3); }
+  .nav .btn { height: 42px; padding: 0 20px; }
+
+  /* monograma de fundo */
+  .mono-bg { position: absolute; right: -4vw; top: -6vw; font-family: var(--font-serif); font-style: italic; font-size: 44vw; line-height: 1; color: var(--gold); opacity: 0.06; pointer-events: none; user-select: none; }
+
+  /* hero */
+  .hero { padding: 88px 0 104px; }
+  .hero .grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: center; }
+  .hero .lead { max-width: 560px; }
+  .pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+  .pill { font-size: 12.5px; font-weight: 500; letter-spacing: 0.04em; padding: 8px 16px; border-radius: 999px; border: 1px solid rgba(27,22,17,0.22); color: var(--t-cream-1); background: rgba(255,255,255,0.35); }
+  .hero .note { margin-top: 18px; font-size: 14px; color: var(--t-cream-2); }
+  .hero-card { position: relative; background: var(--surface-dark); color: var(--t-dark-1); border: 1px solid var(--border-dark); border-radius: 24px; padding: 40px 36px; box-shadow: 0 30px 60px rgba(27,22,17,0.25); }
+  .hero-card .big { font-size: 96px; line-height: 0.95; font-weight: 600; color: var(--t-dark-1); display: flex; align-items: baseline; gap: 14px; }
+  .hero-card .big .serif { font-family: var(--font-serif); font-style: italic; font-weight: 500; font-size: 34px; color: var(--gold-soft); }
+  .hero-card .time { margin-top: 10px; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+  .hero-card h3 { margin-top: 26px; font-size: 26px; }
+  .hero-card p { margin-top: 10px; color: var(--t-dark-2); font-size: 15px; }
+  .hero-card .rule { height: 1px; background: var(--border-dark); margin: 24px 0 18px; }
+  .hero-card ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .hero-card li { display: flex; gap: 12px; font-size: 15px; color: var(--t-dark-2); }
+  .hero-card li b { color: var(--t-dark-1); font-weight: 600; }
+  .check { flex-shrink: 0; width: 18px; height: 18px; margin-top: 4px; color: var(--gold); }
+
+  /* faixa dourada */
+  .ribbon-wrap { position: relative; overflow: hidden; margin: -12px 0; z-index: 2; padding: 10px 0; }
+  .ribbon { background: linear-gradient(90deg, #a8853f, #e3cf9a 35%, #c9a961 65%, #a8853f); color: #1b1611; padding: 14px 0; transform: rotate(-1.2deg) scale(1.04); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; white-space: nowrap; overflow: hidden; }
+  .ribbon span { display: inline-block; padding: 0 22px; }
+
+  /* cards genéricos */
+  .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 48px; }
+  .card { border-radius: var(--radius); padding: 32px 28px; border: 1px solid var(--border-dark); background: var(--surface-dark); }
+  .cream .card { background: var(--surface-cream); border-color: var(--border-cream); }
+  .card h3 { margin-bottom: 12px; }
+  .card p { color: var(--t-dark-2); font-size: 15.5px; }
+  .cream .card p { color: var(--t-cream-2); }
+  .card .num { font-family: var(--font-serif); font-style: italic; color: var(--gold); font-size: 30px; line-height: 1; margin-bottom: 18px; display: block; }
+
+  /* programa */
+  .program { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 64px; align-items: start; margin-top: 8px; }
+  .steps { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border-cream); }
+  .steps li { display: grid; grid-template-columns: 64px 1fr; gap: 20px; padding: 26px 0; border-bottom: 1px solid var(--border-cream); }
+  .steps .n { font-family: var(--font-serif); font-style: italic; font-size: 34px; color: var(--gold-deep); line-height: 1; }
+  .steps h3 { font-size: 19px; }
+  .steps p { margin-top: 8px; color: var(--t-cream-2); font-size: 15.5px; }
+
+  /* quem conduz */
+  .people { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 48px; }
+  .person { text-align: center; padding: 36px 26px; border-radius: var(--radius); border: 1px solid var(--border-dark); background: var(--surface-dark); }
+  .avatar { width: 124px; height: 124px; border-radius: 50%; margin: 0 auto 22px; border: 1px solid var(--gold); background: radial-gradient(circle at 30% 30%, #3a3026, #1f1915); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-style: italic; font-size: 40px; color: var(--gold-soft); overflow: hidden; }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .person h3 { font-size: 19px; }
+  .person .role { margin-top: 6px; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+  .person p { margin-top: 14px; color: var(--t-dark-2); font-size: 15px; }
+
+  /* preços */
+  .pricing { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 48px; }
+  .price-card { border-radius: 22px; padding: 40px 36px; border: 1px solid var(--border-dark); background: var(--surface-dark); display: flex; flex-direction: column; }
+  .price-card.featured { border-color: var(--gold); box-shadow: 0 0 0 1px rgba(201,169,97,0.25), 0 30px 60px rgba(0,0,0,0.35); background: linear-gradient(180deg, #26201a, #1f1915); }
+  .price-card h3 { font-size: 24px; }
+  .price-card > p { margin-top: 12px; color: var(--t-dark-2); font-size: 15.5px; min-height: 76px; }
+  .price { margin-top: 28px; display: flex; align-items: baseline; gap: 10px; }
+  .price .rs { font-size: 16px; color: var(--gold); font-weight: 500; }
+  .price .val { font-size: 56px; font-weight: 600; line-height: 1; }
+  .price-card .inst { margin-top: 8px; font-size: 14px; color: var(--t-dark-2); }
+  .price-card .btn { margin-top: 28px; align-self: flex-start; }
+  .price-notes { margin-top: 28px; border: 1px solid var(--border-dark); border-radius: 16px; padding: 22px 26px; display: grid; gap: 10px; background: rgba(38,32,26,0.6); }
+  .price-notes p { font-size: 15px; color: var(--t-dark-2); display: flex; gap: 12px; }
+  .price-notes p b { color: var(--t-dark-1); font-weight: 600; }
+  .price-notes p.open { color: var(--gold-soft); }
+
+  /* a conta */
+  .calc { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .calc-box { background: var(--surface-dark); color: var(--t-dark-1); border: 1px solid var(--border-dark); border-radius: 22px; padding: 30px 32px; }
+  .calc-box .row { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; padding: 14px 0; border-bottom: 1px solid var(--border-dark); font-size: 15px; color: var(--t-dark-2); }
+  .calc-box .row:last-of-type { border-bottom: 0; }
+  .calc-box .row b { font-size: 22px; font-weight: 600; color: var(--t-dark-1); white-space: nowrap; }
+  .calc-box .row.hi b { color: var(--gold-soft); }
+  .calc-box .foot { margin-top: 16px; font-size: 12.5px; color: var(--t-dark-3); }
+
+  /* caso supreme */
+  .case { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 56px; align-items: center; }
+  .photo { position: relative; aspect-ratio: 4 / 5; border-radius: 22px; border: 1px solid var(--border-dark); background: linear-gradient(160deg, #2b241d, #1f1915); display: flex; align-items: flex-end; padding: 22px; overflow: hidden; }
+  .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .photo .tag { position: relative; font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); }
+  .case .lead { max-width: none; }
+
+  /* para quem é */
+  .fit { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 44px; }
+  .fit .card h3 { font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 18px; }
+  .fit ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .fit li { display: flex; gap: 12px; color: var(--t-cream-2); font-size: 15.5px; }
+  .fit .no li .check { color: var(--t-cream-2); }
+
+  /* faq */
+  .faq { max-width: 820px; margin: 40px auto 0; }
+  details { border-top: 1px solid var(--border-dark); }
+  details:last-of-type { border-bottom: 1px solid var(--border-dark); }
+  summary { list-style: none; cursor: pointer; padding: 22px 0; display: flex; justify-content: space-between; align-items: center; gap: 20px; font-weight: 500; font-size: 17px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; font-family: var(--font-serif); font-size: 30px; color: var(--gold); line-height: 1; transition: transform 160ms ease; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p { padding: 0 0 22px; color: var(--t-dark-2); font-size: 15.5px; max-width: 700px; }
+
+  /* formulário */
+  .form-wrap { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: start; }
+  form { background: var(--surface-dark); border: 1px solid var(--border-dark); border-radius: 22px; padding: 34px 32px; }
+  .field { margin-bottom: 20px; }
+  .field label, .field .lbl { display: block; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .field input { width: 100%; height: 52px; padding: 0 16px; border-radius: 12px; border: 1px solid var(--border-dark); background: #17120e; color: var(--t-dark-1); font-family: var(--font-sans); font-size: 15px; }
+  .field input:focus { outline: none; border-color: var(--gold); }
+  .choices { display: flex; flex-wrap: wrap; gap: 10px; }
+  .choices label { position: relative; display: inline-flex; align-items: center; height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid var(--border-dark); font-size: 14px; color: var(--t-dark-2); cursor: pointer; text-transform: none; letter-spacing: 0; margin: 0; }
+  .choices input { position: absolute; opacity: 0; width: 0; height: 0; }
+  .choices label:has(input:checked) { border-color: var(--gold); color: var(--t-dark-1); background: rgba(201,169,97,0.12); }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  form .btn { width: 100%; margin-top: 6px; }
+  form .line { margin-top: 16px; font-size: 13.5px; color: var(--t-dark-3); text-align: center; }
+  .done { display: none; padding: 26px; text-align: center; color: var(--t-dark-2); }
+  form.sent .fields { display: none; }
+  form.sent .done { display: block; }
+
+  /* footer */
+  footer { padding: 40px 0 48px; border-top: 1px solid rgba(201,169,97,0.18); text-align: center; color: var(--t-dark-3); font-size: 13px; }
+  footer .mono { font-family: var(--font-serif); font-style: italic; font-size: 36px; color: var(--gold); margin-bottom: 8px; }
+
+  /* animação de entrada */
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity 600ms ease, transform 600ms ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+
+  /* responsivo */
+  @media (max-width: 900px) {
+    section { padding: 72px 0; }
+    .hero { padding: 64px 0 80px; }
+    .hero .grid, .program, .calc, .case, .form-wrap { grid-template-columns: 1fr; gap: 40px; }
+    .cards, .people { grid-template-columns: 1fr; }
+    .pricing, .fit { grid-template-columns: 1fr; }
+    .brand span { display: none; }
+    .mono-bg { font-size: 70vw; }
+    .photo { max-width: 420px; }
+  }
+  @media (max-width: 640px) {
+    .wrap { padding: 0 20px; }
+    section { padding: 60px 0; }
+    .btn-row .btn, .price-card .btn { width: 100%; }
+    .hero-card { padding: 30px 24px; }
+    .hero-card .big { font-size: 72px; }
+    .row2 { grid-template-columns: 1fr; }
+    .ribbon { font-size: 11px; }
+    .steps li { grid-template-columns: 48px 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="#topo" aria-label="Supreme, Full Body Experience">
+      <span class="mono">S</span>
+      Supreme <span>&middot; Full Body Experience</span>
+    </a>
+    <!-- COPY -->
+    <a class="btn btn-primary" href="#inscricao">Garantir minha vaga</a>
+  </div>
+</nav>
+
+<!-- 1. HERO -->
+<section class="cream hero" id="topo">
+  <div class="mono-bg" aria-hidden="true">S</div>
+  <div class="wrap grid">
+    <div class="reveal">
+      <!-- COPY -->
+      <span class="kicker">Full Body Experience · Dia 20 · Módulo de Gestão</span>
+      <h1>A técnica faz o médico executar. O posicionamento faz o paciente aceitar o <em class="hl">valor</em>.</h1>
+      <p class="lead">Uma manhã na Clínica Supreme sobre a parte do protocolo corporal que acontece fora da sala de procedimento: posicionamento, precificação e fidelização. Aberta a médicos, gestores, sócios e equipe.</p>
+      <div class="pills">
+        <span class="pill">20 de outubro, terça</span>
+        <span class="pill">9h às 13h</span>
+        <span class="pill">Goiânia</span>
+        <span class="pill">Turma reduzida</span>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#inscricao" data-vaga="medico">Quero o módulo de gestão</a>
+        <a class="btn btn-outline" href="#inscricao" data-vaga="gestor">Inscrever meu gestor</a>
+      </div>
+      <p class="note">Quem comprou Hands On já está incluso. Quem comprou Observador soma o módulo por R$ 1.999.</p>
+    </div>
+
+    <aside class="hero-card reveal" aria-label="Resumo do dia 20">
+      <div class="big">20 <span class="serif">de outubro, terça</span></div>
+      <div class="time">Das 9h às 13h</div>
+      <h3>Módulo de Gestão</h3>
+      <p>Do Full Face ao Full Body: posicionamento, precificação e fidelização, com Silvane Castro, Dra. Maria Lígia Mendonça e Dr. Arthur Rocha.</p>
+      <div class="rule"></div>
+      <ul>
+        <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Hands On</b>: já está incluso no pacote</span></li>
+        <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Observador</b> que adquiriu o módulo de gestão</span></li>
+        <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Médico</b> que quer somente a gestão</span></li>
+        <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Gestor, sócio ou equipe</b>: não precisa ser médico</span></li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<!-- 2. ONDE A MARGEM SOME -->
+<section class="dark">
+  <div class="wrap">
+    <div class="reveal">
+      <!-- COPY -->
+      <span class="kicker">O problema</span>
+      <h2>Onde a clínica perde a <em class="hl">margem</em>.</h2>
+      <p class="lead">Dominar a técnica corporal é a metade que acontece dentro da sala. A outra metade decide quanto o paciente paga, se ele volta e se a equipe sustenta o valor quando o médico não está na conversa.</p>
+    </div>
+    <div class="cards">
+      <article class="card reveal">
+        <span class="num">01</span>
+        <h3>Vendendo por mL</h3>
+        <p>O paciente pergunta quanto é o mL e a clínica responde. A partir daí o protocolo vira produto, e produto tem preço de mercado.</p>
+      </article>
+      <article class="card reveal">
+        <span class="num">02</span>
+        <h3>Descontando na recepção</h3>
+        <p>O médico faz um protocolo excelente e a equipe fecha com desconto, em 12 vezes. A margem some antes de o paciente entrar na sala.</p>
+      </article>
+      <article class="card reveal">
+        <span class="num">03</span>
+        <h3>Sem plano de retorno</h3>
+        <p>Sem uma jornada desenhada, o paciente corporal faz uma sessão e some. A recorrência que sustenta a clínica não acontece por acaso.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 3. PROGRAMA -->
+<section class="cream">
+  <div class="wrap program">
+    <div class="reveal">
+      <!-- COPY -->
+      <span class="kicker">Das 9h às 13h</span>
+      <h2>O que acontece na <em class="hl">manhã</em> do dia 20.</h2>
+      <div class="btn-row"><a class="btn btn-primary" href="#inscricao" data-vaga="medico">Quero o módulo de gestão</a></div>
+    </div>
+    <ol class="steps reveal">
+      <li><span class="n">01</span><div><h3>Posicionamento e precificação de protocolos corporais premium</h3><p>Como definir o preço por resultado e por plano, e como sustentar esse valor na comunicação da clínica.</p></div></li>
+      <li><span class="n">02</span><div><h3>O modelo de negócio da Clínica Supreme</h3><p>Como a Supreme saiu do facial e estruturou uma operação corporal premium: o que mudou na oferta, na equipe e na conta.</p></div></li>
+      <li><span class="n">03</span><div><h3>Fidelização e recorrência em harmonização corporal</h3><p>Corpo tem manutenção. Como desenhar o plano de retorno para o paciente ficar.</p></div></li>
+      <li><span class="n">04</span><div><h3>A jornada do paciente Full Body</h3><p>Do primeiro contato à manutenção: o que a recepção, o comercial e o médico precisam falar do mesmo jeito.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<div class="ribbon-wrap"><div class="ribbon" aria-hidden="true"><span>Módulo de Gestão</span>·<span>20 de outubro</span>·<span>9h às 13h</span>·<span>Clínica Supreme</span>·<span>Módulo de Gestão</span>·<span>20 de outubro</span>·<span>9h às 13h</span>·<span>Clínica Supreme</span>·<span>Módulo de Gestão</span>·<span>20 de outubro</span>·<span>9h às 13h</span>·<span>Clínica Supreme</span></div></div>
+
+<!-- 4. QUEM CONDUZ -->
+<section class="dark">
+  <div class="wrap">
+    <div class="center reveal">
+      <!-- COPY -->
+      <span class="kicker">Quem está na sala</span>
+      <h2>Três pontos de vista sobre a mesma <em class="hl">conta</em>.</h2>
+    </div>
+    <div class="people">
+      <article class="person reveal">
+        <div class="avatar"><img src="../images/professores/silvane-castro.webp" width="560" height="747" alt="Silvane Castro" loading="lazy"></div>
+        <h3>Silvane Castro</h3>
+        <div class="role">Seven Gestão</div>
+        <p>Gestão e posicionamento de clínicas premium.</p>
+      </article>
+      <article class="person reveal">
+        <div class="avatar"><img src="../images/professores/maria-ligia.webp" width="560" height="747" alt="Dra. Maria Lígia Mendonça" loading="lazy"></div>
+        <h3>Dra. Maria Lígia Mendonça</h3>
+        <div class="role">Dermatologista, idealizadora da Supreme e do Full Body Experience</div>
+        <p>O caso real da clínica que saiu do facial.</p>
+      </article>
+      <article class="person reveal">
+        <div class="avatar"><img src="../images/professores/arthur-rocha.webp" width="560" height="747" alt="Dr. Arthur Rocha" loading="lazy"></div>
+        <h3>Dr. Arthur Rocha</h3>
+        <div class="role">Nutrólogo</div>
+        <p>O suporte clínico dentro da jornada e da recorrência do paciente.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 5. PARA QUEM, E QUANTO -->
+<section class="dark" id="vagas">
+  <div class="mono-bg" aria-hidden="true" style="top:auto; bottom:-10vw;">S</div>
+  <div class="wrap">
+    <div class="center reveal">
+      <!-- COPY -->
+      <span class="kicker">Dia 2 · Aberto para a equipe</span>
+      <h2>Escolha o seu <em class="hl">lugar</em> no dia 20.</h2>
+    </div>
+    <div class="pricing">
+      <article class="price-card featured reveal">
+        <h3>Médico que já domina a técnica</h3>
+        <p>Você faz corporal e o preço não acompanha. Vem pela parte de negócio: posicionamento, precificação e recorrência.</p>
+        <div class="price"><span class="rs">R$</span><span class="val">3.790</span></div>
+        <div class="inst">ou 6x de R$ 631,67</div>
+        <a class="btn btn-primary" href="#inscricao" data-vaga="medico">Quero só o módulo de gestão</a>
+      </article>
+      <article class="price-card reveal">
+        <h3>Gestor, sócio ou equipe da clínica</h3>
+        <p>Não precisa ser médico. Quem precifica, atende e negocia aprende a mesma lógica que o médico, no mesmo dia.</p>
+        <div class="price"><span class="rs">R$</span><span class="val">1.499</span></div>
+        <div class="inst">ou 6x de R$ 249,84</div>
+        <a class="btn btn-outline" href="#inscricao" data-vaga="gestor">Inscrever meu gestor</a>
+      </article>
+    </div>
+    <div class="price-notes reveal">
+      <p><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Hands On</b>: o dia 20 já está incluso no pacote.</span></p>
+      <p><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Observador</b>: soma o módulo por R$ 1.999, contra R$ 3.790 do valor avulso.</span></p>
+      <p class="open"><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Ninguém fica de fora. Este é o dia aberto.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- 6. A CONTA -->
+<section class="cream">
+  <div class="wrap calc">
+    <div class="reveal">
+      <!-- COPY -->
+      <span class="kicker">A conta</span>
+      <h2>Uma negociação paga a <em class="hl">manhã</em> inteira.</h2>
+      <p class="lead">No mercado premium, um protocolo Full Body fica na faixa de R$ 50.000. O módulo custa R$ 3.790 para o médico e R$ 1.499 para o gestor. Um único protocolo que deixa de ser fechado por mL cobre o dia 20 para a clínica inteira.</p>
+    </div>
+    <div class="calc-box reveal">
+      <div class="row hi"><span>Protocolo Full Body, faixa de mercado</span><b>R$ 50.000</b></div>
+      <div class="row"><span>Módulo de Gestão, médico</span><b>R$ 3.790</b></div>
+      <div class="row"><span>Módulo de Gestão, gestor</span><b>R$ 1.499</b></div>
+      <p class="foot">Faixa de mercado. Cenário ilustrativo, sem garantia de resultado financeiro.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 7. DO FULL FACE AO FULL BODY -->
+<section class="dark">
+  <div class="wrap case">
+    <div class="photo reveal">
+      <img src="../images/professores/maria-ligia.webp" width="560" height="747" alt="Dra. Maria Lígia Mendonça" loading="lazy">
+      <span class="tag">Dra. Maria Lígia Mendonça</span>
+    </div>
+    <div class="reveal">
+      <!-- COPY -->
+      <span class="kicker">O caso Supreme</span>
+      <h2>Do Full Face ao Full Body: o dia que muda a <em class="hl">conta</em> da clínica.</h2>
+      <p class="lead">A Supreme começou no facial, como a maioria das clínicas. O que mudou a conta foi tratar o corporal como operação: oferta desenhada, preço por resultado, equipe falando a mesma língua do médico e um plano de retorno para cada paciente. É essa passagem que a Dra. Maria Lígia abre no dia 20, com os números e as decisões que a sustentaram.</p>
+      <div class="btn-row"><a class="btn btn-primary" href="#inscricao" data-vaga="medico">Quero o módulo de gestão</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. PARA QUEM É -->
+<section class="cream">
+  <div class="wrap">
+    <div class="center reveal">
+      <!-- COPY -->
+      <h2>Para quem é. E para quem <em class="hl">não</em> é.</h2>
+    </div>
+    <div class="fit">
+      <article class="card reveal">
+        <h3>É para você se</h3>
+        <ul>
+          <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>já domina a técnica corporal e cobra menos do que entrega</span></li>
+          <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>sua equipe vende por mL e dá desconto na recepção</span></li>
+          <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>quer estruturar recorrência em vez de depender de paciente novo</span></li>
+          <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>é gestor ou sócio e precisa entender o protocolo para vender o protocolo.</span></li>
+        </ul>
+      </article>
+      <article class="card no reveal">
+        <h3>Não é para você se</h3>
+        <ul>
+          <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg><span>espera garantia de faturamento</span></li>
+          <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg><span>quer aprender a técnica, porque isso acontece no dia 19</span></li>
+          <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg><span>busca fórmula pronta sem mexer na operação.</span></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="ribbon-wrap"><div class="ribbon" aria-hidden="true"><span>Módulo de Gestão</span>·<span>20 de outubro</span>·<span>9h às 13h</span>·<span>Clínica Supreme</span>·<span>Módulo de Gestão</span>·<span>20 de outubro</span>·<span>9h às 13h</span>·<span>Clínica Supreme</span>·<span>Módulo de Gestão</span>·<span>20 de outubro</span>·<span>9h às 13h</span>·<span>Clínica Supreme</span></div></div>
+
+<!-- 9. FAQ -->
+<section class="dark">
+  <div class="wrap">
+    <div class="center reveal">
+      <!-- COPY -->
+      <span class="kicker">Perguntas frequentes</span>
+    </div>
+    <div class="faq reveal">
+      <details><summary>Preciso ser médico para participar?</summary><p>Não. O dia 20 é aberto a gestores, sócios e equipe da clínica. A vaga de gestor custa R$ 1.499.</p></details>
+      <details><summary>Comprei Observador. Como somo o módulo?</summary><p>Pelo mesmo link, por R$ 1.999. O valor avulso do módulo é R$ 3.790.</p></details>
+      <details><summary>Comprei Hands On. Preciso pagar o dia 20?</summary><p>Não. O módulo já está incluso no pacote.</p></details>
+      <details><summary>Posso levar mais de uma pessoa da equipe?</summary><p>Sim, cada pessoa ocupa uma vaga de gestor, e as turmas são reduzidas.</p></details>
+      <details><summary>Onde e que horas?</summary><p>Clínica Supreme, em Goiânia, no dia 20 de outubro, terça, das 9h às 13h.</p></details>
+      <details><summary>Como a vaga é confirmada?</summary><p>Por ordem de pagamento. Quando a turma fecha, o link sai do ar.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 10. CTA FINAL -->
+<section class="dark" id="inscricao">
+  <div class="wrap form-wrap">
+    <div class="reveal">
+      <!-- COPY -->
+      <span class="kicker">Último passo</span>
+      <h2>Conte um pouco sobre você. Leva menos de <em class="hl">dois</em> minutos.</h2>
+      <p class="lead">As turmas são reduzidas e fecham por ordem de pagamento.</p>
+    </div>
+    <!-- INTEGRAÇÃO: trocar o handler do submit pelo endpoint do formulário (ou pelo link de checkout por vaga) -->
+    <form class="reveal" id="form" novalidate>
+      <div class="fields">
+        <div class="field">
+          <span class="lbl">Você é médico(a)?</span>
+          <div class="choices">
+            <label><input type="radio" name="medico" value="Sim"> Sim</label>
+            <label><input type="radio" name="medico" value="Não"> Não</label>
+          </div>
+        </div>
+        <div class="field">
+          <span class="lbl">Qual vaga?</span>
+          <div class="choices">
+            <label><input type="radio" name="vaga" value="medico"> Médico, módulo de gestão</label>
+            <label><input type="radio" name="vaga" value="gestor"> Gestor, sócio ou equipe</label>
+            <label><input type="radio" name="vaga" value="observador"> Já comprei Observador, quero somar o módulo</label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="nome">Nome</label>
+          <input id="nome" name="nome" type="text" autocomplete="name">
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label for="whatsapp">WhatsApp</label>
+            <input id="whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="cidade">Cidade</label>
+            <input id="cidade" name="cidade" type="text" autocomplete="address-level2">
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Garantir minha vaga</button>
+        <p class="line">As turmas são reduzidas e fecham por ordem de pagamento.</p>
+      </div>
+      <div class="done">
+        <p>Recebemos os seus dados. A equipe da Supreme entra em contato pelo WhatsApp com o link da sua vaga.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- 11. RODAPÉ -->
+<footer>
+  <div class="wrap">
+    <div class="mono">S</div>
+    <!-- COPY -->
+    <p>Supreme · Full Body Experience · Goiânia · Conteúdo técnico dirigido a profissionais da área médica e à gestão de clínicas.</p>
+  </div>
+</footer>
+
+<script>
+  // entrada suave
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // CTA pré-seleciona a vaga no formulário
+  document.querySelectorAll('[data-vaga]').forEach(a => {
+    a.addEventListener('click', () => {
+      const v = a.getAttribute('data-vaga');
+      const r = document.querySelector(`input[name="vaga"][value="${v}"]`);
+      if (r) r.checked = true;
+      const m = document.querySelector(`input[name="medico"][value="${v === 'gestor' ? 'Não' : 'Sim'}"]`);
+      if (m) m.checked = true;
+    });
+  });
+
+  // envio: lead.php (grava leads-gestao.csv); se falhar, abre o WhatsApp com os dados
+  const WHATSAPP = '5562998432153';
+  const ROTULO = { medico:'Médico, módulo de gestão', gestor:'Gestor, sócio ou equipe', observador:'Já comprei Observador, quero somar o módulo' };
+  const form = document.getElementById('form');
+  let enviando = false;
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (enviando) return;
+    const nome = form.nome.value.trim(), zap = form.whatsapp.value.replace(/\D/g, '');
+    const vaga = form.querySelector('input[name="vaga"]:checked')?.value;
+    if (!nome || zap.length < 10 || !vaga) { (!nome ? form.nome : zap.length < 10 ? form.whatsapp : form.querySelector('input[name="vaga"]')).focus(); return; }
+    enviando = true;
+    const utms = {};
+    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid','fbclid'].forEach(p => { const v = new URLSearchParams(location.search).get(p); if (v) utms[p] = v; });
+    const lead = Object.assign({ formulario:'gestao', website:'', nome, whatsapp:zap, cidade:form.cidade.value.trim(), medico:form.querySelector('input[name="medico"]:checked')?.value || '', vaga }, utms);
+    let registrado = false;
+    try {
+      const r = await fetch('../lead.php', { method:'POST', credentials:'same-origin', headers:{ 'Content-Type':'application/json', 'Accept':'application/json' }, body:JSON.stringify(lead) });
+      const c = await r.json().catch(() => ({}));
+      registrado = r.ok && c.ok === true;
+    } catch (err) { registrado = false; }
+    const texto = `Olá, vim pela página do Módulo de Gestão da Full Body Experience e quero garantir minha vaga.\nNome: ${nome}\nVaga: ${ROTULO[vaga]}\n` + (lead.medico ? `Médico(a): ${lead.medico}\n` : '') + (lead.cidade ? `Cidade: ${lead.cidade}\n` : '');
+    const link = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`;
+    const done = form.querySelector('.done');
+    done.innerHTML = registrado
+      ? `<p>Recebemos os seus dados. A equipe da Supreme entra em contato pelo WhatsApp com o link da sua vaga.</p><p style="margin-top:18px"><a class="btn btn-outline" href="${link}" target="_blank" rel="noopener">Falar com a equipe no WhatsApp</a></p>`
+      : `<p>Não conseguimos registrar o envio agora. Fale com a equipe da Supreme pelo WhatsApp: seus dados já vão preenchidos na mensagem.</p><p style="margin-top:18px"><a class="btn btn-primary" href="${link}" target="_blank" rel="noopener">Falar com a equipe no WhatsApp</a></p>`;
+    form.classList.add('sent');
+    form.scrollIntoView({ block: 'center' });
+    enviando = false;
+  });
+</script>
+</body>
+</html>
