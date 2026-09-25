@@ -379,13 +379,50 @@ com data, local, professores e as quatro ofertas com preço.
 
 ---
 
+---
+
+## Página do Módulo de Gestão · `gestao/index.html`
+
+Segunda página do projeto, criada em 25/09/2026: a mesma diagramação da LP principal,
+falando **só do dia 20** (Módulo de Gestão). Endereço previsto:
+<https://fullbodyexperience.com.br/gestao/> · preview:
+<https://atendimento3ads.github.io/lp-full-body-experience/gestao/>
+
+- **Copy:** `Briefing_Copy_LP_FullBody_Modulo_Gestao.docx` (Drive). Tratada como aprovada:
+  a página diagrama, não reescreve. As 11 seções do briefing estão na ordem pedida.
+- **Layout:** tokens, barra fixa, faixa diagonal, monograma, CTA em pílula, título em dois
+  pesos e o hero (mesma arte `hero-desktop.webp` / `hero-mobile.webp`, mesma mecânica de
+  fundo) são os mesmos do `index.html`. Decisão do JP em 25/09: manter a arte do hero mesmo
+  ela trazendo o cartão "Dia 19 · Hands-On". O cartão-resumo do dia 20 que o briefing de
+  copy previa no hero foi retirado para não competir com a figura; o conteúdo dele
+  (quem participa) está nas notas da seção de vagas e no FAQ.
+- **Imagens:** reaproveita `images/professores/` (Silvane, Dra. Maria Lígia e Dr. Arthur) e a
+  foto da Dra. Maria Lígia na seção "O caso Supreme". Não há foto de paciente nesta página.
+- **Formulário** (seção "Último passo"): médico sim/não, vaga (médico · gestor · já comprei
+  Observador), nome, WhatsApp e cidade. Os CTAs com `data-vaga` pré-selecionam a vaga.
+  Integração no bloco `CONFIG` do `<script>`:
+  - `CONFIG.formEndpoint` aponta para `../lead.php`, que recebe o lead por POST (JSON) com
+    `formulario: "gestao"` e grava em `fullbodyexperience-leads/leads-gestao.csv`, ao lado
+    do `leads.csv` da qualificação. **Se o envio falhar** (por exemplo no GitHub Pages, que
+    não roda PHP), a tela de confirmação avisa e destaca o botão do WhatsApp com os dados
+    preenchidos, para o lead não se perder.
+  - `CONFIG.checkout.medico / .gestor / .observador`: quando preenchidos, a tela de
+    "recebemos os seus dados" mostra também o botão "Ir para o pagamento", com UTMs.
+  - GTM, Clarity, `CONFIG.whatsapp`, `metaPixelId` e `ga4Id`: os mesmos da LP principal.
+- **Eventos:** `clique_cta_gestao` (com a vaga), `lead_gestao` (+ `Lead` no Pixel),
+  `viu_vagas_gestao` (+ `ViewContent`), `clique_whatsapp`, `scroll_depth`, e
+  `InitiateCheckout` no botão de pagamento. Contador real para 20/10 às 9h.
+- **Pendências próprias:** links de checkout por vaga (Monique) e `og-cover`, compartilhado
+  com a LP principal.
+
 ## Estrutura da pasta
 
 ```
 lp-full-body-experience/
 ├── index.html                    a página (versão da referência)
 ├── index-versaoantiga.html       primeira versão, editorial
-├── lead.php                      valida e grava os leads qualificados
+├── gestao/index.html             página só do Módulo de Gestão (dia 20)
+├── lead.php                      valida e grava os leads (qualificação e gestão)
 ├── .cpanel.yml                   receita de implantação do Git Version Control
 ├── images/
 │   ├── hero-desktop.webp         arte do hero, 1920×874

@@ -3,3 +3,4 @@ Thumbs.db
 
 # Material bruto do cliente e da LP antiga — não vai para o repositório nem para o ar
 _material-cliente/
+.claude/

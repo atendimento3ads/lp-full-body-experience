@@ -57,6 +57,71 @@ function csvSafe($value)
     return preg_match('/^[=+\-@]/', $value) === 1 ? "'" . $value : $value;
 }
 
+// ── Formulário da página do Módulo de Gestão (/gestao/) ─────────────
+// Payload menor e público diferente (gestor não precisa ser médico).
+// Grava em leads-gestao.csv, separado do leads.csv da qualificação.
+if (($data['formulario'] ?? '') === 'gestao') {
+    $vagasGestao = [
+        'medico' => 'Médico, módulo de gestão',
+        'gestor' => 'Gestor, sócio ou equipe',
+        'observador' => 'Já comprou Observador, quer somar o módulo'
+    ];
+    $gNome = clean($data['nome'] ?? '', 120);
+    $gTelefone = clean($data['whatsapp'] ?? '', 30);
+    $gCidade = clean($data['cidade'] ?? '', 120);
+    $gMedico = clean($data['medico'] ?? '', 8);
+    $gVaga = clean($data['vaga'] ?? '', 20);
+    $gDigits = preg_replace('/\D+/', '', $gTelefone) ?? '';
+    $gNomeLen = function_exists('mb_strlen') ? mb_strlen($gNome) : strlen($gNome);
+    if (!allowed($gVaga, $vagasGestao) || $gNomeLen < 3 || strlen($gDigits) < 10 || strlen($gDigits) > 13) {
+        respond(422, ['ok' => false, 'message' => 'Confira seu nome, WhatsApp e a vaga.']);
+    }
+
+    $gTrackingKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'fbclid'];
+    $gTracking = [];
+    foreach ($gTrackingKeys as $key) {
+        $gTracking[$key] = clean($data[$key] ?? '', 150);
+    }
+
+    $gDir = getenv('FULLBODY_LEADS_DIR') ?: dirname(__DIR__) . '/fullbodyexperience-leads';
+    if (!is_dir($gDir) && !mkdir($gDir, 0700, true) && !is_dir($gDir)) {
+        respond(500, ['ok' => false, 'message' => 'Não foi possível registrar o contato.']);
+    }
+    @chmod($gDir, 0700);
+
+    $gCsv = $gDir . '/leads-gestao.csv';
+    $gHandle = fopen($gCsv, 'c+');
+    if ($gHandle === false || !flock($gHandle, LOCK_EX)) {
+        if (is_resource($gHandle)) {
+            fclose($gHandle);
+        }
+        respond(500, ['ok' => false, 'message' => 'Não foi possível registrar o contato.']);
+    }
+    fseek($gHandle, 0, SEEK_END);
+    if (ftell($gHandle) === 0) {
+        fwrite($gHandle, "\xEF\xBB\xBF");
+        fputcsv($gHandle, [
+            'criado_em', 'nome', 'whatsapp', 'cidade', 'medico', 'vaga',
+            'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'fbclid'
+        ], ';', '"', '');
+    }
+    $gRow = array_map('csvSafe', [
+        (new DateTimeImmutable('now', new DateTimeZone('America/Sao_Paulo')))->format('Y-m-d H:i:s'),
+        $gNome, $gDigits, $gCidade, $gMedico, $vagasGestao[$gVaga],
+        $gTracking['utm_source'], $gTracking['utm_medium'], $gTracking['utm_campaign'],
+        $gTracking['utm_content'], $gTracking['utm_term'], $gTracking['gclid'], $gTracking['fbclid']
+    ]);
+    $gWritten = fputcsv($gHandle, $gRow, ';', '"', '');
+    fflush($gHandle);
+    flock($gHandle, LOCK_UN);
+    fclose($gHandle);
+    @chmod($gCsv, 0600);
+    if ($gWritten === false) {
+        respond(500, ['ok' => false, 'message' => 'Não foi possível registrar o contato.']);
+    }
+    respond(200, ['ok' => true]);
+}
+
 $medico = clean($data['medico'] ?? '', 8);
 $especialidade = clean($data['especialidade'] ?? '');
 $atuacao = clean($data['atuacao_estetica'] ?? '');
